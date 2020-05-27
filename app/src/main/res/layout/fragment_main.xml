@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".GJ.MainFragment">
+
+    <LinearLayout
+        android:id="@+id/actionbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/actionbar_bk"
+        android:gravity="center_vertical"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_launcher_foreground" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center|center_vertical"
+            android:text="@string/actionbar_title1"
+            android:textSize="18sp"
+            android:textStyle="normal|bold" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:text="@string/actionbar_title2"
+            android:textSize="36sp" />
+
+    </LinearLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/fragment_vp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <RadioGroup
+        android:id="@+id/tabs_rg"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:background="#FBFBFB"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/tab_home"
+            style="@style/Custom.TabRadioButton"
+            android:checked="true"
+            android:drawableTop="@drawable/tab_selector_home"
+            android:text="@string/tab_home" />
+
+        <RadioButton
+            android:id="@+id/tab_hot"
+            style="@style/Custom.TabRadioButton"
+            android:drawableTop="@drawable/tab_selector_hot"
+            android:text="@string/tab_hot" />
+
+        <RadioButton
+            android:id="@+id/tab_category"
+            style="@style/Custom.TabRadioButton"
+            android:drawableTop="@drawable/tab_selector_category"
+            android:text="@string/tab_category" />
+
+        <RadioButton
+            android:id="@+id/tab_cart"
+            style="@style/Custom.TabRadioButton"
+            android:drawableTop="@drawable/tab_selector_cart"
+            android:text="@string/tab_cart" />
+
+        <RadioButton
+            android:id="@+id/tab_user"
+            style="@style/Custom.TabRadioButton"
+            android:drawableTop="@drawable/tab_selector_user"
+            android:text="@string/tab_user" />
+    </RadioGroup>
+
+</LinearLayout>

@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">TaoHuo</string>
+
+    <!--框架 By GJ-->
+    <string name="tab_home">主页</string>
+    <string name="tab_hot">热卖</string>
+    <string name="tab_category">分类</string>
+    <string name="tab_cart">购物车</string>
+    <string name="tab_user">我的</string>
+    <string name="actionbar_title1">淘货</string>
+    <string name="actionbar_title2">+</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
