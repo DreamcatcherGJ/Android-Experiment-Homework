@@ -19,10 +19,11 @@
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_gravity="start"
             android:contentDescription="@string/app_name"
-            android:src="@drawable/ic_launcher_foreground" />
+            android:padding="8dp"
+            android:src="@mipmap/brand_48" />
 
         <TextView
             android:id="@+id/textView"
@@ -53,8 +54,8 @@
     <RadioGroup
         android:id="@+id/tabs_rg"
         android:layout_width="match_parent"
-        android:layout_height="75dp"
-        android:background="#FBFBFB"
+        android:layout_height="58dp"
+        android:background="#FFFFFF"
         android:orientation="horizontal">
 
         <RadioButton
