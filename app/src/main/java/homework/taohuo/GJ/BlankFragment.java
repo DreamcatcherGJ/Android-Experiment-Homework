@@ -40,7 +40,7 @@ public class BlankFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.fragment_blank, container, false);
+        View rootView = inflater.inflate(R.layout.gj_blank, container, false);
         TextView contentTv = rootView.findViewById(R.id.content_tv);
         contentTv.setText(mContentText);
         return rootView;

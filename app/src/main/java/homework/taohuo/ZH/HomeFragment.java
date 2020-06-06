@@ -59,7 +59,7 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        mView = inflater.inflate(R.layout.fragment_home, null);
+        mView = inflater.inflate(R.layout.zh_fragment_home, null);
         setView();
         return mView;
     }

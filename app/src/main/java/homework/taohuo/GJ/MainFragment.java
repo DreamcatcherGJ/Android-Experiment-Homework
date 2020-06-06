@@ -43,12 +43,12 @@ public class MainFragment extends Fragment {
         mViewPager = v.findViewById(R.id.fragment_vp);
         mTabRadioGroup = v.findViewById(R.id.tabs_rg);
 
-        ListFragment listFragment = new ListFragment(data);
+        ListFragment listFragment = new ListFragment(data);////临时测试
         HomeFragment homeFragment = new HomeFragment();
 
         mFragments = new ArrayList<>(1);
         mFragments.add(homeFragment);
-        mFragments.add(listFragment);
+        mFragments.add(listFragment);//临时测试
         mFragments.add(BlankFragment.newInstance("分类"));
         mFragments.add(BlankFragment.newInstance("购物车"));
         mFragments.add(BlankFragment.newInstance("我的"));

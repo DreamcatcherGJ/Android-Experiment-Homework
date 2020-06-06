@@ -1,7 +1,5 @@
 package homework.taohuo.GX;
 
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -33,7 +31,7 @@ public class ListFragment extends Fragment
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_list, container, false);
+        View view = inflater.inflate(R.layout.gx_list, container, false);
 
         ListOptionView = (RecyclerView) view.findViewById(R.id.list_option_view);
         ListOptionView.setLayoutManager(new LinearLayoutManager(getContext()));
