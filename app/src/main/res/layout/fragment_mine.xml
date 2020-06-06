@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ZH.MineFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="#EB4F38">
+
+        <com.example.store.ZH.CircleImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="100dp"
+            android:src="@mipmap/zh_img" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="210dp">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@mipmap/zh_list"/>
+
+        <Button
+            android:id="@+id/zh_btn6"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="我的订单"
+            android:background="#00000000"
+            android:layout_marginLeft="15dp"
+            android:gravity="center_vertical"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="260dp">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@mipmap/zh_favorite"/>
+
+        <Button
+            android:id="@+id/zh_btn7"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="我的收藏"
+            android:background="#00000000"
+            android:layout_marginLeft="15dp"
+            android:gravity="center_vertical"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="310dp">
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@mipmap/zh_location"/>
+
+        <Button
+            android:id="@+id/zh_btn8"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="15dp"
+            android:text="收货地址"
+            android:background="#00000000"
+            android:gravity="center_vertical"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="380dp">
+        <Button
+            android:id="@+id/zh_btn9"
+            android:layout_width="380dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:background="#eb4f38"
+            android:text="退出登录"
+            android:textColor="#FFFFFF"/>
+    </LinearLayout>
+
+</FrameLayout>

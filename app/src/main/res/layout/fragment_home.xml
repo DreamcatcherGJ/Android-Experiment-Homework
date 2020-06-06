@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/zh_home"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ZH.HomeFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp" >
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/vp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dip"
+            android:layout_gravity="bottom"
+            android:background="#33000000"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <!--<TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="图片标题"
+                android:textColor="#FFFFFF" />-->
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:orientation="horizontal" >
+
+                <View
+                    android:id="@+id/dot_0"
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:background="@mipmap/zh_dot_yes"/>
+
+                <View
+                    android:id="@+id/dot_1"
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:background="@mipmap/zh_dot_no"/>
+
+                <View
+                    android:id="@+id/dot_2"
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:background="@mipmap/zh_dot_no"/>
+
+                <View
+                    android:id="@+id/dot_3"
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:layout_marginLeft="2dip"
+                    android:layout_marginRight="2dip"
+                    android:background="@mipmap/zh_dot_no"/>
+
+                <View
+                    android:id="@+id/dot_4"
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:background="@mipmap/zh_dot_no"/>
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:layout_marginTop="180dp">
+
+        <Button
+            android:id="@+id/zh_btn1"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:background="#00000000"
+            android:text="超低五折价"
+            android:textColor="#CC0000"/>
+
+        <ImageView
+            android:id="@+id/zh_img1"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="-50dp"
+            android:src="@mipmap/zh_img06"
+            />
+
+
+        <Button
+            android:id="@+id/zh_btn2"
+            android:layout_marginTop="150dp"
+            android:layout_marginLeft="65dp"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:background="#00000000"
+            android:text="华为品牌日"
+            android:textColor="#CC0000"/>
+
+        <ImageView
+            android:id="@+id/zh_img2"
+            android:layout_height="150dp"
+            android:layout_width="150dp"
+            android:layout_marginLeft="-120dp"
+            android:src="@mipmap/zh_img07"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="370dp">
+
+        <ImageView
+            android:id="@+id/zh_img3"
+            android:layout_width="100dp"
+            android:layout_height="120dp"
+            android:src="@mipmap/zh_img08" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginTop="20dp"
+            android:text="手表榜 风云起" />
+
+        <Button
+            android:id="@+id/zh_btn3"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginLeft="-86dp"
+            android:layout_marginTop="60dp"
+            android:background="#00000000"
+            android:text="华为GT2"
+            android:textColor="#CC0000" />
+
+        <Button
+            android:id="@+id/zh_btn4"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="165dp"
+            android:layout_marginLeft="-200dp"
+            android:text="小米手环4"
+            android:textColor="#CC0000"
+            android:background="#00000000"/>
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="110dp"
+            android:layout_marginTop="120dp"
+            android:src="@mipmap/zh_img09" />
+
+        <Button
+            android:id="@+id/zh_btn5"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="70dp"
+            android:text="iPhone SE"
+            android:textColor="#CC0000"
+            android:background="#00000000"/>
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="160dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginLeft="-140dp"
+            android:src="@mipmap/zh_img10"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
