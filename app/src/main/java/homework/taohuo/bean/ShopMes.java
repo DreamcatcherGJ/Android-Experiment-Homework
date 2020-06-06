@@ -19,9 +19,9 @@ public class ShopMes {
 
         //王龙
         data.add(new Shop("华为旗下荣耀手环5",
-                R.mipmap.wl_shop1,R.mipmap.wl_shop1_detail,"￥"));
+                R.mipmap.wl_shop1,R.mipmap.wl_shop1_detail,"￥149"));
         data.add(new Shop("小米移动电源3",
-                R.mipmap.wl_shop2,R.mipmap.wl_shop2_detail,"￥"));
+                R.mipmap.wl_shop2,R.mipmap.wl_shop2_detail,"￥109"));
 
         //刘顺
         data.add(new Shop("遨游A6防爆智能手机",
