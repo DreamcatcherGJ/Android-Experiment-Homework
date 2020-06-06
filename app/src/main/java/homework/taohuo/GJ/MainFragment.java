@@ -16,7 +16,10 @@ import android.widget.RadioGroup;
 import java.util.ArrayList;
 import java.util.List;
 
+import homework.taohuo.GX.ListFragment;
 import homework.taohuo.R;
+import homework.taohuo.ZH.HomeFragment;
+import homework.taohuo.bean.Shop;
 
 public class MainFragment extends Fragment {
 
@@ -24,9 +27,12 @@ public class MainFragment extends Fragment {
     private RadioGroup mTabRadioGroup;
     private List<Fragment> mFragments;
     private FragmentPagerAdapter mAdapter;
+    private List<Shop> data = new ArrayList<>();
 
     public MainFragment() {
-        // Required empty public constructor
+        data.add(new Shop("测试1", R.mipmap.brand_128,R.mipmap.brand_128,"￥1"));
+        data.add(new Shop("测试2",R.mipmap.tab_cart_b,R.mipmap.brand_128,"￥5"));
+        data.add(new Shop("测试3",R.mipmap.tab_category_b,R.mipmap.brand_128,"￥10"));
     }
 
     @Override
@@ -37,9 +43,12 @@ public class MainFragment extends Fragment {
         mViewPager = v.findViewById(R.id.fragment_vp);
         mTabRadioGroup = v.findViewById(R.id.tabs_rg);
 
+        ListFragment listFragment = new ListFragment(data);
+        HomeFragment homeFragment = new HomeFragment();
+
         mFragments = new ArrayList<>(1);
-        mFragments.add(BlankFragment.newInstance("首页"));
-        mFragments.add(BlankFragment.newInstance("热卖"));
+        mFragments.add(homeFragment);
+        mFragments.add(listFragment);
         mFragments.add(BlankFragment.newInstance("分类"));
         mFragments.add(BlankFragment.newInstance("购物车"));
         mFragments.add(BlankFragment.newInstance("我的"));
