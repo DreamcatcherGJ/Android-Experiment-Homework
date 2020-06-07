@@ -1,16 +1,26 @@
 package homework.taohuo.bean;
 
 public class Shop {
+    private String id;//商品编号
     private String title;//标题
     private int headImage;//图片
     private int detailImage;//详细信息
     private String price;//价格
 
-    public Shop(String title, int headImage, int detailImage, String price) {
+    public Shop(String id, String title, int headImage, int detailImage, String price) {
+        this.id = id;
         this.title = title;
         this.headImage = headImage;
         this.detailImage = detailImage;
         this.price = price;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getTitle() {

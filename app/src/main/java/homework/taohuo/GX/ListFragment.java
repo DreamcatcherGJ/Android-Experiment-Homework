@@ -6,13 +6,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 import homework.taohuo.R;
+import homework.taohuo.bean.GetShopMes;
 import homework.taohuo.bean.Shop;
 
 /**
@@ -23,8 +23,9 @@ public class ListFragment extends Fragment
     private RecyclerView ListOptionView;
     private List<Shop> data = new ArrayList<>();
 
-    public ListFragment(List<Shop> data) {
-        this.data = data;
+    public ListFragment(List<String> number) {
+        GetShopMes needmes = new GetShopMes();
+        data = needmes.GetShopMes(number);
     }
 
     @Override
