@@ -64,7 +64,7 @@ public class Addaddress extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_addaddress, container, false);
+        return inflater.inflate(R.layout.wzt_addaddress, container, false);
     }
 
     public void onActivityCreated(Bundle savedInstanceState) {

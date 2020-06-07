@@ -1,6 +1,5 @@
 package homework.taohuo.ZH;
 import homework.taohuo.GX.ListFragment;
-import homework.taohuo.MainActivity;
 import homework.taohuo.R;
 
 import androidx.fragment.app.Fragment;
@@ -8,8 +7,6 @@ import androidx.fragment.app.Fragment;
 import android.os.Bundle;
 import android.os.Handler;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 import android.view.LayoutInflater;
@@ -65,7 +62,7 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        mView = inflater.inflate(R.layout.zh_fragment_home, null);
+        mView = inflater.inflate(R.layout.zh_home, null);
         setView();
         return mView;
     }
