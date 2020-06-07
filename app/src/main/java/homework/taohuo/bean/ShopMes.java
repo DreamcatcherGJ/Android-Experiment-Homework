@@ -13,9 +13,9 @@ public class ShopMes {
     {
         //张虎
         data.add(new Shop("HUAWEI WATCH GT2",
-                R.mipmap.zh_shop1,R.mipmap.wl_shop1_detail,"￥"));
+                R.mipmap.zh_shop1,R.mipmap.zh_shop1_detail,"￥1488"));
         data.add(new Shop("小米手表Color",
-                R.mipmap.zh_shop2,R.mipmap.wl_shop2_detail,"￥"));
+                R.mipmap.zh_shop2,R.mipmap.zh_shop2_detail,"￥699"));
 
         //王龙
         data.add(new Shop("华为旗下荣耀手环5",
