@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WZT.PickAddress">
+
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="112dp"
+        android:gravity="center"
+        android:text="收货地址"
+        android:textSize="40dp" />
+
+    <Button
+        android:id="@+id/wzt_bt9"
+        android:layout_width="match_parent"
+        android:layout_height="92dp"
+        android:layout_gravity="bottom"
+        android:gravity="center"
+        android:text="添加新地址"
+
+       />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="526dp"
+        android:layout_gravity="bottom"
+
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:text="地址1" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:text="地址2" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="533dp"
+
+        android:layout_gravity="right|bottom"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/wzt_bt1"
+            android:layout_width="wrap_content"
+            android:layout_height="65dp"
+            android:layout_weight="1"
+            android:text="修改" />
+
+        <Button
+            android:id="@+id/wzt_bt2"
+            android:onClick="onclick1"
+            android:text="删除"
+            android:layout_width="wrap_content"
+            android:layout_height="59dp"
+            android:layout_weight="1"
+            tools:ignore="OnClick" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="175dp"
+        android:layout_height="467dp"
+        android:layout_gravity="right|bottom"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/wzt_bt3"
+            android:layout_width="wrap_content"
+            android:layout_height="59dp"
+            android:layout_weight="1"
+            android:text="修改" />
+
+        <Button
+            android:id="@+id/wzt_bt4"
+            android:onClick="onclick2"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:text="删除"
+            tools:ignore="OnClick" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="179dp"
+
+        android:layout_height="409dp"
+        android:layout_gravity="right|bottom"
+        android:orientation="horizontal"/>
+
+    <LinearLayout
+        android:layout_width="176dp"
+        android:layout_height="339dp"
+
+        android:layout_gravity="right|bottom"
+        android:orientation="horizontal"/>
+
+
+</FrameLayout>
