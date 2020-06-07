@@ -8,13 +8,20 @@
     <string name="tab_cart">购物车</string>
     <string name="tab_user">我的</string>
     <string name="actionbar_title1">淘货</string>
-    <string name="actionbar_title2">+</string>
+    <string name="actionbar_title2"></string>
 
     <!--List By GX-->
     <string name="list_title">标题</string>
     <string name="list_headimage">图片</string>
     <string name="list_detailimage">详细信息</string>
     <string name="list_price">价格</string>
+
+    <!--List By GHY-->
+    <string name="shop_name">商品名称</string>
+    <string name="shop_detail">商品详情</string>
+    <string name="shop_collect">收藏</string>
+    <string name="shop_add">加入购物车</string>
+    <string name="shop_buy">立即购买</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

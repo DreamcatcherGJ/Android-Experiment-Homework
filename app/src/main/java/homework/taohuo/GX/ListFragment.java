@@ -6,11 +6,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
+
+import homework.taohuo.GHY.ShopDetailFragment;
 import homework.taohuo.R;
 import homework.taohuo.bean.GetShopMes;
 import homework.taohuo.bean.Shop;
@@ -43,6 +47,19 @@ public class ListFragment extends Fragment
     private class MyViewHolder extends RecyclerView.ViewHolder{
         public MyViewHolder(View itemView) {
             super(itemView);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int position = getAdapterPosition();
+                    Shop shop = data.get(position);
+                    ShopDetailFragment shopDetailFragment = new ShopDetailFragment(shop.getId());
+                    getActivity().getSupportFragmentManager()
+                            .beginTransaction()
+                            .replace(R.id.fragment_container, shopDetailFragment, null)
+                            .addToBackStack(null)
+                            .commit();
+                }
+            });
         }
     }
 

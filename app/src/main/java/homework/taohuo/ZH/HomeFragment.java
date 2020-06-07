@@ -1,4 +1,6 @@
 package homework.taohuo.ZH;
+import homework.taohuo.GX.ListFragment;
+import homework.taohuo.MainActivity;
 import homework.taohuo.R;
 
 import androidx.fragment.app.Fragment;
@@ -6,6 +8,8 @@ import androidx.fragment.app.Fragment;
 import android.os.Bundle;
 import android.os.Handler;
 import androidx.annotation.Nullable;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 import android.view.LayoutInflater;
@@ -54,6 +58,8 @@ public class HomeFragment extends Fragment {
     private TextView title;
     private ViewPagerAdapter adapter;
     private ScheduledExecutorService scheduledExecutorService;
+
+    private List<String> number = new ArrayList<>();
 
     @Nullable
     @Override
@@ -205,14 +211,27 @@ public class HomeFragment extends Fragment {
         btn4 = (Button) getActivity().findViewById(R.id.zh_btn4);
         btn5 = (Button) getActivity().findViewById(R.id.zh_btn5);
         //img1 =(ImageView) getActivity().findViewById(R.id.zh_img1);
-        /*btn1.setOnClickListener(new View.OnClickListener() {
+        btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (blankFragment == null) {
-                    blankFragment = new BlankFragment();
-                }
-                getFragmentManager().beginTransaction().replace(R.id.fragment_container, blankFragment).commitAllowingStateLoss();
+                number.add("3");
+                number.add("4");
+                number.add("5");
+                number.add("6");
+                number.add("7");
+                number.add("8");
+                number.add("9");
+                number.add("10");
+                number.add("11");
+
+                ListFragment listFragment = new ListFragment(number);
+
+                getActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragment_container, listFragment, null)
+                        .addToBackStack(null)
+                        .commit();
             }
-        });*/
+        });
     }
 }

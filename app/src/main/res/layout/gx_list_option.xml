@@ -5,7 +5,7 @@
     android:id="@+id/list_option"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="5dp"
+    android:layout_margin="3dp"
     android:orientation="horizontal"
     app:cardBackgroundColor="#FFFFFF"
     app:cardCornerRadius="8dp">
@@ -17,8 +17,8 @@
 
         <ImageView
             android:id="@+id/list_headimage"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_margin="5dp"
             android:contentDescription="@string/list_headimage"
             app:srcCompat="@drawable/ic_launcher_foreground" />
