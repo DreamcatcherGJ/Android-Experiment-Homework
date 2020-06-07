@@ -33,7 +33,7 @@ public class HomeFragment extends Fragment {
     private List<ImageView> images;
     private List<View> dots;
     private int currentItem;
-    private Button btn1,btn2,btn3,btn4,btn5;
+    private Button btn1,btn2,btn3,btn4;
     //记录上一次点的位置
     private int oldPosition = 0;
     //存放图片的id
@@ -206,20 +206,69 @@ public class HomeFragment extends Fragment {
         btn2 = (Button) getActivity().findViewById(R.id.zh_btn2);
         btn3 = (Button) getActivity().findViewById(R.id.zh_btn3);
         btn4 = (Button) getActivity().findViewById(R.id.zh_btn4);
-        btn5 = (Button) getActivity().findViewById(R.id.zh_btn5);
         //img1 =(ImageView) getActivity().findViewById(R.id.zh_img1);
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                number.add("9");
+                number.add("10");
+                number.add("11");
+                number.add("12");
+                number.add("13");
+                number.add("14");
+
+                ListFragment listFragment = new ListFragment(number);
+
+                getActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragment_container, listFragment, null)
+                        .addToBackStack(null)
+                        .commit();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                number.add("1");
                 number.add("3");
+                number.add("8");
+
+                ListFragment listFragment = new ListFragment(number);
+
+                getActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragment_container, listFragment, null)
+                        .addToBackStack(null)
+                        .commit();
+            }
+        });
+
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 number.add("4");
                 number.add("5");
                 number.add("6");
                 number.add("7");
                 number.add("8");
-                number.add("9");
-                number.add("10");
-                number.add("11");
+
+                ListFragment listFragment = new ListFragment(number);
+
+                getActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragment_container, listFragment, null)
+                        .addToBackStack(null)
+                        .commit();
+            }
+        });
+
+        btn4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                number.add("5");
+                number.add("6");
+                number.add("7");
 
                 ListFragment listFragment = new ListFragment(number);
 
