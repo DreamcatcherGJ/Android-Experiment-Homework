@@ -15,6 +15,7 @@ import java.util.List;
 import homework.taohuo.GX.ListFragment;
 import homework.taohuo.R;
 import homework.taohuo.ZH.HomeFragment;
+import homework.taohuo.ZH.MineFragment;
 import homework.taohuo.bean.Shop;
 
 public class MainFragment extends Fragment {
@@ -51,13 +52,14 @@ public class MainFragment extends Fragment {
         }
         ListFragment listFragment = new ListFragment(number);////临时测试
         HomeFragment homeFragment = new HomeFragment();
+        MineFragment mineFragment = new MineFragment();
 
         mFragments = new ArrayList<>(1);
         mFragments.add(homeFragment);
         mFragments.add(listFragment);//临时测试
         mFragments.add(BlankFragment.newInstance("分类"));
         mFragments.add(BlankFragment.newInstance("购物车"));
-        mFragments.add(BlankFragment.newInstance("我的"));
+        mFragments.add(mineFragment);
 
         mAdapter = new MyFragmentPagerAdapter(getFragmentManager(), mFragments);
         mViewPager.setAdapter(mAdapter);
