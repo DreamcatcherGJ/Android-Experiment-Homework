@@ -1,21 +1,17 @@
 package homework.taohuo.GJ;
 
 import android.os.Bundle;
-
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import homework.taohuo.GX.ListFragment;
 import homework.taohuo.R;
 import homework.taohuo.ZH.HomeFragment;
@@ -28,11 +24,18 @@ public class MainFragment extends Fragment {
     private List<Fragment> mFragments;
     private FragmentPagerAdapter mAdapter;
     private List<Shop> data = new ArrayList<>();
+    private List<String> number = new ArrayList<>();
 
     public MainFragment() {
-        data.add(new Shop("测试1", R.mipmap.brand_128,R.mipmap.brand_128,"￥1"));
-        data.add(new Shop("测试2",R.mipmap.tab_cart_b,R.mipmap.brand_128,"￥5"));
-        data.add(new Shop("测试3",R.mipmap.tab_category_b,R.mipmap.brand_128,"￥10"));
+        number.add("3");
+        number.add("4");
+        number.add("5");
+        number.add("6");
+        number.add("7");
+        number.add("8");
+        number.add("9");
+        number.add("10");
+        number.add("11");
     }
 
     @Override
@@ -43,7 +46,10 @@ public class MainFragment extends Fragment {
         mViewPager = v.findViewById(R.id.fragment_vp);
         mTabRadioGroup = v.findViewById(R.id.tabs_rg);
 
-        ListFragment listFragment = new ListFragment(data);////临时测试
+        for(int i = 0;i < number.size();i++){
+            System.out.println(number.get(i));
+        }
+        ListFragment listFragment = new ListFragment(number);////临时测试
         HomeFragment homeFragment = new HomeFragment();
 
         mFragments = new ArrayList<>(1);
