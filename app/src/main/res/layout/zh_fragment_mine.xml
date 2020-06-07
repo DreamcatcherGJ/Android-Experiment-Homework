@@ -11,11 +11,11 @@
         android:layout_height="200dp"
         android:background="#EB4F38">
 
-        <com.example.store.ZH.CircleImageView
+        <homework.taohuo.ZH.CircleImageView
             android:layout_width="200dp"
             android:layout_height="100dp"
             android:layout_gravity="center"
-            android:layout_marginLeft="100dp"
+            android:layout_marginLeft="150dp"
             android:src="@mipmap/zh_img" />
     </LinearLayout>
 
