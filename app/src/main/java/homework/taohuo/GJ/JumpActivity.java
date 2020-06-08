@@ -10,6 +10,7 @@ import java.util.List;
 import homework.taohuo.GHY.ShopDetailFragment;
 import homework.taohuo.GX.ListFragment;
 import homework.taohuo.R;
+import homework.taohuo.WL.OrderTabFragment;
 import homework.taohuo.WZT.AdressFragment;
 import homework.taohuo.WZT.ModifyAddress;
 
@@ -31,7 +32,6 @@ public class JumpActivity extends AppCompatActivity {
             //1.商品列表
             String number = getIntent().getStringExtra("number");
             Gson gson=new Gson();
-
             List<String> ListNumber = gson.fromJson(number,new TypeToken<List<String>>(){}.getType());
             ListFragment listFragment = new ListFragment(ListNumber);
             fragmentTransaction.add(R.id.fragment_container2, listFragment);
@@ -51,8 +51,11 @@ public class JumpActivity extends AppCompatActivity {
             fragmentTransaction.commit();
         }
         if (id == 4) {
-            ModifyAddress modifyAddress = new ModifyAddress();
-            fragmentTransaction.add(R.id.fragment_container2, modifyAddress);
+            String number = getIntent().getStringExtra("number");
+            Gson gson=new Gson();
+            List<String> ListNumber = gson.fromJson(number,new TypeToken<List<String>>(){}.getType());
+            OrderTabFragment orderTabFragment = new OrderTabFragment(ListNumber);
+            fragmentTransaction.replace(R.id.fragment_container2, orderTabFragment);
             fragmentTransaction.commit();
         }
     }

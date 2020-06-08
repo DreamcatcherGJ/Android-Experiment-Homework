@@ -39,7 +39,7 @@ public class MainFragment extends Fragment
 
         mFragments = new ArrayList<>(1);
         mFragments.add(homeFragment);
-        mFragments.add(BlankFragment.newInstance("热卖"));
+        mFragments.add(BlankFragment.newInstance("分类"));
         mFragments.add(BlankFragment.newInstance("分类"));
         mFragments.add(BlankFragment.newInstance("购物车"));
         mFragments.add(mineFragment);

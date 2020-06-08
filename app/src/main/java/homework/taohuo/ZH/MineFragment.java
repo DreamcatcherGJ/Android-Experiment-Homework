@@ -10,6 +10,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.google.gson.Gson;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import homework.taohuo.GJ.JumpActivity;
 import homework.taohuo.R;
 
@@ -38,6 +43,22 @@ public class MineFragment extends Fragment {
         btn2 = (Button) getActivity().findViewById(R.id.zh_btn7);
         btn3 = (Button) getActivity().findViewById(R.id.zh_btn8);
         btn4 = (Button) getActivity().findViewById(R.id.zh_btn9);
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                List<String> number = new ArrayList<>();
+                number.add("1");
+                number.add("2");
+                number.add("3");
+
+                Gson gson=new Gson();
+                String listNum = gson.toJson(number);
+                Intent intent = new Intent(getActivity(), JumpActivity.class);
+                intent.putExtra("id",4);
+                intent.putExtra("number",listNum);
+                startActivity(intent);
+            }
+        });
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
