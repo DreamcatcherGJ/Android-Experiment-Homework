@@ -10,6 +10,7 @@ import java.util.List;
 import homework.taohuo.GHY.ShopDetailFragment;
 import homework.taohuo.GX.ListFragment;
 import homework.taohuo.R;
+import homework.taohuo.WL.OrderTabFragment;
 import homework.taohuo.WZT.AdressFragment;
 import homework.taohuo.WZT.ModifyAddress;
 
@@ -63,6 +64,14 @@ public class JumpActivity extends AppCompatActivity {
         if (id == 6) {//返回”我的收货地址“界面
             AdressFragment adressFragment =  new AdressFragment();
             fragmentTransaction.add(R.id.fragment_container2, adressFragment);
+            fragmentTransaction.commit();
+        }
+        if (id == 7) {
+            String number = getIntent().getStringExtra("number");
+            Gson gson=new Gson();
+            List<String> ListNumber = gson.fromJson(number,new TypeToken<List<String>>(){}.getType());
+            OrderTabFragment orderTabFragment = new OrderTabFragment(ListNumber);
+            fragmentTransaction.replace(R.id.fragment_container2, orderTabFragment);
             fragmentTransaction.commit();
         }
     }

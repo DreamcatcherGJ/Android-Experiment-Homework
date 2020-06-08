@@ -12,33 +12,19 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import java.util.ArrayList;
 import java.util.List;
-import homework.taohuo.GX.ListFragment;
 import homework.taohuo.R;
-import homework.taohuo.WL.OrderFragment;
 import homework.taohuo.ZH.HomeFragment;
 import homework.taohuo.ZH.MineFragment;
-import homework.taohuo.bean.Shop;
 
-public class MainFragment extends Fragment {
+public class MainFragment extends Fragment
+{
 
     private ViewPager mViewPager;
     private RadioGroup mTabRadioGroup;
     private List<Fragment> mFragments;
     private FragmentPagerAdapter mAdapter;
-    private List<Shop> data = new ArrayList<>();
-    private List<String> number = new ArrayList<>();
 
-    public MainFragment() {
-        number.add("3");
-        number.add("4");
-        number.add("5");
-        number.add("6");
-        number.add("7");
-        number.add("8");
-        number.add("9");
-        number.add("10");
-        number.add("11");
-    }
+    public MainFragment() { }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -48,18 +34,13 @@ public class MainFragment extends Fragment {
         mViewPager = v.findViewById(R.id.fragment_vp);
         mTabRadioGroup = v.findViewById(R.id.tabs_rg);
 
-        for(int i = 0;i < number.size();i++){
-            System.out.println(number.get(i));
-        }
-        ListFragment listFragment = new ListFragment(number);////临时测试
         HomeFragment homeFragment = new HomeFragment();
         MineFragment mineFragment = new MineFragment();
 
-
         mFragments = new ArrayList<>(1);
         mFragments.add(homeFragment);
-        mFragments.add(listFragment);//临时测试
-        mFragments.add(BlankFragment.newInstance("购物车"));
+        mFragments.add(BlankFragment.newInstance("分类"));
+        mFragments.add(BlankFragment.newInstance("分类"));
         mFragments.add(BlankFragment.newInstance("购物车"));
         mFragments.add(mineFragment);
 
@@ -73,12 +54,14 @@ public class MainFragment extends Fragment {
     }
 
     @Override
-    public void onDestroy() {
+    public void onDestroy()
+    {
         super.onDestroy();
         mViewPager.removeOnPageChangeListener(mPageChangeListener);
     }
 
-    private ViewPager.OnPageChangeListener mPageChangeListener = new ViewPager.OnPageChangeListener() {
+    private ViewPager.OnPageChangeListener mPageChangeListener = new ViewPager.OnPageChangeListener()
+    {
         @Override
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
@@ -98,7 +81,8 @@ public class MainFragment extends Fragment {
 
     private RadioGroup.OnCheckedChangeListener mOnCheckedChangeListener = new RadioGroup.OnCheckedChangeListener() {
         @Override
-        public void onCheckedChanged(RadioGroup group, int checkedId) {
+        public void onCheckedChanged(RadioGroup group, int checkedId)
+        {
             for (int i = 0; i < group.getChildCount(); i++) {
                 if (group.getChildAt(i).getId() == checkedId) {
                     mViewPager.setCurrentItem(i);
@@ -108,8 +92,8 @@ public class MainFragment extends Fragment {
         }
     };
 
-    private class MyFragmentPagerAdapter extends FragmentPagerAdapter {
-
+    private class MyFragmentPagerAdapter extends FragmentPagerAdapter
+    {
         private List<Fragment> mList;
 
         public MyFragmentPagerAdapter(FragmentManager fm, List<Fragment> list) {
