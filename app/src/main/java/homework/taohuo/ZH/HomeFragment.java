@@ -254,8 +254,8 @@ public class HomeFragment extends Fragment {
             public void onClick(View v) {
                 List<String> number = new ArrayList<>();
                 number.add("1");
+                number.add("2");
                 number.add("3");
-                number.add("8");
 
                 Gson gson=new Gson();
                 String listNum = gson.toJson(number);
