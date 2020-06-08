@@ -55,16 +55,20 @@ public class ListFragment extends Fragment
                     int position = getAdapterPosition();
                     Shop shop = data.get(position);
 
+                    //跳转到新Activiyt
                     Intent intent = new Intent(getActivity(), JumpActivity.class);
                     intent.putExtra("id",2);
-                    intent.putExtra("num",shop.getId());
+                    intent.putExtra("shop_id",shop.getId());
                     startActivity(intent);
-//                    ShopDetailFragment shopDetailFragment = new ShopDetailFragment(shop.getId());
-//                    getActivity().getSupportFragmentManager()
-//                            .beginTransaction()
-//                            .replace(R.id.fragment_container, shopDetailFragment, null)
-//                            .addToBackStack(null)
-//                            .commit();
+
+                    /*跳转fragment
+                    ShopDetailFragment shopDetailFragment = new ShopDetailFragment(shop.getId());
+                    getActivity().getSupportFragmentManager()
+                            .beginTransaction()
+                            .replace(R.id.fragment_container, shopDetailFragment, null)
+                            .addToBackStack(null)
+                            .commit();
+                     */
                 }
             });
         }

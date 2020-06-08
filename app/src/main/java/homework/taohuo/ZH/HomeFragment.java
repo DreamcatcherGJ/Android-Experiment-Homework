@@ -1,6 +1,7 @@
 package homework.taohuo.ZH;
 import homework.taohuo.GJ.JumpActivity;
 import homework.taohuo.GX.ListFragment;
+import homework.taohuo.MainActivity;
 import homework.taohuo.R;
 
 import androidx.fragment.app.Fragment;
@@ -221,10 +222,10 @@ public class HomeFragment extends Fragment {
                 number.add("14");
 
                 Gson gson=new Gson();
-                String listStr = gson.toJson(number);
+                String listNum = gson.toJson(number);
                 Intent intent = new Intent(getActivity(), JumpActivity.class);
                 intent.putExtra("id",1);
-                intent.putExtra("num",listStr);
+                intent.putExtra("number",listNum);
                 startActivity(intent);
             }
         });
@@ -239,12 +240,12 @@ public class HomeFragment extends Fragment {
                 number.add("7");
                 number.add("8");
 
-                ListFragment listFragment = new ListFragment(number);
-                getActivity().getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.fragment_container, listFragment, null)
-                        .addToBackStack(null)
-                        .commit();
+                Gson gson=new Gson();
+                String listNum = gson.toJson(number);
+                Intent intent = new Intent(getActivity(), JumpActivity.class);
+                intent.putExtra("id",1);
+                intent.putExtra("number",listNum);
+                startActivity(intent);
             }
         });
 
@@ -256,12 +257,12 @@ public class HomeFragment extends Fragment {
                 number.add("3");
                 number.add("8");
 
-                ListFragment listFragment = new ListFragment(number);
-                getActivity().getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.fragment_container, listFragment, null)
-                        .addToBackStack(null)
-                        .commit();
+                Gson gson=new Gson();
+                String listNum = gson.toJson(number);
+                Intent intent = new Intent(getActivity(), JumpActivity.class);
+                intent.putExtra("id",1);
+                intent.putExtra("number",listNum);
+                startActivity(intent);
             }
         });
 
@@ -273,12 +274,12 @@ public class HomeFragment extends Fragment {
                 number.add("6");
                 number.add("7");
 
-                ListFragment listFragment = new ListFragment(number);
-                getActivity().getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.fragment_container, listFragment, null)
-                        .addToBackStack(null)
-                        .commit();
+                Gson gson=new Gson();
+                String listNum = gson.toJson(number);
+                Intent intent = new Intent(getActivity(), JumpActivity.class);
+                intent.putExtra("id",1);
+                intent.putExtra("number",listNum);
+                startActivity(intent);
             }
         });
     }
