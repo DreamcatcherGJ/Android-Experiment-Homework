@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="#CDEFEFEF"
     android:orientation="vertical"
-    tools:context=".GX.ListFragment">
+    tools:context=".WZT.AdressFragment">
 
 
     <LinearLayout
