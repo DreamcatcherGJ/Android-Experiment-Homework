@@ -1,9 +1,11 @@
 package homework.taohuo.ZH;
+import homework.taohuo.GJ.JumpActivity;
 import homework.taohuo.GX.ListFragment;
 import homework.taohuo.R;
 
 import androidx.fragment.app.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import androidx.annotation.Nullable;
@@ -16,6 +18,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,8 +59,6 @@ public class HomeFragment extends Fragment {
     private TextView title;
     private ViewPagerAdapter adapter;
     private ScheduledExecutorService scheduledExecutorService;
-
-    private List<String> number = new ArrayList<>();
 
     @Nullable
     @Override
@@ -210,6 +212,7 @@ public class HomeFragment extends Fragment {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                List<String> number = new ArrayList<>();
                 number.add("9");
                 number.add("10");
                 number.add("11");
@@ -217,25 +220,26 @@ public class HomeFragment extends Fragment {
                 number.add("13");
                 number.add("14");
 
-                ListFragment listFragment = new ListFragment(number);
-
-                getActivity().getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.fragment_container, listFragment, null)
-                        .addToBackStack(null)
-                        .commit();
+                Gson gson=new Gson();
+                String listStr = gson.toJson(number);
+                Intent intent = new Intent(getActivity(), JumpActivity.class);
+                intent.putExtra("id",1);
+                intent.putExtra("num",listStr);
+                startActivity(intent);
             }
         });
 
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                number.add("1");
-                number.add("3");
+                List<String> number = new ArrayList<>();
+                number.add("4");
+                number.add("5");
+                number.add("6");
+                number.add("7");
                 number.add("8");
 
                 ListFragment listFragment = new ListFragment(number);
-
                 getActivity().getSupportFragmentManager()
                         .beginTransaction()
                         .replace(R.id.fragment_container, listFragment, null)
@@ -247,14 +251,12 @@ public class HomeFragment extends Fragment {
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                number.add("4");
-                number.add("5");
-                number.add("6");
-                number.add("7");
+                List<String> number = new ArrayList<>();
+                number.add("1");
+                number.add("3");
                 number.add("8");
 
                 ListFragment listFragment = new ListFragment(number);
-
                 getActivity().getSupportFragmentManager()
                         .beginTransaction()
                         .replace(R.id.fragment_container, listFragment, null)
@@ -266,12 +268,12 @@ public class HomeFragment extends Fragment {
         btn4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                List<String> number = new ArrayList<>();
                 number.add("5");
                 number.add("6");
                 number.add("7");
 
                 ListFragment listFragment = new ListFragment(number);
-
                 getActivity().getSupportFragmentManager()
                         .beginTransaction()
                         .replace(R.id.fragment_container, listFragment, null)

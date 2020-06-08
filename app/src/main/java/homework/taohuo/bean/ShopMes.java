@@ -1,5 +1,8 @@
 package homework.taohuo.bean;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
 import java.util.ArrayList;
 import java.util.List;
 import homework.taohuo.R;
@@ -60,6 +63,7 @@ public class ShopMes {
 
         //json转list
         List<Shop> lis = gson.fromJson(listStr,new TypeToken<List<Shop>>(){}.getType());
-        */
+         */
+
     }
 }
