@@ -1,5 +1,6 @@
 package homework.taohuo.ZH;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import homework.taohuo.GJ.JumpActivity;
 import homework.taohuo.R;
 
 /**
@@ -36,14 +38,13 @@ public class MineFragment extends Fragment {
         btn2 = (Button) getActivity().findViewById(R.id.zh_btn7);
         btn3 = (Button) getActivity().findViewById(R.id.zh_btn8);
         btn4 = (Button) getActivity().findViewById(R.id.zh_btn9);
-        /*btn1.setOnClickListener(new View.OnClickListener() {
+        btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (blankFragment == null) {
-                    blankFragment = new BlankFragment();
-                }
-                getFragmentManager().beginTransaction().replace(R.id.fragment_container, blankFragment).commitAllowingStateLoss();
+                Intent intent = new Intent(getActivity(), JumpActivity.class);
+                intent.putExtra("id",3);
+                startActivity(intent);
             }
-        });*/
+        });
     }
 }

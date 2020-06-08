@@ -10,6 +10,8 @@ import java.util.List;
 import homework.taohuo.GHY.ShopDetailFragment;
 import homework.taohuo.GX.ListFragment;
 import homework.taohuo.R;
+import homework.taohuo.WZT.AdressFragment;
+import homework.taohuo.WZT.ModifyAddress;
 
 public class JumpActivity extends AppCompatActivity {
 
@@ -24,21 +26,31 @@ public class JumpActivity extends AppCompatActivity {
         //界面跳转需求
         int id = getIntent().getIntExtra("id", 0);
         //1.商品列表
-        String number = getIntent().getStringExtra("number");
-        Gson gson=new Gson();
-        List<String> ListNumber = gson.fromJson(number,new TypeToken<List<String>>(){}.getType());
+//        String number = getIntent().getStringExtra("number");
+//        Gson gson=new Gson();
+//        List<String> ListNumber = gson.fromJson(number,new TypeToken<List<String>>(){}.getType());
         //2.商品ID
         String shop_id = getIntent().getStringExtra("shop_id");
 
         //界面跳转
-        if (id == 1) {
-            ListFragment listFragment = new ListFragment(ListNumber);
-            fragmentTransaction.add(R.id.fragment_container2, listFragment);
-            fragmentTransaction.commit();
-        }
+//        if (id == 1) {
+//            ListFragment listFragment = new ListFragment(ListNumber);
+//            fragmentTransaction.add(R.id.fragment_container2, listFragment);
+//            fragmentTransaction.commit();
+//        }
         if (id == 2) {
             ShopDetailFragment shopDetailFragment = new ShopDetailFragment(shop_id);
             fragmentTransaction.add(R.id.fragment_container2, shopDetailFragment);
+            fragmentTransaction.commit();
+        }
+        if (id == 3) {
+            AdressFragment adressFragment =  new AdressFragment();
+            fragmentTransaction.add(R.id.fragment_container2, adressFragment);
+            fragmentTransaction.commit();
+        }
+        if (id == 4) {
+            ModifyAddress modifyAddress = new ModifyAddress();
+            fragmentTransaction.add(R.id.fragment_container2, modifyAddress);
             fragmentTransaction.commit();
         }
     }
