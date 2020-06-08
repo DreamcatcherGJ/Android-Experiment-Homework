@@ -3,20 +3,13 @@ package homework.taohuo.GJ;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-
 import android.os.Bundle;
-
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-
 import homework.taohuo.GHY.ShopDetailFragment;
 import homework.taohuo.GX.ListFragment;
 import homework.taohuo.R;
-import homework.taohuo.bean.Shop;
 
 public class JumpActivity extends AppCompatActivity {
 

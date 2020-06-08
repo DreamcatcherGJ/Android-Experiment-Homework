@@ -7,15 +7,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
-
-import homework.taohuo.GHY.ShopDetailFragment;
 import homework.taohuo.GJ.JumpActivity;
 import homework.taohuo.R;
 import homework.taohuo.bean.GetShopMes;

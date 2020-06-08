@@ -1,8 +1,5 @@
 package homework.taohuo.bean;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-
 import java.util.ArrayList;
 import java.util.List;
 import homework.taohuo.R;
@@ -55,15 +52,5 @@ public class ShopMes {
                 R.mipmap.hjl_shop2,R.mipmap.hjl_shop2_detail,"￥22"));
 
         return data;
-
-        /*
-        //list转为json
-        Gson gson=new Gson();
-        String listStr = gson.toJson(data);
-
-        //json转list
-        List<Shop> lis = gson.fromJson(listStr,new TypeToken<List<Shop>>(){}.getType());
-         */
-
     }
 }
