@@ -1,5 +1,6 @@
 package homework.taohuo.WZT;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -10,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import homework.taohuo.GJ.JumpActivity;
 import homework.taohuo.R;
 
 /**
@@ -71,9 +73,18 @@ public class ModifyAddress extends Fragment {
     public void onActivityCreated(Bundle savedInstanceState) {
 
         super.onActivityCreated(savedInstanceState);
-        btn1 = (Button) getActivity().findViewById(R.id.button1);
-        btn2 = (Button) getActivity().findViewById(R.id.button2);
-        ed1  = (EditText)getActivity().findViewById(R.id.editTextTextPersonName2);
+        Button changeok = (Button) getActivity().findViewById(R.id.changeok);
+        Button changecancel= (Button) getActivity().findViewById(R.id.changecancel);
+
+        changecancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), JumpActivity.class);
+                intent.putExtra("id",6);
+                //   intent.putExtra("number",adress.getID());
+                startActivity(intent);
+            }
+        });
 
     }
 }
