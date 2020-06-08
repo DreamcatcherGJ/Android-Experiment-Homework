@@ -224,7 +224,7 @@ public class HomeFragment extends Fragment {
                 Gson gson=new Gson();
                 String listNum = gson.toJson(number);
                 Intent intent = new Intent(getActivity(), JumpActivity.class);
-                intent.putExtra("id",1);
+                intent.putExtra("id",21);
                 intent.putExtra("number",listNum);
                 startActivity(intent);
             }
@@ -243,7 +243,7 @@ public class HomeFragment extends Fragment {
                 Gson gson=new Gson();
                 String listNum = gson.toJson(number);
                 Intent intent = new Intent(getActivity(), JumpActivity.class);
-                intent.putExtra("id",1);
+                intent.putExtra("id",21);
                 intent.putExtra("number",listNum);
                 startActivity(intent);
             }
@@ -260,7 +260,7 @@ public class HomeFragment extends Fragment {
                 Gson gson=new Gson();
                 String listNum = gson.toJson(number);
                 Intent intent = new Intent(getActivity(), JumpActivity.class);
-                intent.putExtra("id",1);
+                intent.putExtra("id",21);
                 intent.putExtra("number",listNum);
                 startActivity(intent);
             }
@@ -277,7 +277,7 @@ public class HomeFragment extends Fragment {
                 Gson gson=new Gson();
                 String listNum = gson.toJson(number);
                 Intent intent = new Intent(getActivity(), JumpActivity.class);
-                intent.putExtra("id",1);
+                intent.putExtra("id",21);
                 intent.putExtra("number",listNum);
                 startActivity(intent);
             }

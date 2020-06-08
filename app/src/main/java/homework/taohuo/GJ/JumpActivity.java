@@ -27,8 +27,42 @@ public class JumpActivity extends AppCompatActivity {
         //界面跳转需求
         int id = getIntent().getIntExtra("id", 0);
 
-        //界面跳转
-        if (id == 1) {
+        /***
+         问题：
+             1.id值唯一
+             2.'0'不可作为id
+             3.该Activity多人共同编辑存在开发冲突问题
+
+         解决办法：
+            1.分配id范围(范围如下)
+             //葛健：1-10
+             //谷杭豫：11-20
+             //葛璇：21-30
+             //何家乐：31-40
+             //张虎：41-50
+             //刘顺：51-60
+             //王龙：61-70
+             //汪真天：71-80
+             //王锦：81-90
+             //汤深杰：91-100
+
+        ***/
+
+        /*****界面跳转*****/
+        //葛健：1-10
+
+
+        //谷杭豫：11-20
+        if (id == 11) {
+            //商品ID
+            String shop_id = getIntent().getStringExtra("shop_id");
+
+            ShopDetailFragment shopDetailFragment = new ShopDetailFragment(shop_id);
+            fragmentTransaction.add(R.id.fragment_container2, shopDetailFragment);
+            fragmentTransaction.commit();
+        }
+        //葛璇：21-30
+        if (id == 21) {
             //商品列表
             String number = getIntent().getStringExtra("number");
             Gson gson=new Gson();
@@ -38,39 +72,15 @@ public class JumpActivity extends AppCompatActivity {
             fragmentTransaction.add(R.id.fragment_container2, listFragment);
             fragmentTransaction.commit();
         }
-        if (id == 2) {
-            //商品ID
-            String shop_id = getIntent().getStringExtra("shop_id");
 
-            ShopDetailFragment shopDetailFragment = new ShopDetailFragment(shop_id);
-            fragmentTransaction.add(R.id.fragment_container2, shopDetailFragment);
-            fragmentTransaction.commit();
-        }
-        if (id == 3) {
-            //打开我的收货地址
-            AdressFragment adressFragment =  new AdressFragment();
-            fragmentTransaction.add(R.id.fragment_container2, adressFragment);
-            fragmentTransaction.commit();
-        }
-        if (id ==4 ) {
-            //修改我的收货地址
-            ModifyAddress modifyAddress = new ModifyAddress();
-            fragmentTransaction.add(R.id.fragment_container2, modifyAddress);
-            fragmentTransaction.commit();
-        }
-        if (id == 5) {
-            //修改成功
-            ModifyAddress modifyAddress = new ModifyAddress();
-            fragmentTransaction.add(R.id.fragment_container2, modifyAddress);
-            fragmentTransaction.commit();
-        }
-        if (id == 6) {
-            //返回”我的收货地址“界面
-            AdressFragment adressFragment =  new AdressFragment();
-            fragmentTransaction.add(R.id.fragment_container2, adressFragment);
-            fragmentTransaction.commit();
-        }
-        if (id == 7) {
+        //何家乐：31-40
+
+        //张虎：41-50
+
+        //刘顺：51-60
+
+        //王龙：61-70
+        if (id == 61) {
             //我的订单
             String number = getIntent().getStringExtra("number");
             Gson gson=new Gson();
@@ -79,5 +89,36 @@ public class JumpActivity extends AppCompatActivity {
             fragmentTransaction.replace(R.id.fragment_container2, orderTabFragment);
             fragmentTransaction.commit();
         }
+
+        //汪真天：71-80
+        if (id == 71) {
+            //打开我的收货地址
+            AdressFragment adressFragment =  new AdressFragment();
+            fragmentTransaction.add(R.id.fragment_container2, adressFragment);
+            fragmentTransaction.commit();
+        }
+        if (id == 72) {
+            //修改我的收货地址
+            ModifyAddress modifyAddress = new ModifyAddress();
+            fragmentTransaction.add(R.id.fragment_container2, modifyAddress);
+            fragmentTransaction.commit();
+        }
+        if (id == 73) {
+            //修改成功
+            ModifyAddress modifyAddress = new ModifyAddress();
+            fragmentTransaction.add(R.id.fragment_container2, modifyAddress);
+            fragmentTransaction.commit();
+        }
+        if (id == 74) {
+            //返回”我的收货地址“界面
+            AdressFragment adressFragment =  new AdressFragment();
+            fragmentTransaction.add(R.id.fragment_container2, adressFragment);
+            fragmentTransaction.commit();
+        }
+
+        //王锦：81-90
+
+        //汤深杰：91-100
+
     }
 }

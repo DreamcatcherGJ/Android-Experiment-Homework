@@ -83,7 +83,7 @@ public class AdressFragment extends Fragment {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(getActivity(), JumpActivity.class);
-                    intent.putExtra("id",4);
+                    intent.putExtra("id",72);
                     intent.putExtra("number",adress.getID());
                     startActivity(intent);
                 }

@@ -20,6 +20,7 @@ import homework.taohuo.R;
  * create an instance of this fragment.
  */
 public class ModifyAddress extends Fragment {
+    private View view;
     private Button btn1,btn2;
     private EditText ed1;
 
@@ -67,20 +68,21 @@ public class ModifyAddress extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.wzt_modify_address, container, false);
+        view = inflater.inflate(R.layout.wzt_modify_address, container, false);
+        return view;
     }
 
     public void onActivityCreated(Bundle savedInstanceState) {
 
         super.onActivityCreated(savedInstanceState);
-        Button changeok = (Button) getActivity().findViewById(R.id.changeok);
-        Button changecancel= (Button) getActivity().findViewById(R.id.changecancel);
+        Button changeok = (Button) view.findViewById(R.id.changeok);
+        Button changecancel= (Button) view.findViewById(R.id.changecancel);
 
         changecancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), JumpActivity.class);
-                intent.putExtra("id",6);
+                intent.putExtra("id",74);
                 //   intent.putExtra("number",adress.getID());
                 startActivity(intent);
             }
