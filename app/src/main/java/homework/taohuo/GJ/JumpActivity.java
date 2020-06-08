@@ -29,7 +29,7 @@ public class JumpActivity extends AppCompatActivity {
 
         //界面跳转
         if (id == 1) {
-            //1.商品列表
+            //商品列表
             String number = getIntent().getStringExtra("number");
             Gson gson=new Gson();
 
@@ -39,34 +39,39 @@ public class JumpActivity extends AppCompatActivity {
             fragmentTransaction.commit();
         }
         if (id == 2) {
-            //2.商品ID
+            //商品ID
             String shop_id = getIntent().getStringExtra("shop_id");
 
             ShopDetailFragment shopDetailFragment = new ShopDetailFragment(shop_id);
             fragmentTransaction.add(R.id.fragment_container2, shopDetailFragment);
             fragmentTransaction.commit();
         }
-        if (id == 3) {//打开我的收货地址
+        if (id == 3) {
+            //打开我的收货地址
             AdressFragment adressFragment =  new AdressFragment();
             fragmentTransaction.add(R.id.fragment_container2, adressFragment);
             fragmentTransaction.commit();
         }
-        if (id ==4 ) {//修改我的收货地址
+        if (id ==4 ) {
+            //修改我的收货地址
             ModifyAddress modifyAddress = new ModifyAddress();
             fragmentTransaction.add(R.id.fragment_container2, modifyAddress);
             fragmentTransaction.commit();
         }
-        if (id == 5) {//修改成功
+        if (id == 5) {
+            //修改成功
             ModifyAddress modifyAddress = new ModifyAddress();
             fragmentTransaction.add(R.id.fragment_container2, modifyAddress);
             fragmentTransaction.commit();
         }
-        if (id == 6) {//返回”我的收货地址“界面
+        if (id == 6) {
+            //返回”我的收货地址“界面
             AdressFragment adressFragment =  new AdressFragment();
             fragmentTransaction.add(R.id.fragment_container2, adressFragment);
             fragmentTransaction.commit();
         }
         if (id == 7) {
+            //我的订单
             String number = getIntent().getStringExtra("number");
             Gson gson=new Gson();
             List<String> ListNumber = gson.fromJson(number,new TypeToken<List<String>>(){}.getType());
