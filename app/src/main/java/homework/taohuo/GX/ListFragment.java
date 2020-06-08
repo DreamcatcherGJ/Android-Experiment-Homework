@@ -1,20 +1,18 @@
 package homework.taohuo.GX;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
-
-import homework.taohuo.GHY.ShopDetailFragment;
+import homework.taohuo.GJ.JumpActivity;
 import homework.taohuo.R;
 import homework.taohuo.bean.GetShopMes;
 import homework.taohuo.bean.Shop;
@@ -52,12 +50,21 @@ public class ListFragment extends Fragment
                 public void onClick(View v) {
                     int position = getAdapterPosition();
                     Shop shop = data.get(position);
+
+                    //跳转到新Activiyt
+                    Intent intent = new Intent(getActivity(), JumpActivity.class);
+                    intent.putExtra("id",2);
+                    intent.putExtra("shop_id",shop.getId());
+                    startActivity(intent);
+
+                    /*跳转fragment
                     ShopDetailFragment shopDetailFragment = new ShopDetailFragment(shop.getId());
                     getActivity().getSupportFragmentManager()
                             .beginTransaction()
                             .replace(R.id.fragment_container, shopDetailFragment, null)
                             .addToBackStack(null)
                             .commit();
+                     */
                 }
             });
         }
