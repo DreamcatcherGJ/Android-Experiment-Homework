@@ -54,7 +54,7 @@ public class MineFragment extends Fragment {
                 Gson gson=new Gson();
                 String listNum = gson.toJson(number);
                 Intent intent = new Intent(getActivity(), JumpActivity.class);
-                intent.putExtra("id",4);
+                intent.putExtra("id",10);
                 intent.putExtra("number",listNum);
                 startActivity(intent);
             }
