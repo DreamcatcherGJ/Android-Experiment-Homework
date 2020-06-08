@@ -66,7 +66,7 @@ public class JumpActivity extends AppCompatActivity {
             fragmentTransaction.add(R.id.fragment_container2, adressFragment);
             fragmentTransaction.commit();
         }
-        if (id == 6) {
+        if (id == 7) {
             String number = getIntent().getStringExtra("number");
             Gson gson=new Gson();
             List<String> ListNumber = gson.fromJson(number,new TypeToken<List<String>>(){}.getType());
