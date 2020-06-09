@@ -39,27 +39,6 @@
                 android:background="#D3D3D3"
                 android:text="家用电器" />
 
-            <Button
-                android:id="@+id/button4"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:background="#D3D3D3"
-                android:text="电脑办公" />
-
-            <Button
-                android:id="@+id/button5"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:background="#D3D3D3"
-                android:text="手机数码" />
-
-            <Button
-                android:id="@+id/button6"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:background="#D3D3D3"
-                android:text="图书" />
-
         </LinearLayout>
 
         <FrameLayout

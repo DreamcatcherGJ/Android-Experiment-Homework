@@ -68,27 +68,27 @@ public class ShopDetailFragment extends Fragment {
         detail_image.setImageResource(shop.getDetailImage());
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        backListenter();
-    }
-
-    private void backListenter() {
-        v.setFocusableInTouchMode(true);
-        v.requestFocus();
-        v.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View view, int i, KeyEvent keyEvent) {
-                if (keyEvent.getAction() == KeyEvent.ACTION_DOWN && i == KeyEvent.KEYCODE_BACK) {
-                    FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                    fragmentTransaction.replace(R.id.mFrameLayout, new CategoryFragment1()).commit();
-                    fragmentTransaction.remove(ShopDetailFragment.this);
-                    myLinearLayout.setVisibility(View.VISIBLE);
-                    return true;
-                }
-                return false;
-            }
-        });
-    }
+//    @Override
+//    public void onResume() {
+//        super.onResume();
+//        backListenter();
+//    }
+//
+//    private void backListenter() {
+//        v.setFocusableInTouchMode(true);
+//        v.requestFocus();
+//        v.setOnKeyListener(new View.OnKeyListener() {
+//            @Override
+//            public boolean onKey(View view, int i, KeyEvent keyEvent) {
+//                if (keyEvent.getAction() == KeyEvent.ACTION_DOWN && i == KeyEvent.KEYCODE_BACK) {
+//                    FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+//                    fragmentTransaction.replace(R.id.mFrameLayout, new CategoryFragment1()).commit();
+//                    fragmentTransaction.remove(ShopDetailFragment.this);
+//                    myLinearLayout.setVisibility(View.VISIBLE);
+//                    return true;
+//                }
+//                return false;
+//            }
+//        });
+//    }
 }

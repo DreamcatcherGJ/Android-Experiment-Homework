@@ -15,17 +15,14 @@ import homework.taohuo.R;
 import homework.taohuo.category_fragment.CategoryFragment1;
 import homework.taohuo.category_fragment.CategoryFragment2;
 import homework.taohuo.category_fragment.CategoryFragment3;
-import homework.taohuo.category_fragment.CategoryFragment4;
-import homework.taohuo.category_fragment.CategoryFragment5;
-import homework.taohuo.category_fragment.CategoryFragment6;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class CategoryFragment extends Fragment implements View.OnClickListener {
     private View mView;
-    private Button button1, button2, button3, button4, button5, button6;
-    private Button btn1, btn2, btn3, btn4, btn5;
+    private Button button1, button2, button3;
+    private Button btn1, btn2, btn3;
     private FrameLayout mFrameLayout;
 
     @Nullable
@@ -33,7 +30,7 @@ public class CategoryFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        mView = inflater.inflate(R.layout.fragment_category, null);
+        mView = inflater.inflate(R.layout.ls_category, null);
         initFrameLayout();
 
         return mView;
@@ -44,16 +41,10 @@ public class CategoryFragment extends Fragment implements View.OnClickListener {
         button1 = mView.findViewById(R.id.button1);
         button2 = mView.findViewById(R.id.button2);
         button3 = mView.findViewById(R.id.button3);
-        button4 = mView.findViewById(R.id.button4);
-        button5 = mView.findViewById(R.id.button5);
-        button6 = mView.findViewById(R.id.button6);
 
         button1.setOnClickListener(this);
         button2.setOnClickListener(this);
         button3.setOnClickListener(this);
-        button4.setOnClickListener(this);
-        button5.setOnClickListener(this);
-        button6.setOnClickListener(this);
         getFragmentManager().beginTransaction().replace(R.id.mFrameLayout, new CategoryFragment1()).commit();
     }
 
@@ -64,9 +55,6 @@ public class CategoryFragment extends Fragment implements View.OnClickListener {
         btn1 = (Button) getActivity().findViewById(R.id.ls_btn1);
         btn2 = (Button) getActivity().findViewById(R.id.ls_btn2);
         btn3 = (Button) getActivity().findViewById(R.id.ls_btn3);
-        btn4 = (Button) getActivity().findViewById(R.id.ls_btn4);
-        btn5 = (Button) getActivity().findViewById(R.id.ls_btn5);
-        Button btn6 = (Button) getActivity().findViewById(R.id.ls_btn6);
         //img1 =(ImageView) getActivity().findViewById(R.id.zh_img1);
         /*btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,15 +78,6 @@ public class CategoryFragment extends Fragment implements View.OnClickListener {
                 break;
             case R.id.button3:
                 getFragmentManager().beginTransaction().replace(R.id.mFrameLayout, new CategoryFragment3()).commit();
-                break;
-            case R.id.button4:
-                getFragmentManager().beginTransaction().replace(R.id.mFrameLayout, new CategoryFragment4()).commit();
-                break;
-            case R.id.button5:
-                getFragmentManager().beginTransaction().replace(R.id.mFrameLayout, new CategoryFragment5()).commit();
-                break;
-            case R.id.button6:
-                getFragmentManager().beginTransaction().replace(R.id.mFrameLayout, new CategoryFragment6()).commit();
                 break;
         }
     }

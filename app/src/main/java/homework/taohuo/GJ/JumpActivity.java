@@ -82,6 +82,14 @@ public class JumpActivity extends AppCompatActivity {
         //张虎：41-50
 
         //刘顺：51-60
+        if (id == 51) {
+            //商品ID
+            String shop_id = getIntent().getStringExtra("shop_id");
+
+            ShopDetailFragment shopDetailFragment = new ShopDetailFragment(shop_id);
+            fragmentTransaction.add(R.id.fragment_container2, shopDetailFragment);
+            fragmentTransaction.commit();
+        }
 
         //王龙：61-70
         if (id == 61) {

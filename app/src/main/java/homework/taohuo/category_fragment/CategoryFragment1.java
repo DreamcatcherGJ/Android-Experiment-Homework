@@ -4,14 +4,12 @@ package homework.taohuo.category_fragment;
 import android.content.Intent;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
-import homework.taohuo.GHY.ShopDetailFragment;
-import homework.taohuo.LS.CategoryFragment;
+
+import homework.taohuo.GJ.JumpActivity;
 import homework.taohuo.R;
 
 import android.os.Handler;
@@ -44,6 +42,7 @@ public class CategoryFragment1 extends Fragment implements View.OnClickListener 
     private List<View> dots;
     private int currentItem;
     private Button btn1, btn2, btn3, btn4, btn5;
+    private Intent intent;
     //记录上一次点的位置
     private int oldPosition = 0;
     //存放图片的id
@@ -64,7 +63,7 @@ public class CategoryFragment1 extends Fragment implements View.OnClickListener 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        mView = inflater.inflate(R.layout.fragment_category_fragment1, container, false);
+        mView = inflater.inflate(R.layout.ls_category_fragment1, container, false);
         init();
         setView();
         return mView;
@@ -135,22 +134,42 @@ public class CategoryFragment1 extends Fragment implements View.OnClickListener 
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.shop1:
+                intent = new Intent(getActivity(), JumpActivity.class);
+                intent.putExtra("id",51);
+                intent.putExtra("shop_id","5");
+                startActivity(intent);
                 break;
             case R.id.shop2:
+                intent = new Intent(getActivity(), JumpActivity.class);
+                intent.putExtra("id",51);
+                intent.putExtra("shop_id","6");
+                startActivity(intent);
                 break;
             case R.id.shop3:
+                intent = new Intent(getActivity(), JumpActivity.class);
+                intent.putExtra("id",51);
+                intent.putExtra("shop_id","5");
+                startActivity(intent);
                 break;
             case R.id.shop4:
+                intent = new Intent(getActivity(), JumpActivity.class);
+                intent.putExtra("id",51);
+                intent.putExtra("shop_id","5");
+                startActivity(intent);
                 break;
             case R.id.shop5:
+                intent = new Intent(getActivity(), JumpActivity.class);
+                intent.putExtra("id",51);
+                intent.putExtra("shop_id","5");
+                startActivity(intent);
                 break;
             case R.id.shop6:
+                intent = new Intent(getActivity(), JumpActivity.class);
+                intent.putExtra("id",51);
+                intent.putExtra("shop_id","5");
+                startActivity(intent);
                 break;
         }
-        fragmentTransaction = getFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.ls_home, new ShopDetailFragment("10")).commit();
-        fragmentTransaction.remove(this);
-        myLinearLayout.setVisibility(View.INVISIBLE);
     }
 
 

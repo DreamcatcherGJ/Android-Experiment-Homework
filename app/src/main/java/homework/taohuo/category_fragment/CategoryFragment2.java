@@ -1,17 +1,13 @@
 package homework.taohuo.category_fragment;
 
 
-import android.content.Intent;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
-import homework.taohuo.GHY.ShopDetailFragment;
-import homework.taohuo.LS.CategoryFragment;
+
 import homework.taohuo.R;
 
 import android.os.Handler;
@@ -64,7 +60,7 @@ public class CategoryFragment2 extends Fragment implements View.OnClickListener 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        mView = inflater.inflate(R.layout.fragment_category_fragment1, container, false);
+        mView = inflater.inflate(R.layout.ls_category_fragment2, container, false);
         init();
         setView();
         return mView;
@@ -147,10 +143,6 @@ public class CategoryFragment2 extends Fragment implements View.OnClickListener 
             case R.id.shop6:
                 break;
         }
-        fragmentTransaction = getFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.ls_home, new ShopDetailFragment("10")).commit();
-        fragmentTransaction.remove(this);
-        myLinearLayout.setVisibility(View.INVISIBLE);
     }
 
 
