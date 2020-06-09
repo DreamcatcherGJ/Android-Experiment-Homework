@@ -12,9 +12,9 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 
 import homework.taohuo.R;
-import homework.taohuo.category_fragment.CategoryFragment1;
-import homework.taohuo.category_fragment.CategoryFragment2;
-import homework.taohuo.category_fragment.CategoryFragment3;
+import homework.taohuo.LS.category_fragment.CategoryFragment1;
+import homework.taohuo.LS.category_fragment.CategoryFragment2;
+import homework.taohuo.LS.category_fragment.CategoryFragment3;
 
 /**
  * A simple {@link Fragment} subclass.

@@ -1,4 +1,4 @@
-package homework.taohuo.category_fragment;
+package homework.taohuo.LS.category_fragment;
 
 
 import android.content.Intent;
@@ -32,7 +32,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class CategoryFragment3 extends Fragment implements View.OnClickListener {
+public class CategoryFragment1 extends Fragment implements View.OnClickListener {
 
 
     private View mView;
@@ -63,7 +63,7 @@ public class CategoryFragment3 extends Fragment implements View.OnClickListener 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        mView = inflater.inflate(R.layout.ls_category_fragment3, container, false);
+        mView = inflater.inflate(R.layout.ls_category_fragment1, container, false);
         init();
         setView();
         return mView;
@@ -136,18 +136,38 @@ public class CategoryFragment3 extends Fragment implements View.OnClickListener 
             case R.id.shop1:
                 intent = new Intent(getActivity(), JumpActivity.class);
                 intent.putExtra("id",51);
-                intent.putExtra("shop_id","1");
+                intent.putExtra("shop_id","5");
                 startActivity(intent);
                 break;
             case R.id.shop2:
+                intent = new Intent(getActivity(), JumpActivity.class);
+                intent.putExtra("id",51);
+                intent.putExtra("shop_id","6");
+                startActivity(intent);
                 break;
             case R.id.shop3:
+                intent = new Intent(getActivity(), JumpActivity.class);
+                intent.putExtra("id",51);
+                intent.putExtra("shop_id","5");
+                startActivity(intent);
                 break;
             case R.id.shop4:
+                intent = new Intent(getActivity(), JumpActivity.class);
+                intent.putExtra("id",51);
+                intent.putExtra("shop_id","5");
+                startActivity(intent);
                 break;
             case R.id.shop5:
+                intent = new Intent(getActivity(), JumpActivity.class);
+                intent.putExtra("id",51);
+                intent.putExtra("shop_id","5");
+                startActivity(intent);
                 break;
             case R.id.shop6:
+                intent = new Intent(getActivity(), JumpActivity.class);
+                intent.putExtra("id",51);
+                intent.putExtra("shop_id","5");
+                startActivity(intent);
                 break;
         }
     }

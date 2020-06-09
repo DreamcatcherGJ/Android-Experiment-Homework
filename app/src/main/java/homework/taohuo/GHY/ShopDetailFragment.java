@@ -4,25 +4,20 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-import androidx.fragment.app.FragmentTransaction;
-import homework.taohuo.LS.CategoryFragment;
 import homework.taohuo.R;
 import homework.taohuo.bean.GetShopMes;
 import homework.taohuo.bean.Shop;
-import homework.taohuo.category_fragment.CategoryFragment1;
 
 /**
  * A simple {@link Fragment} subclass.
