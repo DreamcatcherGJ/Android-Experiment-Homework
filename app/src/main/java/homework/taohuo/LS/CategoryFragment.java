@@ -4,13 +4,11 @@ import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
-
 import homework.taohuo.R;
 import homework.taohuo.LS.category_fragment.CategoryFragment1;
 import homework.taohuo.LS.category_fragment.CategoryFragment2;
