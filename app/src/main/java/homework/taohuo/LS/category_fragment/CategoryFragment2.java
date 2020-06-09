@@ -1,6 +1,7 @@
 package homework.taohuo.LS.category_fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -8,6 +9,7 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import homework.taohuo.GJ.JumpActivity;
 import homework.taohuo.R;
 
 import android.os.Handler;
@@ -34,12 +36,13 @@ public class CategoryFragment2 extends Fragment implements View.OnClickListener 
 
 
     private View mView;
-    private LinearLayout shop1, shop2, shop3, shop4, shop5, shop6;
+    private LinearLayout shop1, shop2, shop3, shop4;
     private ViewPager mViewPaper;
     private List<ImageView> images;
     private List<View> dots;
     private int currentItem;
-    private Button btn1, btn2, btn3, btn4, btn5;
+    private Intent intent;
+    private Button btn1, btn2, btn3, btn4;
     //记录上一次点的位置
     private int oldPosition = 0;
     //存放图片的id
@@ -47,8 +50,7 @@ public class CategoryFragment2 extends Fragment implements View.OnClickListener 
             R.mipmap.zh_img01,
             R.mipmap.zh_img02,
             R.mipmap.zh_img03,
-            R.mipmap.zh_img04,
-            R.mipmap.zh_img05
+            R.mipmap.zh_img04
     };
 
     private TextView title;
@@ -76,10 +78,6 @@ public class CategoryFragment2 extends Fragment implements View.OnClickListener 
         shop3.setOnClickListener(this);
         shop4 = mView.findViewById(R.id.shop4);
         shop4.setOnClickListener(this);
-        shop5 = mView.findViewById(R.id.shop5);
-        shop5.setOnClickListener(this);
-        shop6 = mView.findViewById(R.id.shop6);
-        shop6.setOnClickListener(this);
     }
 
     private void setView() {
@@ -131,16 +129,28 @@ public class CategoryFragment2 extends Fragment implements View.OnClickListener 
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.shop1:
+                intent = new Intent(getActivity(), JumpActivity.class);
+                intent.putExtra("id",51);
+                intent.putExtra("shop_id","1");
+                startActivity(intent);
                 break;
             case R.id.shop2:
+                intent = new Intent(getActivity(), JumpActivity.class);
+                intent.putExtra("id",51);
+                intent.putExtra("shop_id","2");
+                startActivity(intent);
                 break;
             case R.id.shop3:
+                intent = new Intent(getActivity(), JumpActivity.class);
+                intent.putExtra("id",51);
+                intent.putExtra("shop_id","7");
+                startActivity(intent);
                 break;
             case R.id.shop4:
-                break;
-            case R.id.shop5:
-                break;
-            case R.id.shop6:
+                intent = new Intent(getActivity(), JumpActivity.class);
+                intent.putExtra("id",51);
+                intent.putExtra("shop_id","4");
+                startActivity(intent);
                 break;
         }
     }

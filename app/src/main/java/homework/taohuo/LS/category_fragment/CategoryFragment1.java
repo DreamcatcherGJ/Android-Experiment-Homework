@@ -36,12 +36,12 @@ public class CategoryFragment1 extends Fragment implements View.OnClickListener 
 
 
     private View mView;
-    private LinearLayout shop1, shop2, shop3, shop4, shop5, shop6;
+    private LinearLayout shop1, shop2, shop3,shop4;
     private ViewPager mViewPaper;
     private List<ImageView> images;
     private List<View> dots;
     private int currentItem;
-    private Button btn1, btn2, btn3, btn4, btn5;
+    private Button btn1, btn2, btn3, btn4;
     private Intent intent;
     //记录上一次点的位置
     private int oldPosition = 0;
@@ -50,8 +50,7 @@ public class CategoryFragment1 extends Fragment implements View.OnClickListener 
             R.mipmap.zh_img01,
             R.mipmap.zh_img02,
             R.mipmap.zh_img03,
-            R.mipmap.zh_img04,
-            R.mipmap.zh_img05
+            R.mipmap.zh_img04
     };
 
     private TextView title;
@@ -79,10 +78,6 @@ public class CategoryFragment1 extends Fragment implements View.OnClickListener 
         shop3.setOnClickListener(this);
         shop4 = mView.findViewById(R.id.shop4);
         shop4.setOnClickListener(this);
-        shop5 = mView.findViewById(R.id.shop5);
-        shop5.setOnClickListener(this);
-        shop6 = mView.findViewById(R.id.shop6);
-        shop6.setOnClickListener(this);
     }
 
     private void setView() {
@@ -148,25 +143,13 @@ public class CategoryFragment1 extends Fragment implements View.OnClickListener 
             case R.id.shop3:
                 intent = new Intent(getActivity(), JumpActivity.class);
                 intent.putExtra("id",51);
-                intent.putExtra("shop_id","5");
+                intent.putExtra("shop_id","9");
                 startActivity(intent);
                 break;
             case R.id.shop4:
                 intent = new Intent(getActivity(), JumpActivity.class);
                 intent.putExtra("id",51);
-                intent.putExtra("shop_id","5");
-                startActivity(intent);
-                break;
-            case R.id.shop5:
-                intent = new Intent(getActivity(), JumpActivity.class);
-                intent.putExtra("id",51);
-                intent.putExtra("shop_id","5");
-                startActivity(intent);
-                break;
-            case R.id.shop6:
-                intent = new Intent(getActivity(), JumpActivity.class);
-                intent.putExtra("id",51);
-                intent.putExtra("shop_id","5");
+                intent.putExtra("shop_id","13");
                 startActivity(intent);
                 break;
         }

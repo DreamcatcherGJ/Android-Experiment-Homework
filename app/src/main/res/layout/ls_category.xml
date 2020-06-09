@@ -21,23 +21,23 @@
             <Button
                 android:id="@+id/button1"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="90dp"
                 android:background="#D3D3D3"
                 android:text="热门推荐" />
 
             <Button
                 android:id="@+id/button2"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="90dp"
                 android:background="#D3D3D3"
-                android:text="品牌男装" />
+                android:text="手机数码" />
 
             <Button
                 android:id="@+id/button3"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="90dp"
                 android:background="#D3D3D3"
-                android:text="家用电器" />
+                android:text="零 食" />
 
         </LinearLayout>
 

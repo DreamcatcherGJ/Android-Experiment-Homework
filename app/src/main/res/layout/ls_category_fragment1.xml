@@ -92,17 +92,17 @@
 
                 <Button
                     android:id="@+id/ls_btn1"
-                    android:layout_width="70dp"
-                    android:layout_height="30dp"
+                    android:layout_width="100dp"
+                    android:layout_height="45dp"
                     android:layout_marginTop="10dp"
                     android:background="#00000000"
-                    android:text="iPad Pro "
+                    android:text="遨游A6防爆智能手机 "
                     android:textColor="#A9A9A9" />
 
                 <TextView
                     android:layout_width="50dp"
                     android:layout_height="30dp"
-                    android:text="￥3500"
+                    android:text="￥3998"
                     android:textColor="#FF0000" />
             </LinearLayout>
 
@@ -127,13 +127,13 @@
                     android:layout_height="30dp"
                     android:layout_marginTop="10dp"
                     android:background="#00000000"
-                    android:text=" iPad mini 5"
+                    android:text="i9黑苹果主机"
                     android:textColor="#A9A9A9" />
 
                 <TextView
-                    android:layout_width="50dp"
+                    android:layout_width="55dp"
                     android:layout_height="30dp"
-                    android:text="￥1388"
+                    android:text="￥10700"
                     android:textColor="#FF0000" />
             </LinearLayout>
         </LinearLayout>
@@ -160,17 +160,17 @@
 
                 <Button
                     android:id="@+id/ls_btn3"
-                    android:layout_width="80dp"
-                    android:layout_height="30dp"
+                    android:layout_width="100dp"
+                    android:layout_height="45dp"
                     android:layout_marginTop="10dp"
                     android:background="#00000000"
-                    android:text="iPad10.2"
+                    android:text="巧乐兹3种口味冰淇淋"
                     android:textColor="#A9A9A9" />
 
                 <TextView
                     android:layout_width="50dp"
                     android:layout_height="30dp"
-                    android:text="￥2399"
+                    android:text="￥129"
                     android:textColor="#FF0000" />
             </LinearLayout>
 
@@ -191,17 +191,17 @@
 
                 <Button
                     android:id="@+id/ls_btn4"
-                    android:layout_width="80dp"
-                    android:layout_height="30dp"
+                    android:layout_width="100dp"
+                    android:layout_height="45dp"
                     android:layout_marginTop="10dp"
                     android:background="#00000000"
-                    android:text=" iPad 2018"
+                    android:text="王子香浓巧克力味曲奇"
                     android:textColor="#A9A9A9" />
 
                 <TextView
                     android:layout_width="50dp"
                     android:layout_height="30dp"
-                    android:text="￥1998"
+                    android:text="￥34"
                     android:textColor="#FF0000" />
             </LinearLayout>
         </LinearLayout>
@@ -209,69 +209,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:id="@+id/shop5"
-                android:layout_width="145dp"
-                android:layout_height="190dp"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/ls_img5"
-                    android:layout_width="90dp"
-                    android:layout_height="90dp"
-                    android:layout_marginTop="20dp"
-                    android:src="@mipmap/hjl_shop2" />
-
-                <Button
-                    android:id="@+id/ls_btn5"
-                    android:layout_width="80dp"
-                    android:layout_height="30dp"
-                    android:layout_marginTop="10dp"
-                    android:background="#00000000"
-                    android:text="12.9 iPad Pro"
-                    android:textColor="#A9A9A9" />
-
-                <TextView
-                    android:layout_width="50dp"
-                    android:layout_height="30dp"
-                    android:text="￥3950"
-                    android:textColor="#FF0000" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/shop6"
-                android:layout_width="145dp"
-                android:layout_height="190dp"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/ls_img6"
-                    android:layout_width="90dp"
-                    android:layout_height="90dp"
-                    android:layout_marginTop="20dp"
-                    android:src="@mipmap/gx_shop1" />
-
-                <Button
-                    android:id="@+id/ls_btn6"
-                    android:layout_width="80dp"
-                    android:layout_height="30dp"
-                    android:layout_marginTop="10dp"
-                    android:background="#00000000"
-                    android:text="主机 I3 9100F"
-                    android:textColor="#A9A9A9" />
-
-                <TextView
-                    android:layout_width="50dp"
-                    android:layout_height="30dp"
-                    android:text="￥2599"
-                    android:textColor="#FF0000" />
-            </LinearLayout>
-        </LinearLayout>
+            android:orientation="horizontal"/>
     </LinearLayout>
 </ScrollView>
