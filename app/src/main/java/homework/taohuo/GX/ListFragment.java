@@ -53,7 +53,7 @@ public class ListFragment extends Fragment
 
                     //跳转到新Activiyt
                     Intent intent = new Intent(getActivity(), JumpActivity.class);
-                    intent.putExtra("id",2);
+                    intent.putExtra("id",11);
                     intent.putExtra("shop_id",shop.getId());
                     startActivity(intent);
 

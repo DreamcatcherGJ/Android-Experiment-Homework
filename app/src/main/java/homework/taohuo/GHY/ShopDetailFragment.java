@@ -3,13 +3,18 @@ package homework.taohuo.GHY;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+
 import homework.taohuo.R;
 import homework.taohuo.bean.GetShopMes;
 import homework.taohuo.bean.Shop;
@@ -20,6 +25,7 @@ import homework.taohuo.bean.Shop;
 public class ShopDetailFragment extends Fragment {
     private List<Shop> shopdata = new ArrayList<>();
     private View v;
+    private LinearLayout myLinearLayout;
 
     public ShopDetailFragment(String num) {
         List<String> number = new ArrayList<>();
@@ -47,6 +53,7 @@ public class ShopDetailFragment extends Fragment {
         TextView shop_price = (TextView) v.findViewById(R.id.shop_price);
         ImageView detail_image = (ImageView) v.findViewById(R.id.detail_image);
 
+        myLinearLayout = Objects.requireNonNull(getActivity()).findViewById(R.id.myLinearLayout);
         Shop shop = shopdata.get(0);
 
         shop_name.setText(shop.getTitle());
@@ -55,4 +62,28 @@ public class ShopDetailFragment extends Fragment {
         shop_price.setText(shop.getPrice());
         detail_image.setImageResource(shop.getDetailImage());
     }
+
+//    @Override
+//    public void onResume() {
+//        super.onResume();
+//        backListenter();
+//    }
+//
+//    private void backListenter() {
+//        v.setFocusableInTouchMode(true);
+//        v.requestFocus();
+//        v.setOnKeyListener(new View.OnKeyListener() {
+//            @Override
+//            public boolean onKey(View view, int i, KeyEvent keyEvent) {
+//                if (keyEvent.getAction() == KeyEvent.ACTION_DOWN && i == KeyEvent.KEYCODE_BACK) {
+//                    FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+//                    fragmentTransaction.replace(R.id.mFrameLayout, new CategoryFragment1()).commit();
+//                    fragmentTransaction.remove(ShopDetailFragment.this);
+//                    myLinearLayout.setVisibility(View.VISIBLE);
+//                    return true;
+//                }
+//                return false;
+//            }
+//        });
+//    }
 }

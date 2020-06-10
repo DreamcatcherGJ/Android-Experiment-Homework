@@ -1,44 +1,48 @@
-package homework.taohuo.ZH;
-import homework.taohuo.GJ.JumpActivity;
-import homework.taohuo.GX.ListFragment;
-import homework.taohuo.MainActivity;
-import homework.taohuo.R;
+package homework.taohuo.LS.category_fragment;
 
-import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import androidx.annotation.Nullable;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
-import android.view.LayoutInflater;
 
+import homework.taohuo.GJ.JumpActivity;
+import homework.taohuo.R;
+
+import android.os.Handler;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
+
 /**
- * Created by Administrator on 2016/7/13.
+ * A simple {@link Fragment} subclass.
  */
-public class HomeFragment extends Fragment {
+public class CategoryFragment1 extends Fragment implements View.OnClickListener {
+
 
     private View mView;
+    private LinearLayout shop1, shop2, shop3,shop4;
     private ViewPager mViewPaper;
     private List<ImageView> images;
     private List<View> dots;
     private int currentItem;
-    private Button btn1,btn2,btn3,btn4;
+    private Button btn1, btn2, btn3, btn4;
+    private Intent intent;
     //记录上一次点的位置
     private int oldPosition = 0;
     //存放图片的id
@@ -46,28 +50,34 @@ public class HomeFragment extends Fragment {
             R.mipmap.zh_img01,
             R.mipmap.zh_img02,
             R.mipmap.zh_img03,
-            R.mipmap.zh_img04,
-            R.mipmap.zh_img05
+            R.mipmap.zh_img04
     };
-    //存放图片的标题
-    /*private String[] titles = new String[]{
-            "轮播1",
-            "轮播2",
-            "轮播3",
-            "轮播4",
-            "轮播5"
-    };*/
+
     private TextView title;
     private ViewPagerAdapter adapter;
     private ScheduledExecutorService scheduledExecutorService;
+    private FragmentTransaction fragmentTransaction;
+    private LinearLayout myLinearLayout;
 
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
-        mView = inflater.inflate(R.layout.zh_home, null);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        mView = inflater.inflate(R.layout.ls_category_fragment1, container, false);
+        init();
         setView();
         return mView;
+    }
+
+    private void init() {
+        myLinearLayout = Objects.requireNonNull(getActivity()).findViewById(R.id.myLinearLayout);
+        shop1 = mView.findViewById(R.id.shop1);
+        shop1.setOnClickListener(this);
+        shop2 = mView.findViewById(R.id.shop2);
+        shop2.setOnClickListener(this);
+        shop3 = mView.findViewById(R.id.shop3);
+        shop3.setOnClickListener(this);
+        shop4 = mView.findViewById(R.id.shop4);
+        shop4.setOnClickListener(this);
     }
 
     private void setView() {
@@ -87,9 +97,6 @@ public class HomeFragment extends Fragment {
         dots.add(mView.findViewById(R.id.dot_2));
         dots.add(mView.findViewById(R.id.dot_3));
         dots.add(mView.findViewById(R.id.dot_4));
-
-        //title = (TextView) mView.findViewById(R.id.title);
-        //title.setText(titles[0]);
 
         adapter = new ViewPagerAdapter();
         mViewPaper.setAdapter(adapter);
@@ -114,12 +121,41 @@ public class HomeFragment extends Fragment {
 
             @Override
             public void onPageScrollStateChanged(int arg0) {
-
             }
         });
     }
 
-    /*定义的适配器*/
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.shop1:
+                intent = new Intent(getActivity(), JumpActivity.class);
+                intent.putExtra("id",51);
+                intent.putExtra("shop_id","5");
+                startActivity(intent);
+                break;
+            case R.id.shop2:
+                intent = new Intent(getActivity(), JumpActivity.class);
+                intent.putExtra("id",51);
+                intent.putExtra("shop_id","6");
+                startActivity(intent);
+                break;
+            case R.id.shop3:
+                intent = new Intent(getActivity(), JumpActivity.class);
+                intent.putExtra("id",51);
+                intent.putExtra("shop_id","9");
+                startActivity(intent);
+                break;
+            case R.id.shop4:
+                intent = new Intent(getActivity(), JumpActivity.class);
+                intent.putExtra("id",51);
+                intent.putExtra("shop_id","13");
+                startActivity(intent);
+                break;
+        }
+    }
+
+
     public class ViewPagerAdapter extends PagerAdapter {
 
         @Override
@@ -201,86 +237,4 @@ public class HomeFragment extends Fragment {
         }
     }
 
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        // final User user ;
-        btn1 = (Button) getActivity().findViewById(R.id.zh_btn1);
-        btn2 = (Button) getActivity().findViewById(R.id.zh_btn2);
-        btn3 = (Button) getActivity().findViewById(R.id.zh_btn3);
-        btn4 = (Button) getActivity().findViewById(R.id.zh_btn4);
-        //img1 =(ImageView) getActivity().findViewById(R.id.zh_img1);
-        btn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                List<String> number = new ArrayList<>();
-                number.add("9");
-                number.add("10");
-                number.add("11");
-                number.add("12");
-                number.add("13");
-                number.add("14");
-
-                Gson gson=new Gson();
-                String listNum = gson.toJson(number);
-                Intent intent = new Intent(getActivity(), JumpActivity.class);
-                intent.putExtra("id",21);
-                intent.putExtra("number",listNum);
-                startActivity(intent);
-            }
-        });
-
-        btn2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                List<String> number = new ArrayList<>();
-                number.add("4");
-                number.add("5");
-                number.add("6");
-                number.add("7");
-                number.add("8");
-
-                Gson gson=new Gson();
-                String listNum = gson.toJson(number);
-                Intent intent = new Intent(getActivity(), JumpActivity.class);
-                intent.putExtra("id",21);
-                intent.putExtra("number",listNum);
-                startActivity(intent);
-            }
-        });
-
-        btn3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                List<String> number = new ArrayList<>();
-                number.add("1");
-                number.add("2");
-                number.add("3");
-
-                Gson gson=new Gson();
-                String listNum = gson.toJson(number);
-                Intent intent = new Intent(getActivity(), JumpActivity.class);
-                intent.putExtra("id",21);
-                intent.putExtra("number",listNum);
-                startActivity(intent);
-            }
-        });
-
-        btn4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                List<String> number = new ArrayList<>();
-                number.add("5");
-                number.add("6");
-                number.add("7");
-
-                Gson gson=new Gson();
-                String listNum = gson.toJson(number);
-                Intent intent = new Intent(getActivity(), JumpActivity.class);
-                intent.putExtra("id",21);
-                intent.putExtra("number",listNum);
-                startActivity(intent);
-            }
-        });
-    }
 }
