@@ -6,6 +6,8 @@ import androidx.fragment.app.FragmentTransaction;
 import android.os.Bundle;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+
+import java.util.ArrayList;
 import java.util.List;
 import homework.taohuo.GHY.ShopDetailFragment;
 import homework.taohuo.GX.ListFragment;
@@ -13,6 +15,7 @@ import homework.taohuo.R;
 import homework.taohuo.WL.OrderTabFragment;
 import homework.taohuo.WZT.AdressFragment;
 import homework.taohuo.WZT.ModifyAddress;
+import homework.taohuo.service.RWUser;
 
 public class JumpActivity extends AppCompatActivity {
 
@@ -67,6 +70,15 @@ public class JumpActivity extends AppCompatActivity {
         }
         //葛璇：21-30
         if (id == 21) {
+            List<String> number2 = new ArrayList<>();
+            RWUser User = new RWUser();
+            User.RWUser(this);
+            number2 = User.GetCart();
+            for (int i=0;i<number2.size();i++)
+            {
+                System.out.println(number2.get(i));
+            }
+
             //商品列表
             String number = getIntent().getStringExtra("number");
             Gson gson=new Gson();

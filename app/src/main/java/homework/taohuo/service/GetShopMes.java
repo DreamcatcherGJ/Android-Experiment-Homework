@@ -1,7 +1,10 @@
-package homework.taohuo.bean;
+package homework.taohuo.service;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import homework.taohuo.bean.Shop;
+import homework.taohuo.bean.ShopMes;
 
 public class GetShopMes {
     private List<Shop> needmes = new ArrayList<>();
