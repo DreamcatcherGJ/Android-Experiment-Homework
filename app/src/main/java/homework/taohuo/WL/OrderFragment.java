@@ -75,6 +75,16 @@ public class OrderFragment extends Fragment {
             TextView viewPrice = (TextView) v.findViewById(R.id.order_price);
             Button viewButton = (Button) v.findViewById(R.id.order_button);
 
+            viewButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(getActivity(), JumpActivity.class);
+                    intent.putExtra("id",63);
+                    //   intent.putExtra("number",adress.getID());
+                    startActivity(intent);
+                }
+            });
+
             Shop shop = data.get(position);
 
             viewHeadImage.setImageResource(shop.getHeadImage());

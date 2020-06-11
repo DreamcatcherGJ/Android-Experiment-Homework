@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.google.android.material.tabs.TabLayout;
 
@@ -58,6 +59,17 @@ public class OrderTabFragment extends Fragment {
 
         Button button1 = (Button)  view.findViewById(R.id.button3);
         Button button2 = (Button)  view.findViewById(R.id.button4);
+        ImageButton button3 = (ImageButton)  view.findViewById(R.id.wl_btn);
+
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), JumpActivity.class);
+                intent.putExtra("id",62);
+                //   intent.putExtra("number",adress.getID());
+                startActivity(intent);
+            }
+        });
 
         button1.setOnClickListener(new View.OnClickListener() {
             @Override

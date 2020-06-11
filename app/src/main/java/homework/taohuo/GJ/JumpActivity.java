@@ -9,10 +9,13 @@ import com.google.gson.reflect.TypeToken;
 import java.util.List;
 import homework.taohuo.GHY.ShopDetailFragment;
 import homework.taohuo.GX.ListFragment;
+import homework.taohuo.LS.CategoryFragment;
 import homework.taohuo.R;
 import homework.taohuo.WL.OrderTabFragment;
 import homework.taohuo.WZT.AdressFragment;
 import homework.taohuo.WZT.ModifyAddress;
+import homework.taohuo.ZH.HomeFragment;
+import homework.taohuo.ZH.MineFragment;
 
 public class JumpActivity extends AppCompatActivity {
 
@@ -99,6 +102,13 @@ public class JumpActivity extends AppCompatActivity {
             List<String> ListNumber = gson.fromJson(number,new TypeToken<List<String>>(){}.getType());
             OrderTabFragment orderTabFragment = new OrderTabFragment(ListNumber);
             fragmentTransaction.replace(R.id.fragment_container2, orderTabFragment);
+            fragmentTransaction.commit();
+        }
+
+        if (id == 62) {
+            //返回”我的“界面
+            MineFragment mineFragment =  new MineFragment();
+            fragmentTransaction.add(R.id.fragment_container2, mineFragment);
             fragmentTransaction.commit();
         }
 
