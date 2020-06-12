@@ -1,5 +1,6 @@
 package homework.taohuo.WL;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -16,6 +17,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+import homework.taohuo.GJ.JumpActivity;
 import homework.taohuo.R;
 import homework.taohuo.service.GetShopMes;
 import homework.taohuo.bean.Shop;
