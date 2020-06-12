@@ -40,7 +40,7 @@ public class CartFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.tsj_cart, container, false);
 
-        ListOptionView = (RecyclerView) view.findViewById(R.id.cart_option_view);
+        ListOptionView = (RecyclerView) view.findViewById(R.id.hot_option_view);
         ListOptionView.setLayoutManager(new LinearLayoutManager(getContext()));
         ListOptionView.setAdapter(new CartFragment.MyAdapter());
         return view;
