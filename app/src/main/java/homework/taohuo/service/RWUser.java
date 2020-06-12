@@ -44,13 +44,14 @@ public class RWUser extends AppCompatActivity
         ListNumber = gson.fromJson(data,new TypeToken<List<String>>(){}.getType());
         return ListNumber;
     }
-    //订单
+    //全部订单
     public List<String> GetOrder1()
     {
         data = User.getString("order1", "defaultValue");
         ListNumber = gson.fromJson(data,new TypeToken<List<String>>(){}.getType());
         return ListNumber;
     }
+    //待支付订单
     public List<String> GetOrder2()
     {
         String data = User.getString("order2", "defaultValue");
