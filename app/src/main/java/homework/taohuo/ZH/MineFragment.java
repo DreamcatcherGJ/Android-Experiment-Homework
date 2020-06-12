@@ -46,16 +46,8 @@ public class MineFragment extends Fragment {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                List<String> number = new ArrayList<>();
-                number.add("1");
-                number.add("2");
-                number.add("3");
-
-                Gson gson=new Gson();
-                String listNum = gson.toJson(number);
                 Intent intent = new Intent(getActivity(), JumpActivity.class);
                 intent.putExtra("id",61);
-                intent.putExtra("number",listNum);
                 startActivity(intent);
             }
         });

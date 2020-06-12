@@ -3,6 +3,7 @@ import homework.taohuo.GJ.JumpActivity;
 import homework.taohuo.GX.ListFragment;
 import homework.taohuo.MainActivity;
 import homework.taohuo.R;
+import homework.taohuo.service.RWUser;
 
 import androidx.fragment.app.Fragment;
 
@@ -66,6 +67,7 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         mView = inflater.inflate(R.layout.zh_home, null);
+
         setView();
         return mView;
     }

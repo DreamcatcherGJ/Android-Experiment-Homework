@@ -13,11 +13,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 import homework.taohuo.GJ.JumpActivity;
-import homework.taohuo.MainActivity;
 import homework.taohuo.R;
 import homework.taohuo.service.GetShopMes;
 import homework.taohuo.bean.Shop;
-import homework.taohuo.service.RWUser;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -26,7 +24,6 @@ public class ListFragment extends Fragment
 {
     private RecyclerView ListOptionView;
     private List<Shop> data = new ArrayList<>();
-
 
     public ListFragment(List<String> number) {
         GetShopMes needmes = new GetShopMes();
@@ -42,6 +39,7 @@ public class ListFragment extends Fragment
         ListOptionView = (RecyclerView) view.findViewById(R.id.list_option_view);
         ListOptionView.setLayoutManager(new LinearLayoutManager(getContext()));
         ListOptionView.setAdapter(new MyAdapter());
+
         return view;
     }
 

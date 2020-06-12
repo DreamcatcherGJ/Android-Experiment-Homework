@@ -1,38 +1,23 @@
 package homework.taohuo.WL;
 
-import android.content.Intent;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.viewpager.widget.ViewPager;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-
-import com.google.android.material.tabs.TabLayout;
-
-import java.util.ArrayList;
 import java.util.List;
-
-import homework.taohuo.GJ.BlankFragment;
-import homework.taohuo.GJ.JumpActivity;
-import homework.taohuo.GX.ListFragment;
 import homework.taohuo.R;
-import homework.taohuo.bean.Adress;
-import homework.taohuo.bean.Shop;
+import homework.taohuo.service.RWUser;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class OrderTabFragment extends Fragment {
     private View view;
-    private List<String> number;
+    private List<String> number1, number2;
 
-    public OrderTabFragment(List<String> number) {
-        this.number = number;
+    public OrderTabFragment() {
     }
 
 
@@ -42,6 +27,11 @@ public class OrderTabFragment extends Fragment {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.wl_order_tab, container, false);
 
+        RWUser User = new RWUser();
+        User.RWUser(getActivity());
+        number1 = User.GetOrder1();
+        number2 = User.GetOrder2();
+
         setTab();
 
         return view;
@@ -49,7 +39,7 @@ public class OrderTabFragment extends Fragment {
 
     public void setTab()
     {
-        OrderFragment orderFragment = new OrderFragment(number);
+        OrderFragment orderFragment = new OrderFragment(number1);
         getActivity().getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.wl_tab, orderFragment, null)
@@ -63,11 +53,7 @@ public class OrderTabFragment extends Fragment {
             @Override
             public void onClick(View v)
             {
-                List<String> number = new ArrayList<>();
-                number.add("1");
-                number.add("2");
-                number.add("3");
-                OrderFragment orderFragment = new OrderFragment(number);
+                OrderFragment orderFragment = new OrderFragment(number1);
                 getActivity().getSupportFragmentManager()
                         .beginTransaction()
                         .replace(R.id.wl_tab, orderFragment, null)
@@ -80,11 +66,7 @@ public class OrderTabFragment extends Fragment {
             @Override
             public void onClick(View v)
             {
-                List<String> number = new ArrayList<>();
-                number.add("4");
-                number.add("5");
-                number.add("6");
-                OrderFragment orderFragment = new OrderFragment(number);
+                OrderFragment orderFragment = new OrderFragment(number2);
                 getActivity().getSupportFragmentManager()
                         .beginTransaction()
                         .replace(R.id.wl_tab, orderFragment, null)

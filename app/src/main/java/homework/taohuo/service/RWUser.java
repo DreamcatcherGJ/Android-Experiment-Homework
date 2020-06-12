@@ -2,34 +2,30 @@ package homework.taohuo.service;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-
+import androidx.appcompat.app.AppCompatActivity;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import java.util.ArrayList;
 import java.util.List;
-
 import homework.taohuo.bean.Adress;
 
 
-public class RWUser
+public class RWUser extends AppCompatActivity
 {
     private SharedPreferences Login, User;
     private SharedPreferences.Editor editor;
+    private String data;
+    private Gson gson=new Gson();
+    private List<String> ListNumber = new ArrayList<>();
+    private List<Adress> Adress = new ArrayList<>();
 
     public void RWUser(Context context)
     {
-        SharedPreferences Login = context.getSharedPreferences("Login", Context.MODE_PRIVATE);
-        System.out.println("Login:3");
+        Login = context.getSharedPreferences("Login", Context.MODE_PRIVATE);
         String Admin = Login.getString("user", "NoBody");
-        System.out.println("Login:4");
-        System.out.println("Login:Admin");
-
 
         User = context.getSharedPreferences(Admin, Context.MODE_PRIVATE);
-        System.out.println("Admin:1");
         editor = User.edit();
-
-        editor.putString("user", "Admin");
-        System.out.println("Admin:2");
-        editor.apply();
     }
 
 
@@ -37,27 +33,36 @@ public class RWUser
     //购物车
     public List<String> GetCart()
     {
-        List<String> number2 = new ArrayList<>();
-        String data = User.getString("user", "defaultValue");
-        System.out.println("Admin:3");
-        System.out.println(data);
-        number2.add(data);
-        return number2;
+        data = User.getString("user", "defaultValue");
+        ListNumber = gson.fromJson(data,new TypeToken<List<String>>(){}.getType());
+        return ListNumber;
     }
     //收藏
-    public List<String> GetCollect(String user)
+    public List<String> GetCollect()
     {
-        return null;
+        data = User.getString("collect", "defaultValue");
+        ListNumber = gson.fromJson(data,new TypeToken<List<String>>(){}.getType());
+        return ListNumber;
     }
     //订单
-    public List<String> Getorder(String user)
+    public List<String> GetOrder1()
     {
-        return null;
+        data = User.getString("order1", "defaultValue");
+        ListNumber = gson.fromJson(data,new TypeToken<List<String>>(){}.getType());
+        return ListNumber;
+    }
+    public List<String> GetOrder2()
+    {
+        String data = User.getString("order2", "defaultValue");
+        ListNumber = gson.fromJson(data,new TypeToken<List<String>>(){}.getType());
+        return ListNumber;
     }
     //地址
-    public List<Adress> GetAdress(String user)
+    public List<Adress> GetAdress()
     {
-        return null;
+        String data = User.getString("adress", "defaultValue");
+        Adress = gson.fromJson(data,new TypeToken<List<Adress>>(){}.getType());
+        return Adress;
     }
 
 
@@ -73,7 +78,7 @@ public class RWUser
         return null;
     }
     //订单
-    public List<String> Changeorder(String user)
+    public List<String> ChangeOrder(String user)
     {
         return null;
     }
@@ -96,7 +101,7 @@ public class RWUser
         return null;
     }
     //订单
-    public List<String> Deleteorder(String user)
+    public List<String> DeleteOrder(String user)
     {
         return null;
     }
