@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cart_option"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="match_parent"
     android:background="#F6F4F4"
     android:textAlignment="center">
@@ -44,11 +44,11 @@
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="411dp"
-        android:layout_height="476dp"
+        android:layout_width="423dp"
+        android:layout_height="449dp"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="101dp">
+        tools:layout_editor_absoluteX="-2dp"
+        tools:layout_editor_absoluteY="128dp">
 
         <LinearLayout
             android:id="@+id/LinerLayout4"
