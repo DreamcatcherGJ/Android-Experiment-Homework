@@ -109,6 +109,13 @@ public class JumpActivity extends AppCompatActivity
             fragmentTransaction.commit();
         }
 
+        if (id == 63) {
+            //返回”商品“界面
+            CategoryFragment categoryFragment =  new CategoryFragment();
+            fragmentTransaction.add(R.id.fragment_container2, categoryFragment);
+            fragmentTransaction.commit();
+        }
+
         //汪真天：71-80
         if (id == 71) {
             //打开我的收货地址
