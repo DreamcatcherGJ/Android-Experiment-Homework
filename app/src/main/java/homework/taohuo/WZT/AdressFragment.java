@@ -42,7 +42,7 @@ public class AdressFragment extends Fragment {
 
         RWUser User = new RWUser();
         User.RWUser(getActivity());
-        data = User.GetAdress();
+        data = User.GetAddress();
 
         ListOptionView = (RecyclerView) view.findViewById(R.id.adress_option_view);
         ListOptionView.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -77,10 +77,10 @@ public class AdressFragment extends Fragment {
             Button BTchange = (Button) v.findViewById(R.id.adress_change);
             Button BTdetele = (Button) v.findViewById(R.id.adress_detele);
 
-            Adress adress = data.get(position);
+            Adress address = data.get(position);
 
-            viewUser.setText(adress.getName()+"  "+adress.getPhone());
-            viewDetail.setText(adress.getAdress());
+            viewUser.setText(address.getName()+"  "+address.getPhone());
+            viewDetail.setText(address.getAdress());
 
             BTchange.setOnClickListener(new View.OnClickListener() {
                 @Override
