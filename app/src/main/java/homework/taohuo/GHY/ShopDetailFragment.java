@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Objects;
 
 import homework.taohuo.R;
-import homework.taohuo.bean.GetShopMes;
+import homework.taohuo.service.GetShopMes;
 import homework.taohuo.bean.Shop;
 
 /**

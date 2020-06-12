@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 import homework.taohuo.GJ.JumpActivity;
 import homework.taohuo.R;
-import homework.taohuo.bean.GetShopMes;
+import homework.taohuo.service.GetShopMes;
 import homework.taohuo.bean.Shop;
 
 /**
@@ -39,6 +39,7 @@ public class ListFragment extends Fragment
         ListOptionView = (RecyclerView) view.findViewById(R.id.list_option_view);
         ListOptionView.setLayoutManager(new LinearLayoutManager(getContext()));
         ListOptionView.setAdapter(new MyAdapter());
+
         return view;
     }
 

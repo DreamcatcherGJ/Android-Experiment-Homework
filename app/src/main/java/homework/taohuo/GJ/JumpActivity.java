@@ -17,8 +17,8 @@ import homework.taohuo.WZT.ModifyAddress;
 import homework.taohuo.ZH.HomeFragment;
 import homework.taohuo.ZH.MineFragment;
 
-public class JumpActivity extends AppCompatActivity {
-
+public class JumpActivity extends AppCompatActivity
+{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,8 +73,8 @@ public class JumpActivity extends AppCompatActivity {
             //商品列表
             String number = getIntent().getStringExtra("number");
             Gson gson=new Gson();
-
             List<String> ListNumber = gson.fromJson(number,new TypeToken<List<String>>(){}.getType());
+
             ListFragment listFragment = new ListFragment(ListNumber);
             fragmentTransaction.add(R.id.fragment_container2, listFragment);
             fragmentTransaction.commit();
@@ -97,10 +97,7 @@ public class JumpActivity extends AppCompatActivity {
         //王龙：61-70
         if (id == 61) {
             //我的订单
-            String number = getIntent().getStringExtra("number");
-            Gson gson=new Gson();
-            List<String> ListNumber = gson.fromJson(number,new TypeToken<List<String>>(){}.getType());
-            OrderTabFragment orderTabFragment = new OrderTabFragment(ListNumber);
+            OrderTabFragment orderTabFragment = new OrderTabFragment();
             fragmentTransaction.replace(R.id.fragment_container2, orderTabFragment);
             fragmentTransaction.commit();
         }
