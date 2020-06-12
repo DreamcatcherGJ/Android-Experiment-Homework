@@ -18,9 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import homework.taohuo.GJ.JumpActivity;
-import homework.taohuo.GX.ListFragment;
 import homework.taohuo.R;
-import homework.taohuo.bean.ShopMes;
 import homework.taohuo.bean.Shop;
 import homework.taohuo.service.GetShopMes;
 
@@ -40,9 +38,9 @@ public class CartFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.gx_list, container, false);
+        View view = inflater.inflate(R.layout.tsj_cart, container, false);
 
-        ListOptionView = (RecyclerView) view.findViewById(R.id.list_option_view);
+        ListOptionView = (RecyclerView) view.findViewById(R.id.cart_option_view);
         ListOptionView.setLayoutManager(new LinearLayoutManager(getContext()));
         ListOptionView.setAdapter(new CartFragment.MyAdapter());
         return view;
@@ -73,7 +71,7 @@ public class CartFragment extends Fragment {
         @Override
         public CartFragment.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             LayoutInflater inflater = getLayoutInflater();
-            View view = inflater.inflate(R.layout.gx_list_option, parent, false);
+            View view = inflater.inflate(R.layout.tsj_cart_option, parent, false);
             CartFragment.MyViewHolder viewHolder = new CartFragment.MyViewHolder(view);
             return viewHolder;
         }
@@ -81,10 +79,11 @@ public class CartFragment extends Fragment {
         @Override
         public void onBindViewHolder(CartFragment.MyViewHolder viewHolder, int position) {
             View v = viewHolder.itemView;
-            ImageView viewHeadImage = (ImageView) v.findViewById(R.id.list_headimage);
-            TextView viewTitle = (TextView) v.findViewById(R.id.list_title);
-            TextView viewPrice = (TextView) v.findViewById(R.id.list_price);
-            Button viewButton = (Button) v.findViewById(R.id.order_button);
+            ImageView viewHeadImage = (ImageView) v.findViewById(R.id.cart_headimage);
+            TextView viewTitle = (TextView) v.findViewById(R.id.cart_title);
+            TextView viewPrice = (TextView) v.findViewById(R.id.hot_price);
+            Button viewButton = (Button) v.findViewById(R.id.cart_button1);
+            Button viewButton2 = (Button) v.findViewById(R.id.cart_button2);
 
             Shop shop = data.get(position);
 

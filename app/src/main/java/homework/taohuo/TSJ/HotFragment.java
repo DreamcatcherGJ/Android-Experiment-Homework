@@ -37,9 +37,9 @@ public class HotFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.gx_list, container, false);
+        View view = inflater.inflate(R.layout.tsj_hot, container, false);
 
-        ListOptionView = (RecyclerView) view.findViewById(R.id.list_option_view);
+        ListOptionView = (RecyclerView) view.findViewById(R.id.cart_option_view);
         ListOptionView.setLayoutManager(new LinearLayoutManager(getContext()));
         ListOptionView.setAdapter(new HotFragment.MyAdapter());
         return view;
@@ -70,7 +70,7 @@ public class HotFragment extends Fragment {
         @Override
         public HotFragment.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             LayoutInflater inflater = getLayoutInflater();
-            View view = inflater.inflate(R.layout.gx_list_option,parent,false);
+            View view = inflater.inflate(R.layout.tsj_hot_option,parent,false);
             HotFragment.MyViewHolder viewHolder = new HotFragment.MyViewHolder(view);
             return viewHolder;
         }
@@ -78,9 +78,9 @@ public class HotFragment extends Fragment {
         @Override
         public void onBindViewHolder(HotFragment.MyViewHolder viewHolder, int position) {
             View v = viewHolder.itemView;
-            ImageView viewHeadImage = (ImageView) v.findViewById(R.id.list_headimage);
-            TextView viewTitle = (TextView) v.findViewById(R.id.list_title);
-            TextView viewPrice = (TextView) v.findViewById(R.id.list_price);
+            ImageView viewHeadImage = (ImageView) v.findViewById(R.id.hot_headimage);
+            TextView viewTitle = (TextView) v.findViewById(R.id.hot_title);
+            TextView viewPrice = (TextView) v.findViewById(R.id.hot_price);
 
             Shop shop = data.get(position);
 
