@@ -85,6 +85,7 @@ public class JumpActivity extends AppCompatActivity
         if (id == 51) {
             //商品ID
             String shop_id = getIntent().getStringExtra("shop_id");
+
             ShopDetailFragment shopDetailFragment = new ShopDetailFragment(shop_id);
             fragmentTransaction.add(R.id.fragment_container2, shopDetailFragment);
             fragmentTransaction.commit();
