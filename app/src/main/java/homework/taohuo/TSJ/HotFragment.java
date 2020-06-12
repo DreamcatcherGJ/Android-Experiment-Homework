@@ -80,7 +80,7 @@ public class HotFragment extends Fragment {
             View v = viewHolder.itemView;
             ImageView viewHeadImage = (ImageView) v.findViewById(R.id.hot_headimage);
             TextView viewTitle = (TextView) v.findViewById(R.id.hot_title);
-            TextView viewPrice = (TextView) v.findViewById(R.id.hot_price);
+            TextView viewPrice = (TextView) v.findViewById(R.id.cart_price);
 
             Shop shop = data.get(position);
 
