@@ -33,82 +33,122 @@ public class RWUser extends AppCompatActivity
     //购物车
     public List<String> GetCart()
     {
-        data = User.getString("user", "defaultValue");
-        ListNumber = gson.fromJson(data,new TypeToken<List<String>>(){}.getType());
-        return ListNumber;
+        data = User.getString("cart", "defaultValue");
+        if(data == "defaultValue"){
+            return null;
+        }else {
+            ListNumber = gson.fromJson(data,new TypeToken<List<String>>(){}.getType());
+            return ListNumber;
+        }
     }
     //收藏
     public List<String> GetCollect()
     {
         data = User.getString("collect", "defaultValue");
-        ListNumber = gson.fromJson(data,new TypeToken<List<String>>(){}.getType());
-        return ListNumber;
+        if(data == "defaultValue"){
+            return null;
+        }else {
+            ListNumber = gson.fromJson(data,new TypeToken<List<String>>(){}.getType());
+            return ListNumber;
+        }
     }
     //全部订单
     public List<String> GetOrder1()
     {
         data = User.getString("order1", "defaultValue");
-        ListNumber = gson.fromJson(data,new TypeToken<List<String>>(){}.getType());
-        return ListNumber;
+        if(data == "defaultValue"){
+            return null;
+        }else {
+            ListNumber = gson.fromJson(data,new TypeToken<List<String>>(){}.getType());
+            return ListNumber;
+        }
     }
     //待支付订单
     public List<String> GetOrder2()
     {
         String data = User.getString("order2", "defaultValue");
-        ListNumber = gson.fromJson(data,new TypeToken<List<String>>(){}.getType());
-        return ListNumber;
+        if(data == "defaultValue"){
+            return null;
+        }else {
+            ListNumber = gson.fromJson(data,new TypeToken<List<String>>(){}.getType());
+            return ListNumber;
+        }
     }
     //地址
-    public List<Adress> GetAdress()
+    public List<Adress> GetAddress()
     {
-        String data = User.getString("adress", "defaultValue");
-        Adress = gson.fromJson(data,new TypeToken<List<Adress>>(){}.getType());
-        return Adress;
+        String data = User.getString("address", "defaultValue");
+        if(data == "defaultValue"){
+            return null;
+        }else {
+            Adress = gson.fromJson(data,new TypeToken<List<Adress>>(){}.getType());
+            return Adress;
+        }
     }
 
 
     /***修改信息***/
     //购物车
-    public List<String> ChangeCart(String user)
+    public void ChangeCart(String listNum)
     {
-        return null;
+        editor.putString("cart", listNum);
+        editor.apply();
     }
     //收藏
-    public List<String> ChangeCollect(String user)
+    public void ChangeCollect(String listNum)
     {
-        return null;
+        editor.putString("collect", listNum);
+        editor.apply();
     }
-    //订单
-    public List<String> ChangeOrder(String user)
+    //全部订单
+    public void ChangeOrder1(String listNum)
     {
-        return null;
+        editor.putString("order1", listNum);
+        editor.apply();
+    }
+    //待支付订单
+    public void ChangeOrder2(String listNum)
+    {
+        editor.putString("order2", listNum);
+        editor.apply();
     }
     //地址
-    public List<Adress> ChangeAdress(String user)
+    public void ChangeAddress(String listNum)
     {
-        return null;
+        editor.putString("address", listNum);
+        editor.apply();
     }
 
 
     /***删除信息***/
     //购物车
-    public List<String> DeleteCart(String user)
+    public void DeleteCart()
     {
-        return null;
+        editor.remove("cart");
+        editor.apply();
     }
     //收藏
-    public List<String> DeleteCollect(String user)
+    public void DeleteCollect()
     {
-        return null;
+        editor.remove("collect");
+        editor.apply();
     }
-    //订单
-    public List<String> DeleteOrder(String user)
+    //全部订单
+    public void DeleteOrder1()
     {
-        return null;
+        editor.remove("order1");
+        editor.apply();
+    }
+    //待支付订单
+    public void DeleteOrder2()
+    {
+        editor.remove("order2");
+        editor.apply();
     }
     //地址
-    public List<Adress> DeleteAdress(String user)
+    public void DeleteAddress()
     {
-        return null;
+        editor.remove("address");
+        editor.apply();
     }
 }
