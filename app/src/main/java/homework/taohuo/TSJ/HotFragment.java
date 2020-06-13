@@ -58,9 +58,9 @@ public class HotFragment extends Fragment {
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.tsj_hot, container, false);
 
-        ListOptionView = (RecyclerView) v.findViewById(R.id.hot_option_view);
+        ListOptionView = (RecyclerView) v.findViewById(R.id.hot2_option_view);
         ListOptionView.setLayoutManager(new LinearLayoutManager(getContext()));
-        ListOptionView.setAdapter(new OrderFragment.MyAdapter());
+        ListOptionView.setAdapter(new HotFragment.MyAdapter());
 
         ListFragment listFragment = new ListFragment(number);
 

@@ -47,7 +47,7 @@ public class CartFragment extends Fragment {
 
 
 
-        ListOptionView = (RecyclerView) view.findViewById(R.id.hot_option_view);
+        ListOptionView = (RecyclerView) view.findViewById(R.id.cart_option_view);
         ListOptionView.setLayoutManager(new LinearLayoutManager(getContext()));
         ListOptionView.setAdapter(new CartFragment.MyAdapter());
         return view;
