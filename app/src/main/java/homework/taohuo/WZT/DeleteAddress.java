@@ -118,7 +118,7 @@ public class DeleteAddress extends Fragment {
 
         Delete.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {//   delete.clear();
+            public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), JumpActivity.class);
                 intent.putExtra("id",71);
                 startActivity(intent);
