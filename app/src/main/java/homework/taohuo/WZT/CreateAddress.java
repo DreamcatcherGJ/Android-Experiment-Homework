@@ -22,12 +22,11 @@ import homework.taohuo.service.RWUser;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link ModifyAddress#newInstance} factory method to
+ * Use the {@link CreateAddress#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ModifyAddress extends Fragment {
+public class CreateAddress extends Fragment {
     private  List<Adress> oldaddress = new ArrayList<>();
-    private  List<Adress> newaddress = new ArrayList<>();
     private View view;
     private EditText r_address,r_name,r_phone;
     private int id;
@@ -43,7 +42,7 @@ public class ModifyAddress extends Fragment {
 
 
 
-    public ModifyAddress(int id) {
+    public CreateAddress(int id) {
         this.id =  id;
         System.out.println(this.id);
     }
@@ -57,8 +56,8 @@ public class ModifyAddress extends Fragment {
      * @return A new instance of fragment ModifyAddress.
      */
     // TODO: Rename and change types and number of parameters
-    public static ModifyAddress newInstance(String param1, String param2) {
-        ModifyAddress fragment = new ModifyAddress(-1);
+    public static CreateAddress newInstance(String param1, String param2) {
+        CreateAddress fragment = new CreateAddress(-1);
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -79,32 +78,24 @@ public class ModifyAddress extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        view = inflater.inflate(R.layout.wzt_modify_address, container, false);
+        view = inflater.inflate(R.layout.wzt_create_address, container, false);
 
         RWUser User = new RWUser();
         User.RWUser(getActivity());
         oldaddress = User.GetAddress();
-        r_address=(EditText) view.findViewById(R.id.changeadress);
+        r_address=(EditText) view.findViewById(R.id.createadress);
         String addtes1 = r_address.getText().toString();
-        r_name=(EditText) view.findViewById(R.id.changename);
+        r_name=(EditText) view.findViewById(R.id.createname);
         String addtes2 = r_name.getText().toString();
-        r_phone=(EditText) view.findViewById(R.id.changenumber);
+        r_phone=(EditText) view.findViewById(R.id.createnumber);
         String addtes3 = r_phone.getText().toString();
 
 
-        for (int i=0;i<oldaddress.size();i++)
-        {
-            if(id == i)
-            {
-                newaddress.add(new Adress(addtes2,addtes3,addtes1));
-            }else {
-                newaddress.add(new Adress(oldaddress.get(i).getName(),oldaddress.get(i).getPhone(),oldaddress.get(i).getAdress()));
-            }
-        }
+      oldaddress.add(new Adress(addtes1,addtes2,addtes3));
 
 
         Gson gson =new Gson();
-        String newaddressStr = gson.toJson(newaddress);
+        String newaddressStr = gson.toJson(oldaddress);
         User.ChangeAddress(newaddressStr);
 
         return view;

@@ -80,20 +80,13 @@ public class DeleteAddress extends Fragment {
         RWUser User = new RWUser();
         User.RWUser(getActivity());
         olddelete = User.GetAddress();
-      //  r_address=(EditText) view.findViewById(R.id.changeadress);
-        //String addtes1 = r_address.getText().toString();
-       // r_name=(EditText) view.findViewById(R.id.changename);
-       // String addtes2 = r_name.getText().toString();
-        //r_phone=(EditText) view.findViewById(R.id.changenumber);
-       // String addtes3 = r_phone.getText().toString();
+
 
 
         for (int i=0;i<olddelete.size();i++)
         {
-           // System.out.println(i);
             if(id == i)
             {
-                // System.out.println(id);
                 // olddelete.add(new Adress("","",""));
             }else {
                 olddelete.add(new Adress(olddelete.get(i).getName(),olddelete.get(i).getPhone(),olddelete.get(i).getAdress()));
