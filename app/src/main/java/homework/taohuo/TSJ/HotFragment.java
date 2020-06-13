@@ -62,11 +62,11 @@ public class HotFragment extends Fragment {
         ListOptionView.setLayoutManager(new LinearLayoutManager(getContext()));
         ListOptionView.setAdapter(new HotFragment.MyAdapter());
 
-        HotFragment listFragment =new HotFragment(number);
+        /*HotFragment listFragment =new HotFragment(number);
 
         for (int i = 0;i < number.size(); i++) {
             System.out.println(number.get(i));
-        }
+        }*/
 
         return v;
     }
