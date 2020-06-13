@@ -35,7 +35,11 @@ public class HotFragment extends Fragment {
     public HotFragment () {
         number.add("1");
         number.add("2");
-        number.add("3");
+        number.add("12");
+        number.add("14");
+        number.add("8");
+        number.add("10");
+        number.add("6");
         GetShopMes needmes = new GetShopMes();
         data = needmes.GetShopMes(number);
     }
