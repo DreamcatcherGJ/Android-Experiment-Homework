@@ -119,9 +119,6 @@ public class ModifyAddress extends Fragment {
             @Override
             public void onClick(View v) {
 
-
-
-
                 Intent intent = new Intent(getActivity(), JumpActivity.class);
                 intent.putExtra("id",71);
                 startActivity(intent);

@@ -94,7 +94,10 @@ public class AdressFragment extends Fragment {
             BTdetele.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
+                    Intent intent = new Intent(getActivity(), JumpActivity.class);
+                    intent.putExtra("id",73);
+                    intent.putExtra("number",position);
+                    startActivity(intent);
                 }
             });
         }

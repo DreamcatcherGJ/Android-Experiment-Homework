@@ -120,7 +120,8 @@ public class JumpActivity extends AppCompatActivity
 
         if (id == 73) {
             //进入删除界面
-            DeleteAddress deleteAddress =  new DeleteAddress();
+            String number = getIntent().getStringExtra("number");
+            DeleteAddress deleteAddress =  new DeleteAddress(number);
             fragmentTransaction.add(R.id.fragment_container2, deleteAddress);
             fragmentTransaction.commit();
         }
