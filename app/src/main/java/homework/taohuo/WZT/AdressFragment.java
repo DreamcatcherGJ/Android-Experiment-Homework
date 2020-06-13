@@ -22,7 +22,6 @@ import homework.taohuo.GX.ListFragment;
 import homework.taohuo.R;
 import homework.taohuo.bean.Adress;
 import homework.taohuo.bean.Shop;
-import homework.taohuo.service.RWUser;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -30,10 +29,10 @@ import homework.taohuo.service.RWUser;
 public class AdressFragment extends Fragment {
     private RecyclerView ListOptionView;
     private List<Adress> data = new ArrayList<>();
-    public AdressFragment() {
-        data.add(new Adress("1","李四","123456","黄山学院"));
-        data.add(new Adress("2","张十三","123456","黄山学院"));
-        data.add(new Adress("3","伍七","123456","黄山学院"));
+     public AdressFragment() {
+        data.add(new Adress("1","汪真天","123456","黄山学院"));
+        data.add(new Adress("2","汪真天","123456","黄山学院"));
+        data.add(new Adress("3","汪真天","123456","黄山学院"));
     }
 
 
@@ -77,7 +76,6 @@ public class AdressFragment extends Fragment {
             Button BTchange = (Button) v.findViewById(R.id.adress_change);
             Button BTdetele = (Button) v.findViewById(R.id.adress_detele);
 
-
             final Adress adress = data.get(position);
 
             viewUser.setText(adress.getName()+"  "+adress.getPhone());
@@ -86,7 +84,7 @@ public class AdressFragment extends Fragment {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(getActivity(), JumpActivity.class);
-                    intent.putExtra("id",72);
+                    intent.putExtra("id",4);
                     intent.putExtra("number",adress.getID());
                     startActivity(intent);
                 }
@@ -94,10 +92,7 @@ public class AdressFragment extends Fragment {
             BTdetele.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(getActivity(), JumpActivity.class);
-                    intent.putExtra("id",73);
-                    intent.putExtra("number",adress.getID());
-                    startActivity(intent);
+
                 }
             });
         }
@@ -111,3 +106,5 @@ public class AdressFragment extends Fragment {
         }
     }
 }
+
+
