@@ -22,6 +22,7 @@ import homework.taohuo.GX.ListFragment;
 import homework.taohuo.R;
 import homework.taohuo.bean.Adress;
 import homework.taohuo.bean.Shop;
+import homework.taohuo.service.RWUser;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -30,9 +31,6 @@ public class AdressFragment extends Fragment {
     private RecyclerView ListOptionView;
     private List<Adress> data = new ArrayList<>();
      public AdressFragment() {
-        data.add(new Adress("1","汪真天","123456","黄山学院"));
-        data.add(new Adress("2","汪真天","123456","黄山学院"));
-        data.add(new Adress("3","汪真天","123456","黄山学院"));
     }
 
 
@@ -45,6 +43,10 @@ public class AdressFragment extends Fragment {
         ListOptionView = (RecyclerView) view.findViewById(R.id.adress_option_view);
         ListOptionView.setLayoutManager(new LinearLayoutManager(getContext()));
         ListOptionView.setAdapter(new AdressFragment.MyAdapter());
+
+        RWUser User = new RWUser();
+        User.RWUser(getActivity());
+        data = User.GetAddress();
 
         return view;
     }
@@ -84,8 +86,8 @@ public class AdressFragment extends Fragment {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(getActivity(), JumpActivity.class);
-                    intent.putExtra("id",4);
-                    intent.putExtra("number",adress.getID());
+                    intent.putExtra("id",72);
+                    intent.putExtra("number",position);
                     startActivity(intent);
                 }
             });

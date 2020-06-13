@@ -111,7 +111,9 @@ public class JumpActivity extends AppCompatActivity
         }
         if (id == 72) {
             //修改我的收货地址
-            ModifyAddress modifyAddress = new ModifyAddress();
+            String number = getIntent().getStringExtra("number");
+
+            ModifyAddress modifyAddress = new ModifyAddress(number);
             fragmentTransaction.add(R.id.fragment_container2, modifyAddress);
             fragmentTransaction.commit();
         }

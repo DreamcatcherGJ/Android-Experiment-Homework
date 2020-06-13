@@ -15,8 +15,10 @@ import java.util.List;
 
 import homework.taohuo.LS.CategoryFragment;
 import homework.taohuo.R;
+import homework.taohuo.TSJ.HotFragment;
 import homework.taohuo.ZH.HomeFragment;
 import homework.taohuo.ZH.MineFragment;
+import homework.taohuo.service.RWUser;
 
 public class MainFragment extends Fragment
 {
@@ -36,12 +38,15 @@ public class MainFragment extends Fragment
         mViewPager = v.findViewById(R.id.fragment_vp);
         mTabRadioGroup = v.findViewById(R.id.tabs_rg);
 
+
+
         HomeFragment homeFragment = new HomeFragment();
         MineFragment mineFragment = new MineFragment();
         CategoryFragment categoryFragment = new CategoryFragment();
+        HotFragment hotFragment = new HotFragment();
         mFragments = new ArrayList<>(1);
         mFragments.add(homeFragment);
-        mFragments.add(BlankFragment.newInstance("热卖"));
+        mFragments.add(hotFragment);
         mFragments.add(categoryFragment);
         mFragments.add(BlankFragment.newInstance("购物车"));
         mFragments.add(mineFragment);
