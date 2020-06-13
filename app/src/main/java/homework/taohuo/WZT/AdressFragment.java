@@ -30,7 +30,9 @@ import homework.taohuo.service.RWUser;
 public class AdressFragment extends Fragment {
     private RecyclerView ListOptionView;
     private List<Adress> data = new ArrayList<>();
+
      public AdressFragment() {
+         /**/
     }
 
 
@@ -47,6 +49,16 @@ public class AdressFragment extends Fragment {
         RWUser User = new RWUser();
         User.RWUser(getActivity());
         data = User.GetAddress();
+
+        Button BTcreate =(Button) view.findViewById(R.id.address_create);
+        BTcreate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), JumpActivity.class);
+                intent.putExtra("id",74);
+                startActivity(intent);
+            }
+        });
 
         return view;
     }
@@ -100,19 +112,7 @@ public class AdressFragment extends Fragment {
                     startActivity(intent);
                 }
             });
-            BTcreate.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(getActivity(), JumpActivity.class);
-                    intent.putExtra("id",74);
-                    intent.putExtra("Number",position);
-                    startActivity(intent);
-                }
-            });
         }
-
-
-
 
         @Override
         public int getItemCount() {
