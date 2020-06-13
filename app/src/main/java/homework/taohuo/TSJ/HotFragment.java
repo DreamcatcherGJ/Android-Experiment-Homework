@@ -5,22 +5,21 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.ListFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.viewpager.widget.ViewPager;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import homework.taohuo.GJ.JumpActivity;
-import homework.taohuo.GJ.MainFragment;
 import homework.taohuo.R;
+import homework.taohuo.WL.OrderFragment;
 import homework.taohuo.bean.Shop;
 import homework.taohuo.service.GetShopMes;
 
@@ -32,14 +31,13 @@ public class HotFragment extends Fragment {
     private RecyclerView ListOptionView;
     private List<Shop> data = new ArrayList<>();
     private List<String> number = new ArrayList<>();
-    private ViewPager mViewPager;
-    private RadioGroup mTabRadioGroup;
 
-    /*public HotFragment(List<String> number) {
+
+    public HotFragment (List<String> number) {
         GetShopMes needmes = new GetShopMes();
         data = needmes.GetShopMes(number);
     }
-    */
+
     public HotFragment(){
         number.add("13");
         number.add("2");
@@ -58,15 +56,17 @@ public class HotFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_main, container, false);
+        View v = inflater.inflate(R.layout.tsj_hot, container, false);
 
-        mViewPager = v.findViewById(R.id.fragment_vp);
-        mTabRadioGroup = v.findViewById(R.id.tabs_rg);
+        ListOptionView = (RecyclerView) v.findViewById(R.id.hot_option_view);
+        ListOptionView.setLayoutManager(new LinearLayoutManager(getContext()));
+        ListOptionView.setAdapter(new OrderFragment.MyAdapter());
+        ListFragment listFragment = new ListFragment(number);
 
         for (int i = 0;i < number.size(); i++) {
             System.out.println(number.get(i));
         }
-        ListFragment listFragment = new ListFragment(number);
+
         return v;
     }
     private class MyViewHolder extends RecyclerView.ViewHolder{
@@ -80,7 +80,7 @@ public class HotFragment extends Fragment {
 
                     //跳转到新Activiyt
                     Intent intent = new Intent(getActivity(), JumpActivity.class);
-                    intent.putExtra("id",91);
+                    intent.putExtra("id",21);
                     intent.putExtra("shop_id",shop.getId());
                     startActivity(intent);
                 }
@@ -104,7 +104,8 @@ public class HotFragment extends Fragment {
             View v = viewHolder.itemView;
             ImageView viewHeadImage = (ImageView) v.findViewById(R.id.hot_headimage);
             TextView viewTitle = (TextView) v.findViewById(R.id.hot_title);
-            TextView viewPrice = (TextView) v.findViewById(R.id.cart_price);
+            TextView viewPrice = (TextView) v.findViewById(R.id.hot_price);
+            Button viewButton = (Button) v.findViewById(R.id.hot_button);
 
             Shop shop = data.get(position);
 

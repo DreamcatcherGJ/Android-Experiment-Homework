@@ -79,7 +79,7 @@
                 tools:text="@string/shop_detail" />
 
             <TextView
-                android:id="@+id/cart_price"
+                android:id="@+id/hot_price"
                 android:layout_width="119dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"

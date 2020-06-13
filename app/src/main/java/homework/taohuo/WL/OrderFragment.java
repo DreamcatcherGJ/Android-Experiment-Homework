@@ -53,7 +53,7 @@ public class OrderFragment extends Fragment {
     }
 
     //用于为RecyclerView提供数据的适配器类
-    private class MyAdapter extends RecyclerView.Adapter<MyViewHolder>
+    public static class MyAdapter extends RecyclerView.Adapter<MyViewHolder>
     {
         @Override
         public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {

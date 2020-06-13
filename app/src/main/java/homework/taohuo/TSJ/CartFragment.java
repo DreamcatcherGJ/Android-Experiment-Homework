@@ -81,7 +81,7 @@ public class CartFragment extends Fragment {
             View v = viewHolder.itemView;
             ImageView viewHeadImage = (ImageView) v.findViewById(R.id.cart_headimage);
             TextView viewTitle = (TextView) v.findViewById(R.id.cart_title);
-            TextView viewPrice = (TextView) v.findViewById(R.id.cart_price);
+            TextView viewPrice = (TextView) v.findViewById(R.id.hot_price);
             Button viewButton = (Button) v.findViewById(R.id.cart_button1);
             Button viewButton2 = (Button) v.findViewById(R.id.cart_button2);
 
