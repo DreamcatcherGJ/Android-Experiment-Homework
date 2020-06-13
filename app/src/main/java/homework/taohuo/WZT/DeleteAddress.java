@@ -1,5 +1,6 @@
 package homework.taohuo.WZT;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -9,7 +10,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import java.util.List;
+
+import homework.taohuo.GJ.JumpActivity;
 import homework.taohuo.R;
+import homework.taohuo.WL.OrderFragment;
+import homework.taohuo.bean.Adress;
+import homework.taohuo.service.RWUser;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -17,18 +24,18 @@ import homework.taohuo.R;
  * create an instance of this fragment.
  */
 public class DeleteAddress extends Fragment {
-    private Button btn1,btn2;
+    private  List<Adress> delete ;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-
+    private View view;
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
-    public DeleteAddress() {
+    public DeleteAddress( ) {
         // Required empty public constructor
     }
 
@@ -58,18 +65,38 @@ public class DeleteAddress extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
-
-    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.wzt_delete_address, container, false);
     }
-    public void onActivityCreated(Bundle savedInstanceState) {
+    @Override
 
+
+    public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        btn1 = (Button) getActivity().findViewById(R.id.button1);
-        btn2 = (Button) getActivity().findViewById(R.id.button2);
+        Button Delete = (Button) view.findViewById(R.id.button1);
+        Button returnmine= (Button) view.findViewById(R.id.button2);
+
+        returnmine.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), JumpActivity.class);
+                intent.putExtra("id",71);
+                startActivity(intent);
+            }
+        });
+
+        Delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+             //   delete.clear();
+                Intent intent = new Intent(getActivity(), JumpActivity.class);
+                intent.putExtra("id",71);
+                startActivity(intent);
+            }
+        });
+
 
     }
 }
