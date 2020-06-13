@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cart_option"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="#F6F4F4"
+    android:textAlignment="center">
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="419dp"
+        android:layout_height="73dp"
+        android:background="#C8C5C5"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="-4dp"
+        tools:layout_editor_absoluteY="581dp">
+
+        <CheckBox
+            android:id="@+id/checkBox1"
+            android:layout_width="137dp"
+            android:layout_height="30dp"
+            android:background="#C3C2C2"
+            android:text="CheckBox"
+            tools:text="全选" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="31dp"
+            android:layout_weight="1"
+            android:text="TextView"
+            tools:text="合计" />
+
+        <Button
+            android:id="@+id/cart_button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#E81E1E"
+            android:text="去结算" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="423dp"
+        android:layout_height="449dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="-2dp"
+        tools:layout_editor_absoluteY="128dp">
+
+        <LinearLayout
+            android:id="@+id/LinerLayout4"
+            android:layout_width="match_parent"
+            android:layout_height="137dp"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkBox2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:id="@+id/cart_headimage"
+                android:layout_width="146dp"
+                android:layout_height="124dp"
+                android:layout_margin="5dp"
+                android:contentDescription="@string/list_headimage"
+                app:srcCompat="@drawable/ic_launcher_foreground" />
+
+            <TextView
+                android:id="@+id/cart_title"
+                android:layout_width="87dp"
+                android:layout_height="87dp"
+                android:layout_weight="1"
+                android:text="TextView"
+                tools:text="@string/shop_detail" />
+
+            <TextView
+                android:id="@+id/hot_price"
+                android:layout_width="119dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_weight="1"
+                android:gravity="start|center_vertical"
+                android:text="@string/list_price"
+                android:textColor="#F44336"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LinearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="113dp"
+        android:background="#DC1D1D"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/cart_button1"
+            android:layout_width="138dp"
+            android:layout_height="36dp"
+            android:background="#E42525"
+            android:text="编辑" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="405dp"
+            android:layout_height="91dp"
+            android:background="#DA3E3E"
+            android:text="@string/tab_cart"
+            android:textAlignment="center"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

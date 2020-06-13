@@ -12,14 +12,15 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="161dp"
         android:orientation="horizontal">
 
         <ImageView
-            android:id="@+id/order_headimage"
+            android:id="@+id/hot_headimage"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_margin="5dp"
+            android:background="#EDEAEA"
             android:contentDescription="@string/list_headimage"
             app:srcCompat="@drawable/ic_launcher_foreground" />
 
@@ -30,14 +31,15 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/order_title"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="2"
+                android:id="@+id/hot_title"
+                android:layout_width="273dp"
+                android:layout_height="6dp"
                 android:layout_marginTop="8dp"
+                android:layout_weight="2"
                 android:text="@string/list_title"
                 android:textColor="#000000"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                tools:text="@string/list_title" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -48,23 +50,24 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/order_price"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:id="@+id/hot_price"
+                    android:layout_width="208dp"
+                    android:layout_height="41dp"
                     android:layout_marginBottom="8dp"
+                    android:layout_weight="1"
                     android:gravity="start|center_vertical"
                     android:text="@string/list_price"
                     android:textColor="#F44336"
                     android:textSize="18sp" />
 
                 <Button
-                    android:id="@+id/order_button"
+                    android:id="@+id/hot_button"
                     android:layout_width="100dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="end"
+                    android:background="#EA2727"
                     android:gravity="center"
-                    android:text="@string/order_bay" />
+                    android:text="@string/shop_buy" />
             </LinearLayout>
 
         </LinearLayout>

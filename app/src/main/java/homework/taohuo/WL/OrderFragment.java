@@ -41,7 +41,7 @@ public class OrderFragment extends Fragment {
 
         ListOptionView = (RecyclerView) view.findViewById(R.id.order_option_view);
         ListOptionView.setLayoutManager(new LinearLayoutManager(getContext()));
-        ListOptionView.setAdapter(new OrderFragment.MyAdapter());
+        ListOptionView.setAdapter(new MyAdapter());
 
         return  view;
     }
@@ -53,18 +53,18 @@ public class OrderFragment extends Fragment {
     }
 
     //用于为RecyclerView提供数据的适配器类
-    private class MyAdapter extends RecyclerView.Adapter<OrderFragment.MyViewHolder>
+    public static class MyAdapter extends RecyclerView.Adapter<MyViewHolder>
     {
         @Override
-        public OrderFragment.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             LayoutInflater inflater = getLayoutInflater();
             View view = inflater.inflate(R.layout.wl_order_option,parent,false);
-            OrderFragment.MyViewHolder viewHolder = new OrderFragment.MyViewHolder(view);
+            MyViewHolder viewHolder = new MyViewHolder(view);
             return viewHolder;
         }
 
         @Override
-        public void onBindViewHolder(OrderFragment.MyViewHolder viewHolder, int position) {
+        public void onBindViewHolder(MyViewHolder viewHolder, int position) {
             View v = viewHolder.itemView;
             ImageView viewHeadImage = (ImageView) v.findViewById(R.id.order_headimage);
             TextView viewTitle = (TextView) v.findViewById(R.id.order_title);

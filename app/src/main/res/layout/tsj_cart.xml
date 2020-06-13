@@ -10,7 +10,7 @@
     tools:context=".WL.OrderFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/order_option_view"
+        android:id="@+id/hot_option_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="3dp"
