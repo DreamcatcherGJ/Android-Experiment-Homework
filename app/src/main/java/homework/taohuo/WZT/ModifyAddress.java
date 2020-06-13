@@ -13,6 +13,7 @@ import android.widget.EditText;
 
 import com.google.gson.Gson;
 
+import java.util.ArrayList;
 import java.util.List;
 import homework.taohuo.bean.Adress;
 import homework.taohuo.GJ.JumpActivity;
@@ -25,7 +26,8 @@ import homework.taohuo.service.RWUser;
  * create an instance of this fragment.
  */
 public class ModifyAddress extends Fragment {
-    private  List<Adress> oldaddress, newaddress;
+    private  List<Adress> oldaddress = new ArrayList<>();
+    private  List<Adress> newaddress = new ArrayList<>();
     private View view;
     private EditText r_address,r_name,r_phone;
     private int id;
@@ -41,8 +43,9 @@ public class ModifyAddress extends Fragment {
 
 
 
-    public ModifyAddress(String id) {
-        this.id =  Integer.valueOf(id).intValue()-1;
+    public ModifyAddress(int id) {
+        this.id =  id;
+        System.out.println(this.id);
     }
 
     /**
@@ -55,7 +58,7 @@ public class ModifyAddress extends Fragment {
      */
     // TODO: Rename and change types and number of parameters
     public static ModifyAddress newInstance(String param1, String param2) {
-        ModifyAddress fragment = new ModifyAddress("1");
+        ModifyAddress fragment = new ModifyAddress(-1);
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);

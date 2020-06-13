@@ -85,9 +85,10 @@ public class AdressFragment extends Fragment {
             BTchange.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    System.out.println("aaaaa:"+position);
                     Intent intent = new Intent(getActivity(), JumpActivity.class);
                     intent.putExtra("id",72);
-                    intent.putExtra("number",position);
+                    intent.putExtra("Number",position);
                     startActivity(intent);
                 }
             });
@@ -96,7 +97,7 @@ public class AdressFragment extends Fragment {
                 public void onClick(View v) {
                     Intent intent = new Intent(getActivity(), JumpActivity.class);
                     intent.putExtra("id",73);
-                    intent.putExtra("number",position);
+                    intent.putExtra("Number",position);
                     startActivity(intent);
                 }
             });

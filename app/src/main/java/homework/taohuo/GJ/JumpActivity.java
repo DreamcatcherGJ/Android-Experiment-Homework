@@ -111,7 +111,8 @@ public class JumpActivity extends AppCompatActivity
         }
         if (id == 72) {
             //修改我的收货地址
-            String number = getIntent().getStringExtra("number");
+            int number = getIntent().getIntExtra("Number",-1);
+            System.out.println("bbbbb:"+number);
 
             ModifyAddress modifyAddress = new ModifyAddress(number);
             fragmentTransaction.add(R.id.fragment_container2, modifyAddress);
@@ -120,7 +121,8 @@ public class JumpActivity extends AppCompatActivity
 
         if (id == 73) {
             //进入删除界面
-            String number = getIntent().getStringExtra("number");
+            int number = getIntent().getIntExtra("Number",-1);
+
             DeleteAddress deleteAddress =  new DeleteAddress(number);
             fragmentTransaction.add(R.id.fragment_container2, deleteAddress);
             fragmentTransaction.commit();

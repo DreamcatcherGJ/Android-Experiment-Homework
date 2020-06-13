@@ -13,6 +13,7 @@ import android.widget.EditText;
 
 import com.google.gson.Gson;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import homework.taohuo.GJ.JumpActivity;
@@ -27,7 +28,8 @@ import homework.taohuo.service.RWUser;
  * create an instance of this fragment.
  */
 public class DeleteAddress extends Fragment {
-    private  List<Adress> olddelete ,newdelete;
+    private  List<Adress> olddelete = new ArrayList<>();
+    private  List<Adress> newdelete = new ArrayList<>();
     private int id;
 
     // TODO: Rename parameter arguments, choose names that match
@@ -39,9 +41,9 @@ public class DeleteAddress extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public DeleteAddress(String id ) {
+    public DeleteAddress(int id) {
         // Required empty public constructor
-        this.id =  Integer.valueOf(id).intValue()-1;
+        this.id =  id;
     }
 
     /**
@@ -54,7 +56,7 @@ public class DeleteAddress extends Fragment {
      */
     // TODO: Rename and change types and number of parameters
     public static DeleteAddress newInstance(String param1, String param2) {
-        DeleteAddress fragment = new DeleteAddress("1");
+        DeleteAddress fragment = new DeleteAddress(-1);
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -91,8 +93,8 @@ public class DeleteAddress extends Fragment {
            // System.out.println(i);
             if(id == i)
             {
-               // System.out.println(id);
-                olddelete.add(new Adress("","",""));
+                // System.out.println(id);
+                // olddelete.add(new Adress("","",""));
             }else {
                 olddelete.add(new Adress(olddelete.get(i).getName(),olddelete.get(i).getPhone(),olddelete.get(i).getAdress()));
             }

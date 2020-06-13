@@ -27,6 +27,12 @@
             android:textStyle="normal|bold" />
     </LinearLayout>
 
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/adress_option_view"
         android:layout_width="match_parent"
