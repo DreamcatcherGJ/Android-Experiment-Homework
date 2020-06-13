@@ -11,8 +11,13 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.gson.Gson;
+
+import java.util.List;
+import homework.taohuo.bean.Adress;
 import homework.taohuo.GJ.JumpActivity;
 import homework.taohuo.R;
+import homework.taohuo.service.RWUser;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -20,9 +25,9 @@ import homework.taohuo.R;
  * create an instance of this fragment.
  */
 public class ModifyAddress extends Fragment {
+    private  List<Adress> address;
     private View view;
-    private Button btn1,btn2;
-    private EditText ed1;
+    private EditText r_address,r_name,r_phone;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -33,8 +38,10 @@ public class ModifyAddress extends Fragment {
     private String mParam1;
     private String mParam2;
 
+
+
     public ModifyAddress() {
-        // Required empty public constructor
+
     }
 
     /**
@@ -69,24 +76,63 @@ public class ModifyAddress extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.wzt_modify_address, container, false);
+
+       RWUser User = new RWUser();
+        User.RWUser(getActivity());
+        address = User.GetAddress();
+//        r_address=(EditText) view.findViewById(R.id.changeadress);//
+//        r_name=(EditText) view.findViewById(R.id.changename);//
+//        r_phone=(EditText) view.findViewById(R.id.changenumber);//
+//        Gson gson =new Gson();
+//        String s_address=gson.toJson(r_address);
+//        String s_name=gson.toJson(r_name);
+//        String s_phone=gson.toJson(r_phone);
+       // User.ChangeAddress(s_address+"     "+s_name+"      "+s_phone);
+        //User.ChangeAddress("123333333333");
+
         return view;
     }
 
     public void onActivityCreated(Bundle savedInstanceState) {
-
         super.onActivityCreated(savedInstanceState);
-        Button changeok = (Button) view.findViewById(R.id.changeok);
-        Button changecancel= (Button) view.findViewById(R.id.changecancel);
+        Button set = (Button) view.findViewById(R.id.changeok);
+        Button returnme= (Button) view.findViewById(R.id.changecancel);
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        changecancel.setOnClickListener(new View.OnClickListener() {
+        set.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
+
+
                 Intent intent = new Intent(getActivity(), JumpActivity.class);
-                intent.putExtra("id",74);
-                //   intent.putExtra("number",adress.getID());
+                intent.putExtra("id",71);
                 startActivity(intent);
             }
         });
 
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+        returnme.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), JumpActivity.class);
+                intent.putExtra("id",71);
+                startActivity(intent);
+            }
+        });
+
+
+
+
     }
+
 }
