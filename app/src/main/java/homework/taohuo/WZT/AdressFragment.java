@@ -22,7 +22,6 @@ import homework.taohuo.GX.ListFragment;
 import homework.taohuo.R;
 import homework.taohuo.bean.Adress;
 import homework.taohuo.bean.Shop;
-import homework.taohuo.service.RWUser;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -30,19 +29,18 @@ import homework.taohuo.service.RWUser;
 public class AdressFragment extends Fragment {
     private RecyclerView ListOptionView;
     private List<Adress> data = new ArrayList<>();
-
-    public AdressFragment() {
+     public AdressFragment() {
+        data.add(new Adress("1","汪真天","123456","黄山学院"));
+        data.add(new Adress("2","汪真天","123456","黄山学院"));
+        data.add(new Adress("3","汪真天","123456","黄山学院"));
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.wzt_adress, container, false);
-
-        RWUser User = new RWUser();
-        User.RWUser(getActivity());
-        data = User.GetAddress();
 
         ListOptionView = (RecyclerView) view.findViewById(R.id.adress_option_view);
         ListOptionView.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -65,9 +63,10 @@ public class AdressFragment extends Fragment {
             LayoutInflater inflater = getLayoutInflater();
             View view = inflater.inflate(R.layout.wzt_adress_option,parent,false);
             AdressFragment.MyViewHolder viewHolder = new AdressFragment.MyViewHolder(view);
-            System.out.println("222");
             return viewHolder;
         }
+
+
 
         @Override
         public void onBindViewHolder(AdressFragment.MyViewHolder viewHolder, final int position) {
@@ -77,16 +76,16 @@ public class AdressFragment extends Fragment {
             Button BTchange = (Button) v.findViewById(R.id.adress_change);
             Button BTdetele = (Button) v.findViewById(R.id.adress_detele);
 
-            Adress address = data.get(position);
+            final Adress adress = data.get(position);
 
-            viewUser.setText(address.getName()+"  "+address.getPhone());
-            viewDetail.setText(address.getAdress());
-
+            viewUser.setText(adress.getName()+"  "+adress.getPhone());
+            viewDetail.setText(adress.getAdress());
             BTchange.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(getActivity(), JumpActivity.class);
-                    intent.putExtra("id",72);
+                    intent.putExtra("id",4);
+                    intent.putExtra("number",adress.getID());
                     startActivity(intent);
                 }
             });
@@ -98,9 +97,14 @@ public class AdressFragment extends Fragment {
             });
         }
 
+
+
+
         @Override
         public int getItemCount() {
             return data.size();
         }
     }
 }
+
+

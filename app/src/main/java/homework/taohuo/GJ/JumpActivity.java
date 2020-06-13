@@ -13,12 +13,15 @@ import homework.taohuo.LS.CategoryFragment;
 import homework.taohuo.R;
 import homework.taohuo.WL.OrderTabFragment;
 import homework.taohuo.WZT.AdressFragment;
+import homework.taohuo.WZT.DeleteAddress;
 import homework.taohuo.WZT.ModifyAddress;
 import homework.taohuo.ZH.HomeFragment;
 import homework.taohuo.ZH.MineFragment;
 
 public class JumpActivity extends AppCompatActivity
 {
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -129,16 +132,11 @@ public class JumpActivity extends AppCompatActivity
             fragmentTransaction.add(R.id.fragment_container2, modifyAddress);
             fragmentTransaction.commit();
         }
+
         if (id == 73) {
-            //修改成功
-            ModifyAddress modifyAddress = new ModifyAddress();
-            fragmentTransaction.add(R.id.fragment_container2, modifyAddress);
-            fragmentTransaction.commit();
-        }
-        if (id == 74) {
-            //返回”我的收货地址“界面
-            AdressFragment adressFragment =  new AdressFragment();
-            fragmentTransaction.add(R.id.fragment_container2, adressFragment);
+            //进入删除界面
+            DeleteAddress deleteAddress =  new DeleteAddress();
+            fragmentTransaction.add(R.id.fragment_container2, deleteAddress);
             fragmentTransaction.commit();
         }
 
