@@ -32,10 +32,10 @@
 
             <TextView
                 android:id="@+id/hot_title"
-                android:layout_width="273dp"
-                android:layout_height="6dp"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
                 android:layout_marginTop="8dp"
-                android:layout_weight="2"
+                android:layout_weight="1"
                 android:text="@string/list_title"
                 android:textColor="#000000"
                 android:textSize="18sp"

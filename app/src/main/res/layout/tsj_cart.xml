@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cart_fragment"
@@ -9,11 +9,66 @@
     android:orientation="vertical"
     tools:context=".WL.OrderFragment">
 
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/cart_button1"
+            android:layout_width="138dp"
+            android:layout_height="36dp"
+            android:background="#E42525"
+            android:text="编辑" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="405dp"
+            android:layout_height="91dp"
+            android:background="#DA3E3E"
+            android:text="@string/tab_cart"
+            android:textAlignment="center"
+            android:textSize="18sp" />
+    </LinearLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/cart_option_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="3dp"
+        android:layout_height="0dp"
         android:background="#CDEFEFEF"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
         tools:context=".GX.ListFragment"></androidx.recyclerview.widget.RecyclerView>
-</LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <CheckBox
+            android:id="@+id/checkBox1"
+            android:layout_width="137dp"
+            android:layout_height="30dp"
+            android:background="#C3C2C2"
+            android:text="CheckBox"
+            tools:text="全选" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="31dp"
+            android:layout_weight="1"
+            android:text="TextView"
+            tools:text="合计" />
+
+        <Button
+            android:id="@+id/cart_button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#E81E1E"
+            android:text="去结算" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

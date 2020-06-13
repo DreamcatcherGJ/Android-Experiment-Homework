@@ -32,13 +32,12 @@ public class HotFragment extends Fragment {
     private List<Shop> data = new ArrayList<>();
     private List<String> number = new ArrayList<>();
 
-
-    public HotFragment (List<String> number) {
+    public HotFragment () {
+        number.add("1");
+        number.add("2");
+        number.add("3");
         GetShopMes needmes = new GetShopMes();
         data = needmes.GetShopMes(number);
-    }
-
-    public HotFragment(){
     }
 
     @Override
@@ -63,7 +62,7 @@ public class HotFragment extends Fragment {
 
                     //跳转到新Activiyt
                     Intent intent = new Intent(getActivity(), JumpActivity.class);
-                    intent.putExtra("id",21);
+                    intent.putExtra("id",11);
                     intent.putExtra("shop_id",shop.getId());
                     startActivity(intent);
                 }
@@ -95,6 +94,13 @@ public class HotFragment extends Fragment {
             viewHeadImage.setImageResource(shop.getHeadImage());
             viewTitle.setText(shop.getTitle());
             viewPrice.setText(shop.getPrice());
+
+            viewButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                }
+            });
         }
 
         @Override

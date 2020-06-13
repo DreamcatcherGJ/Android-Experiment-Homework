@@ -61,7 +61,7 @@ public class JumpActivity extends AppCompatActivity
 
         //谷杭豫：11-20
         if (id == 11) {
-            //商品ID
+            //商品详情
             String shop_id = getIntent().getStringExtra("shop_id");
 
             ShopDetailFragment shopDetailFragment = new ShopDetailFragment(shop_id);

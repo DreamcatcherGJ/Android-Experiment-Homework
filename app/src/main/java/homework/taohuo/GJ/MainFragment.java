@@ -15,6 +15,7 @@ import java.util.List;
 
 import homework.taohuo.LS.CategoryFragment;
 import homework.taohuo.R;
+import homework.taohuo.TSJ.CartFragment;
 import homework.taohuo.TSJ.HotFragment;
 import homework.taohuo.ZH.HomeFragment;
 import homework.taohuo.ZH.MineFragment;
@@ -44,11 +45,12 @@ public class MainFragment extends Fragment
         MineFragment mineFragment = new MineFragment();
         CategoryFragment categoryFragment = new CategoryFragment();
         HotFragment hotFragment = new HotFragment();
+        CartFragment cartFragment = new CartFragment();
         mFragments = new ArrayList<>(1);
         mFragments.add(homeFragment);
         mFragments.add(hotFragment);
         mFragments.add(categoryFragment);
-        mFragments.add(BlankFragment.newInstance("购物车"));
+        mFragments.add(cartFragment);
         mFragments.add(mineFragment);
 
         mAdapter = new MyFragmentPagerAdapter(getFragmentManager(), mFragments);
