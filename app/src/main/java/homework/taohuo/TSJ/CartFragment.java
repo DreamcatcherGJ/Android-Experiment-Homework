@@ -14,6 +14,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,6 +31,8 @@ import homework.taohuo.service.GetShopMes;
 public class CartFragment extends Fragment {
     private RecyclerView ListOptionView;
     private List<Shop> data = new ArrayList<>();
+    private Gson gson=new Gson();
+    private List<String> ListNumber = new ArrayList<>();
 
     public CartFragment(List<String> number) {
         GetShopMes needmes = new GetShopMes();
@@ -39,6 +44,8 @@ public class CartFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.tsj_cart, container, false);
+
+
 
         ListOptionView = (RecyclerView) view.findViewById(R.id.hot_option_view);
         ListOptionView.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -81,7 +88,7 @@ public class CartFragment extends Fragment {
             View v = viewHolder.itemView;
             ImageView viewHeadImage = (ImageView) v.findViewById(R.id.cart_headimage);
             TextView viewTitle = (TextView) v.findViewById(R.id.cart_title);
-            TextView viewPrice = (TextView) v.findViewById(R.id.hot_price);
+            TextView viewPrice = (TextView) v.findViewById(R.id.cart_price);
             Button viewButton = (Button) v.findViewById(R.id.cart_button1);
             Button viewButton2 = (Button) v.findViewById(R.id.cart_button2);
 

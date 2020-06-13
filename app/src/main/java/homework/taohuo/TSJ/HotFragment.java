@@ -61,6 +61,7 @@ public class HotFragment extends Fragment {
         ListOptionView = (RecyclerView) v.findViewById(R.id.hot_option_view);
         ListOptionView.setLayoutManager(new LinearLayoutManager(getContext()));
         ListOptionView.setAdapter(new OrderFragment.MyAdapter());
+
         ListFragment listFragment = new ListFragment(number);
 
         for (int i = 0;i < number.size(); i++) {
