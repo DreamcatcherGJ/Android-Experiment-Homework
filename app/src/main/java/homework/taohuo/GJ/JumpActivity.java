@@ -12,6 +12,7 @@ import homework.taohuo.GX.ListFragment;
 import homework.taohuo.R;
 import homework.taohuo.WL.OrderTabFragment;
 import homework.taohuo.WZT.AdressFragment;
+import homework.taohuo.WZT.CreateAddress;
 import homework.taohuo.WZT.DeleteAddress;
 import homework.taohuo.WZT.ModifyAddress;
 
@@ -125,6 +126,14 @@ public class JumpActivity extends AppCompatActivity
 
             DeleteAddress deleteAddress =  new DeleteAddress(number);
             fragmentTransaction.add(R.id.fragment_container2, deleteAddress);
+            fragmentTransaction.commit();
+        }
+        if (id == 74) {
+            //进入新增界面
+            int number = getIntent().getIntExtra("Number",-1);
+
+            CreateAddress createAddress =new CreateAddress(number);
+            fragmentTransaction.add(R.id.fragment_container2, createAddress);
             fragmentTransaction.commit();
         }
 

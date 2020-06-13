@@ -77,7 +77,7 @@ public class AdressFragment extends Fragment {
             TextView viewDetail = (TextView) v.findViewById(R.id.adress_detail);
             Button BTchange = (Button) v.findViewById(R.id.adress_change);
             Button BTdetele = (Button) v.findViewById(R.id.adress_detele);
-
+            Button BTcreate =(Button) v.findViewById(R.id.address_create);
             final Adress adress = data.get(position);
 
             viewUser.setText(adress.getName()+"  "+adress.getPhone());
@@ -85,7 +85,6 @@ public class AdressFragment extends Fragment {
             BTchange.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    System.out.println("aaaaa:"+position);
                     Intent intent = new Intent(getActivity(), JumpActivity.class);
                     intent.putExtra("id",72);
                     intent.putExtra("Number",position);
@@ -97,6 +96,15 @@ public class AdressFragment extends Fragment {
                 public void onClick(View v) {
                     Intent intent = new Intent(getActivity(), JumpActivity.class);
                     intent.putExtra("id",73);
+                    intent.putExtra("Number",position);
+                    startActivity(intent);
+                }
+            });
+            BTcreate.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(getActivity(), JumpActivity.class);
+                    intent.putExtra("id",74);
                     intent.putExtra("Number",position);
                     startActivity(intent);
                 }

@@ -28,10 +28,10 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/address_create"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:text="新建" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/adress_option_view"
