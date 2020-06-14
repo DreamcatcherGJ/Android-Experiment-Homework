@@ -24,6 +24,7 @@ import homework.taohuo.GJ.JumpActivity;
 import homework.taohuo.R;
 import homework.taohuo.bean.Shop;
 import homework.taohuo.service.GetShopMes;
+import homework.taohuo.service.RWUser;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -34,9 +35,7 @@ public class CartFragment extends Fragment {
     private Gson gson=new Gson();
     private List<String> ListNumber = new ArrayList<>();
 
-    public CartFragment(List<String> number) {
-        GetShopMes needmes = new GetShopMes();
-        data = needmes.GetShopMes(number);
+    public CartFragment() {
     }
 
     @Override
@@ -45,11 +44,17 @@ public class CartFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.tsj_cart, container, false);
 
-
-
-        ListOptionView = (RecyclerView) view.findViewById(R.id.hot_option_view);
+        ListOptionView = (RecyclerView) view.findViewById(R.id.cart_option_view);
         ListOptionView.setLayoutManager(new LinearLayoutManager(getContext()));
         ListOptionView.setAdapter(new CartFragment.MyAdapter());
+
+        RWUser User = new RWUser();
+        User.RWUser(getActivity());
+        ListNumber = User.GetCart();
+
+        GetShopMes needmes = new GetShopMes();
+        data = needmes.GetShopMes(ListNumber);
+
         return view;
     }
 

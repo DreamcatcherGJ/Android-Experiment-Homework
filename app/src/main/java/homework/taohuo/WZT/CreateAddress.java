@@ -15,35 +15,38 @@ import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import homework.taohuo.bean.Adress;
 import homework.taohuo.GJ.JumpActivity;
 import homework.taohuo.R;
-import homework.taohuo.WL.OrderFragment;
-import homework.taohuo.bean.Adress;
 import homework.taohuo.service.RWUser;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link DeleteAddress#newInstance} factory method to
+ * Use the {@link CreateAddress#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class DeleteAddress extends Fragment {
-    private  List<Adress> olddelete = new ArrayList<>();
-    private  List<Adress> newdelete = new ArrayList<>();
+public class CreateAddress extends Fragment {
+    private  List<Adress> oldaddress = new ArrayList<>();
+    private  List<Adress> newaddress = new ArrayList<>();
+
+    private View view;
+    private EditText r_address,r_name,r_phone;
     private int id;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-    private View view;
+
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
-    public DeleteAddress(int id) {
-        // Required empty public constructor
+
+
+    public CreateAddress(int id) {
         this.id =  id;
+        System.out.println(this.id);
     }
 
     /**
@@ -52,11 +55,11 @@ public class DeleteAddress extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment DeleteAddress.
+     * @return A new instance of fragment ModifyAddress.
      */
     // TODO: Rename and change types and number of parameters
-    public static DeleteAddress newInstance(String param1, String param2) {
-        DeleteAddress fragment = new DeleteAddress(-1);
+    public static CreateAddress newInstance(String param1, String param2) {
+        CreateAddress fragment = new CreateAddress(-1);
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -72,42 +75,69 @@ public class DeleteAddress extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        view= inflater.inflate(R.layout.wzt_delete_address, container, false);
+        view = inflater.inflate(R.layout.wzt_create_address, container, false);
 
         RWUser User = new RWUser();
         User.RWUser(getActivity());
-        olddelete = User.GetAddress();
+        oldaddress = User.GetAddress();
+        r_address=(EditText) view.findViewById(R.id.createadress);
+        String addtes1 = r_address.getText().toString();
+        r_name=(EditText) view.findViewById(R.id.createname);
+        String addtes2 = r_name.getText().toString();
+        r_phone=(EditText) view.findViewById(R.id.createnumber);
+        String addtes3 = r_phone.getText().toString();
 
-
-
-        for (int i=0;i<olddelete.size();i++)
+        for (int i=0;i<oldaddress.size()+1;i++)
         {
             if(id == i)
             {
-                // olddelete.add(new Adress("","",""));
+                newaddress.add(new Adress(addtes2,addtes3,addtes1));
             }else {
-                olddelete.add(new Adress(olddelete.get(i).getName(),olddelete.get(i).getPhone(),olddelete.get(i).getAdress()));
+                newaddress.add(new Adress(oldaddress.get(i).getName(),oldaddress.get(i).getPhone(),oldaddress.get(i).getAdress()));
             }
         }
 
+      oldaddress.add(new Adress(addtes1,addtes2,addtes3));
+
+
         Gson gson =new Gson();
-        String newaddressStr = gson.toJson(newdelete);
+        String newaddressStr = gson.toJson(oldaddress);
         User.ChangeAddress(newaddressStr);
 
         return view;
     }
-    @Override
-
 
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        Button Delete = (Button) view.findViewById(R.id.button1);
-        Button returnmine= (Button) view.findViewById(R.id.button2);
+        Button set = (Button) view.findViewById(R.id.changeok);
+        Button returnme= (Button) view.findViewById(R.id.changecancel);
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        returnmine.setOnClickListener(new View.OnClickListener() {
+        set.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(getActivity(), JumpActivity.class);
+                intent.putExtra("id",71);
+                startActivity(intent);
+            }
+        });
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+        returnme.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), JumpActivity.class);
@@ -116,14 +146,9 @@ public class DeleteAddress extends Fragment {
             }
         });
 
-        Delete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), JumpActivity.class);
-                intent.putExtra("id",71);
-                startActivity(intent);
-            }
-        });
+
+
 
     }
+
 }

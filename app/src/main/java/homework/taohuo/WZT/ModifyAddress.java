@@ -13,6 +13,7 @@ import android.widget.EditText;
 
 import com.google.gson.Gson;
 
+import java.util.ArrayList;
 import java.util.List;
 import homework.taohuo.bean.Adress;
 import homework.taohuo.GJ.JumpActivity;
@@ -25,9 +26,11 @@ import homework.taohuo.service.RWUser;
  * create an instance of this fragment.
  */
 public class ModifyAddress extends Fragment {
-    private  List<Adress> address;
+    private  List<Adress> oldaddress = new ArrayList<>();
+    private  List<Adress> newaddress = new ArrayList<>();
     private View view;
     private EditText r_address,r_name,r_phone;
+    private int id;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -40,8 +43,9 @@ public class ModifyAddress extends Fragment {
 
 
 
-    public ModifyAddress() {
-
+    public ModifyAddress(int id) {
+        this.id =  id;
+        System.out.println(this.id);
     }
 
     /**
@@ -54,7 +58,7 @@ public class ModifyAddress extends Fragment {
      */
     // TODO: Rename and change types and number of parameters
     public static ModifyAddress newInstance(String param1, String param2) {
-        ModifyAddress fragment = new ModifyAddress();
+        ModifyAddress fragment = new ModifyAddress(-1);
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -77,18 +81,31 @@ public class ModifyAddress extends Fragment {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.wzt_modify_address, container, false);
 
-       RWUser User = new RWUser();
+        RWUser User = new RWUser();
         User.RWUser(getActivity());
-        address = User.GetAddress();
-//        r_address=(EditText) view.findViewById(R.id.changeadress);//
-//        r_name=(EditText) view.findViewById(R.id.changename);//
-//        r_phone=(EditText) view.findViewById(R.id.changenumber);//
-//        Gson gson =new Gson();
-//        String s_address=gson.toJson(r_address);
-//        String s_name=gson.toJson(r_name);
-//        String s_phone=gson.toJson(r_phone);
-       // User.ChangeAddress(s_address+"     "+s_name+"      "+s_phone);
-        //User.ChangeAddress("123333333333");
+        oldaddress = User.GetAddress();
+        r_address=(EditText) view.findViewById(R.id.changeadress);
+        String addtes1 = r_address.getText().toString();
+        r_name=(EditText) view.findViewById(R.id.changename);
+        String addtes2 = r_name.getText().toString();
+        r_phone=(EditText) view.findViewById(R.id.changenumber);
+        String addtes3 = r_phone.getText().toString();
+
+
+        for (int i=0;i<oldaddress.size();i++)
+        {
+            if(id == i)
+            {
+                newaddress.add(new Adress(addtes2,addtes3,addtes1));
+            }else {
+                newaddress.add(new Adress(oldaddress.get(i).getName(),oldaddress.get(i).getPhone(),oldaddress.get(i).getAdress()));
+            }
+        }
+
+
+        Gson gson =new Gson();
+        String newaddressStr = gson.toJson(newaddress);
+        User.ChangeAddress(newaddressStr);
 
         return view;
     }
@@ -102,9 +119,6 @@ public class ModifyAddress extends Fragment {
         set.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
-
 
                 Intent intent = new Intent(getActivity(), JumpActivity.class);
                 intent.putExtra("id",71);

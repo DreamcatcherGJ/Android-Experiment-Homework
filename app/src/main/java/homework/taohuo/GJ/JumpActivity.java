@@ -13,6 +13,7 @@ import homework.taohuo.LS.CategoryFragment;
 import homework.taohuo.R;
 import homework.taohuo.WL.OrderTabFragment;
 import homework.taohuo.WZT.AdressFragment;
+import homework.taohuo.WZT.CreateAddress;
 import homework.taohuo.WZT.DeleteAddress;
 import homework.taohuo.WZT.ModifyAddress;
 import homework.taohuo.ZH.HomeFragment;
@@ -64,7 +65,7 @@ public class JumpActivity extends AppCompatActivity
 
         //谷杭豫：11-20
         if (id == 11) {
-            //商品ID
+            //商品详情
             String shop_id = getIntent().getStringExtra("shop_id");
 
             ShopDetailFragment shopDetailFragment = new ShopDetailFragment(shop_id);
@@ -128,15 +129,27 @@ public class JumpActivity extends AppCompatActivity
         }
         if (id == 72) {
             //修改我的收货地址
-            ModifyAddress modifyAddress = new ModifyAddress();
+            int number = getIntent().getIntExtra("Number",-1);
+
+            ModifyAddress modifyAddress = new ModifyAddress(number);
             fragmentTransaction.add(R.id.fragment_container2, modifyAddress);
             fragmentTransaction.commit();
         }
 
         if (id == 73) {
             //进入删除界面
-            DeleteAddress deleteAddress =  new DeleteAddress();
+            int number = getIntent().getIntExtra("Number",-1);
+
+            DeleteAddress deleteAddress =  new DeleteAddress(number);
             fragmentTransaction.add(R.id.fragment_container2, deleteAddress);
+            fragmentTransaction.commit();
+        }
+        if (id == 74) {
+            //进入新增界面
+            int number = getIntent().getIntExtra("Number",-1);
+
+            CreateAddress createAddress =new CreateAddress(number);
+            fragmentTransaction.add(R.id.fragment_container2, createAddress);
             fragmentTransaction.commit();
         }
 

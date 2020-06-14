@@ -1,5 +1,6 @@
 package homework.taohuo.WZT;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -22,6 +23,7 @@ import homework.taohuo.GX.ListFragment;
 import homework.taohuo.R;
 import homework.taohuo.bean.Adress;
 import homework.taohuo.bean.Shop;
+import homework.taohuo.service.RWUser;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -30,9 +32,7 @@ public class AdressFragment extends Fragment {
     private RecyclerView ListOptionView;
     private List<Adress> data = new ArrayList<>();
      public AdressFragment() {
-        data.add(new Adress("1","汪真天","123456","黄山学院"));
-        data.add(new Adress("2","汪真天","123456","黄山学院"));
-        data.add(new Adress("3","汪真天","123456","黄山学院"));
+
     }
 
 
@@ -46,6 +46,20 @@ public class AdressFragment extends Fragment {
         ListOptionView.setLayoutManager(new LinearLayoutManager(getContext()));
         ListOptionView.setAdapter(new AdressFragment.MyAdapter());
 
+        RWUser User = new RWUser();
+        User.RWUser(getActivity());
+        data = User.GetAddress();
+
+        Button BTdetele = (Button) view.findViewById(R.id.adress_detele);
+        BTdetele.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), JumpActivity.class);
+                intent.putExtra("id",73);
+
+                startActivity(intent);
+            }
+        });
         return view;
     }
 
@@ -75,7 +89,7 @@ public class AdressFragment extends Fragment {
             TextView viewDetail = (TextView) v.findViewById(R.id.adress_detail);
             Button BTchange = (Button) v.findViewById(R.id.adress_change);
             Button BTdetele = (Button) v.findViewById(R.id.adress_detele);
-
+            Button BTcreate =(Button) v.findViewById(R.id.address_create);
             final Adress adress = data.get(position);
 
             viewUser.setText(adress.getName()+"  "+adress.getPhone());
@@ -84,17 +98,21 @@ public class AdressFragment extends Fragment {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(getActivity(), JumpActivity.class);
-                    intent.putExtra("id",4);
-                    intent.putExtra("number",adress.getID());
+                    intent.putExtra("id",72);
+                    intent.putExtra("Number",position);
                     startActivity(intent);
                 }
             });
             BTdetele.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
+                    Intent intent = new Intent(getActivity(), JumpActivity.class);
+                    intent.putExtra("id",73);
+                    intent.putExtra("Number",position);
+                    startActivity(intent);
                 }
             });
+
         }
 
 

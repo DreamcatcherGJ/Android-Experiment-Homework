@@ -32,25 +32,12 @@ public class HotFragment extends Fragment {
     private List<Shop> data = new ArrayList<>();
     private List<String> number = new ArrayList<>();
 
-
-    public HotFragment (List<String> number) {
-        GetShopMes needmes = new GetShopMes();
-        data = needmes.GetShopMes(number);
-    }
-
-    public HotFragment(){
-        number.add("13");
+    public HotFragment () {
+        number.add("1");
         number.add("2");
         number.add("3");
-        number.add("4");
-        number.add("5");
-        number.add("6");
-        number.add("7");
-        number.add("8");
-        number.add("9");
-        number.add("10");
-        number.add("11");
-
+        GetShopMes needmes = new GetShopMes();
+        data = needmes.GetShopMes(number);
     }
 
     @Override
@@ -58,15 +45,9 @@ public class HotFragment extends Fragment {
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.tsj_hot, container, false);
 
-        ListOptionView = (RecyclerView) v.findViewById(R.id.hot_option_view);
+        ListOptionView = (RecyclerView) v.findViewById(R.id.hot1_option_view);
         ListOptionView.setLayoutManager(new LinearLayoutManager(getContext()));
-        ListOptionView.setAdapter(new OrderFragment.MyAdapter());
-
-        ListFragment listFragment = new ListFragment(number);
-
-        for (int i = 0;i < number.size(); i++) {
-            System.out.println(number.get(i));
-        }
+        ListOptionView.setAdapter(new HotFragment.MyAdapter());
 
         return v;
     }
@@ -81,7 +62,7 @@ public class HotFragment extends Fragment {
 
                     //跳转到新Activiyt
                     Intent intent = new Intent(getActivity(), JumpActivity.class);
-                    intent.putExtra("id",21);
+                    intent.putExtra("id",11);
                     intent.putExtra("shop_id",shop.getId());
                     startActivity(intent);
                 }
@@ -113,6 +94,13 @@ public class HotFragment extends Fragment {
             viewHeadImage.setImageResource(shop.getHeadImage());
             viewTitle.setText(shop.getTitle());
             viewPrice.setText(shop.getPrice());
+
+            viewButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                }
+            });
         }
 
         @Override
