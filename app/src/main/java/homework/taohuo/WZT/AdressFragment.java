@@ -1,5 +1,6 @@
 package homework.taohuo.WZT;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -30,9 +31,8 @@ import homework.taohuo.service.RWUser;
 public class AdressFragment extends Fragment {
     private RecyclerView ListOptionView;
     private List<Adress> data = new ArrayList<>();
-
      public AdressFragment() {
-         /**/
+
     }
 
 
@@ -50,16 +50,16 @@ public class AdressFragment extends Fragment {
         User.RWUser(getActivity());
         data = User.GetAddress();
 
-        Button BTcreate =(Button) view.findViewById(R.id.address_create);
-        BTcreate.setOnClickListener(new View.OnClickListener() {
+        Button BTdetele = (Button) view.findViewById(R.id.adress_detele);
+        BTdetele.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), JumpActivity.class);
-                intent.putExtra("id",74);
+                intent.putExtra("id",73);
+
                 startActivity(intent);
             }
         });
-
         return view;
     }
 
@@ -112,7 +112,11 @@ public class AdressFragment extends Fragment {
                     startActivity(intent);
                 }
             });
+
         }
+
+
+
 
         @Override
         public int getItemCount() {
