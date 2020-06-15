@@ -31,8 +31,8 @@
 
         <TextView
             android:id="@+id/cart_title"
-            android:layout_width="87dp"
-            android:layout_height="87dp"
+            android:layout_width="90dp"
+            android:layout_height="70dp"
             android:layout_weight="1"
             android:text="TextView"
             tools:text="@string/shop_detail" />

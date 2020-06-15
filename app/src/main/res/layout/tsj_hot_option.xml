@@ -62,8 +62,8 @@
 
                 <Button
                     android:id="@+id/hot_button"
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent"
+                    android:layout_width="66dp"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="end"
                     android:background="#EA2727"
                     android:gravity="center"
