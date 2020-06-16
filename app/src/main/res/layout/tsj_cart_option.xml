@@ -23,16 +23,16 @@
 
         <ImageView
             android:id="@+id/cart_headimage"
-            android:layout_width="146dp"
-            android:layout_height="124dp"
+            android:layout_width="wrap_content"
+            android:layout_height="137dp"
             android:layout_margin="5dp"
             android:contentDescription="@string/list_headimage"
             app:srcCompat="@drawable/ic_launcher_foreground" />
 
         <TextView
             android:id="@+id/cart_title"
-            android:layout_width="87dp"
-            android:layout_height="87dp"
+            android:layout_width="107dp"
+            android:layout_height="74dp"
             android:layout_weight="1"
             android:text="TextView"
             tools:text="@string/shop_detail" />

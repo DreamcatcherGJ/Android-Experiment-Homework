@@ -50,12 +50,12 @@ public class AdressFragment extends Fragment {
         User.RWUser(getActivity());
         data = User.GetAddress();
 
-        Button BTdetele = (Button) view.findViewById(R.id.adress_detele);
-        BTdetele.setOnClickListener(new View.OnClickListener() {
+        Button BTcreate = (Button) view.findViewById(R.id.address_create);
+        BTcreate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), JumpActivity.class);
-                intent.putExtra("id",73);
+                intent.putExtra("id",74);
 
                 startActivity(intent);
             }
@@ -89,7 +89,6 @@ public class AdressFragment extends Fragment {
             TextView viewDetail = (TextView) v.findViewById(R.id.adress_detail);
             Button BTchange = (Button) v.findViewById(R.id.adress_change);
             Button BTdetele = (Button) v.findViewById(R.id.adress_detele);
-            Button BTcreate =(Button) v.findViewById(R.id.address_create);
             final Adress adress = data.get(position);
 
             viewUser.setText(adress.getName()+"  "+adress.getPhone());

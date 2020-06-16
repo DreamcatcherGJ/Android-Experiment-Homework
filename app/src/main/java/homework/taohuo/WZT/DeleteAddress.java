@@ -89,7 +89,7 @@ public class DeleteAddress extends Fragment {
             {
                 // olddelete.add(new Adress("","",""));
             }else {
-                olddelete.add(new Adress(olddelete.get(i).getName(),olddelete.get(i).getPhone(),olddelete.get(i).getAdress()));
+                newdelete.add(new Adress(olddelete.get(i).getName(),olddelete.get(i).getPhone(),olddelete.get(i).getAdress()));
             }
         }
 
