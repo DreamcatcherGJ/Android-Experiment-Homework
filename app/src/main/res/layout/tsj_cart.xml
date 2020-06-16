@@ -11,25 +11,29 @@
 
     <LinearLayout
         android:id="@+id/linearLayout4"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/cart_button1"
-            android:layout_width="138dp"
-            android:layout_height="36dp"
-            android:background="#E42525"
-            android:text="编辑" />
+        android:layout_width="406dp"
+        android:layout_height="68dp"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteY="-6dp">
 
         <TextView
             android:id="@+id/textView15"
-            android:layout_width="405dp"
-            android:layout_height="91dp"
-            android:background="#DA3E3E"
+            android:layout_width="358dp"
+            android:layout_height="match_parent"
+            android:background="#F44336"
             android:text="@string/tab_cart"
             android:textAlignment="center"
+            android:textColor="#00BCD4"
             android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/cart_button1"
+            android:layout_width="53dp"
+            android:layout_height="match_parent"
+            android:background="#F44336"
+            android:text="编辑"
+            android:textColor="#FFFFFF" />
+
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -53,22 +57,23 @@
             android:layout_width="137dp"
             android:layout_height="30dp"
             android:background="#C3C2C2"
-            android:text="CheckBox"
-            tools:text="全选" />
+            android:text="全选" />
 
         <TextView
             android:id="@+id/textView13"
-            android:layout_width="wrap_content"
-            android:layout_height="31dp"
+            android:layout_width="195dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="TextView"
+            android:text="合计"
             tools:text="合计" />
 
         <Button
             android:id="@+id/cart_button2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="74dp"
+            android:layout_height="27dp"
             android:background="#E81E1E"
-            android:text="去结算" />
+            android:text="去结算"
+            android:textColor="#FFFFFF" />
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
