@@ -15,9 +15,11 @@ import homework.taohuo.WZT.AdressFragment;
 import homework.taohuo.WZT.CreateAddress;
 import homework.taohuo.WZT.DeleteAddress;
 import homework.taohuo.WZT.ModifyAddress;
+import homework.taohuo.ZH.MineFragment;
 
 public class JumpActivity extends AppCompatActivity
 {
+
 
 
     @Override
@@ -135,6 +137,7 @@ public class JumpActivity extends AppCompatActivity
             fragmentTransaction.add(R.id.fragment_container2, createAddress);
             fragmentTransaction.commit();
         }
+
 
         //王锦：81-90
 
