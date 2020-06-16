@@ -31,6 +31,7 @@ public class HotFragment extends Fragment {
     private RecyclerView ListOptionView;
     private List<Shop> data = new ArrayList<>();
     private List<String> number = new ArrayList<>();
+    private Shop shop;
 
     public HotFragment () {
         number.add("1");
@@ -93,7 +94,7 @@ public class HotFragment extends Fragment {
             TextView viewPrice = (TextView) v.findViewById(R.id.hot_price);
             Button viewButton = (Button) v.findViewById(R.id.hot_button);
 
-            Shop shop = data.get(position);
+            shop = data.get(position);
 
             viewHeadImage.setImageResource(shop.getHeadImage());
             viewTitle.setText(shop.getTitle());
@@ -102,7 +103,9 @@ public class HotFragment extends Fragment {
             viewButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
+                    Intent intent = new Intent(getActivity(), JumpActivity.class);
+                    intent.putExtra("id",31);
+                    startActivity(intent);
                 }
             });
         }

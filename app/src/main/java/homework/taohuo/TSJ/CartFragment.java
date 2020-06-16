@@ -55,6 +55,22 @@ public class CartFragment extends Fragment {
         GetShopMes needmes = new GetShopMes();
         data = needmes.GetShopMes(ListNumber);
 
+        Button viewButton = (Button) view.findViewById(R.id.cart_button1);
+        Button viewButton2 = (Button) view.findViewById(R.id.cart_button2);
+        viewButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            }
+        });
+        viewButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), JumpActivity.class);
+                intent.putExtra("id",31);
+                startActivity(intent);
+            }
+        });
+
         return view;
     }
 
@@ -94,8 +110,6 @@ public class CartFragment extends Fragment {
             ImageView viewHeadImage = (ImageView) v.findViewById(R.id.cart_headimage);
             TextView viewTitle = (TextView) v.findViewById(R.id.cart_title);
             TextView viewPrice = (TextView) v.findViewById(R.id.cart_price);
-            Button viewButton = (Button) v.findViewById(R.id.cart_button1);
-            Button viewButton2 = (Button) v.findViewById(R.id.cart_button2);
 
             Shop shop = data.get(position);
 
