@@ -27,7 +27,6 @@ import homework.taohuo.service.RWUser;
  */
 public class CreateAddress extends Fragment {
     private  List<Adress> oldaddress = new ArrayList<>();
-    private  List<Adress> newaddress = new ArrayList<>();
 
     private View view;
     private EditText r_address,r_name,r_phone;
@@ -92,17 +91,8 @@ public class CreateAddress extends Fragment {
         r_phone=(EditText) view.findViewById(R.id.createnumber);
         String addtes3 = r_phone.getText().toString();
 
-        for (int i=0;i<oldaddress.size()+1;i++)
-        {
-            if(id == i)
-            {
-                newaddress.add(new Adress(addtes2,addtes3,addtes1));
-            }else {
-                newaddress.add(new Adress(oldaddress.get(i).getName(),oldaddress.get(i).getPhone(),oldaddress.get(i).getAdress()));
-            }
-        }
 
-      oldaddress.add(new Adress(addtes1,addtes2,addtes3));
+        oldaddress.add(new Adress(addtes1,addtes2,addtes3));
 
 
         Gson gson =new Gson();
