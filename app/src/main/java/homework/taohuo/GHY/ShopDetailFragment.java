@@ -13,6 +13,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -27,6 +29,7 @@ import homework.taohuo.bean.Shop;
  */
 public class ShopDetailFragment extends Fragment {
     private List<Shop> shopdata = new ArrayList<>();
+    private Shop shop;
     private View v;
     private LinearLayout myLinearLayout;
 
@@ -58,7 +61,7 @@ public class ShopDetailFragment extends Fragment {
         Button shop_buy = (Button) v.findViewById(R.id.shop_buy);
 
         myLinearLayout = Objects.requireNonNull(getActivity()).findViewById(R.id.myLinearLayout);
-        Shop shop = shopdata.get(0);
+        shop = shopdata.get(0);
 
         shop_name.setText(shop.getTitle());
         head_image.setImageResource(shop.getHeadImage());
@@ -69,8 +72,14 @@ public class ShopDetailFragment extends Fragment {
         shop_buy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                List<String> number = new ArrayList<>();
+                number.add(shop.getId());
+                Gson gson=new Gson();
+                String listNum = gson.toJson(number);
+
                 Intent intent = new Intent(getActivity(), JumpActivity.class);
                 intent.putExtra("id",31);
+                intent.putExtra("OrderNumber",listNum);
                 startActivity(intent);
             }
         });

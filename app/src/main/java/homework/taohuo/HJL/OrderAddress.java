@@ -13,6 +13,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,9 +30,10 @@ public class OrderAddress extends Fragment
 {
     private RecyclerView ListOptionView;
     private List<Adress> data = new ArrayList<>();
+    private List<String> number = new ArrayList<>();
 
-    public OrderAddress() {
-        // Required empty public constructor
+    public OrderAddress(List<String> number) {
+        this.number = number;
     }
 
 
@@ -58,11 +61,14 @@ public class OrderAddress extends Fragment
                 @Override
                 public void onClick(View v) {
                     int position = getAdapterPosition();
+                    Gson gson=new Gson();
+                    String listNum = gson.toJson(number);
 
-                    //跳转到新Activiyt
-//                    Intent intent = new Intent(getActivity(), JumpActivity.class);
-//                    intent.putExtra("id",11);
-//                    startActivity(intent);
+                    Intent intent = new Intent(getActivity(), JumpActivity.class);
+                    intent.putExtra("id",31);
+                    intent.putExtra("AddressNumber",position);
+                    intent.putExtra("OrderNumber",listNum);
+                    startActivity(intent);
 
                 }
             });

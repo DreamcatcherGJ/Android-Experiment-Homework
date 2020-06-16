@@ -14,6 +14,8 @@ import androidx.fragment.app.ListFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.gson.Gson;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -101,10 +103,17 @@ public class HotFragment extends Fragment {
             viewPrice.setText(shop.getPrice());
 
             viewButton.setOnClickListener(new View.OnClickListener() {
+                String shopNumber = shop.getId();
                 @Override
                 public void onClick(View v) {
+                    List<String> number = new ArrayList<>();
+                    number.add(shopNumber);
+                    Gson gson=new Gson();
+                    String listNum = gson.toJson(number);
+
                     Intent intent = new Intent(getActivity(), JumpActivity.class);
                     intent.putExtra("id",31);
+                    intent.putExtra("OrderNumber",listNum);
                     startActivity(intent);
                 }
             });

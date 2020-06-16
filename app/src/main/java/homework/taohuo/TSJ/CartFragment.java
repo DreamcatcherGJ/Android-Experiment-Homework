@@ -31,6 +31,7 @@ import homework.taohuo.service.RWUser;
  */
 public class CartFragment extends Fragment {
     private RecyclerView ListOptionView;
+    private Shop shop;
     private List<Shop> data = new ArrayList<>();
     private Gson gson=new Gson();
     private List<String> ListNumber = new ArrayList<>();
@@ -65,8 +66,14 @@ public class CartFragment extends Fragment {
         viewButton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                List<String> number = new ArrayList<>();
+                number.add(shop.getId());
+                Gson gson=new Gson();
+                String listNum = gson.toJson(number);
+
                 Intent intent = new Intent(getActivity(), JumpActivity.class);
                 intent.putExtra("id",31);
+                intent.putExtra("OrderNumber",listNum);
                 startActivity(intent);
             }
         });
@@ -111,7 +118,7 @@ public class CartFragment extends Fragment {
             TextView viewTitle = (TextView) v.findViewById(R.id.cart_title);
             TextView viewPrice = (TextView) v.findViewById(R.id.cart_price);
 
-            Shop shop = data.get(position);
+            shop = data.get(position);
 
             viewHeadImage.setImageResource(shop.getHeadImage());
             viewTitle.setText(shop.getTitle());

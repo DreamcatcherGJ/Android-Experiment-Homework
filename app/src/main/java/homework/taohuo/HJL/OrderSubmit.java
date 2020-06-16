@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -14,10 +16,13 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import homework.taohuo.GJ.JumpActivity;
+import homework.taohuo.GJ.MainFragment;
 import homework.taohuo.GX.ListFragment;
 import homework.taohuo.R;
 import homework.taohuo.bean.Adress;
@@ -29,12 +34,16 @@ import homework.taohuo.service.RWUser;
 public class OrderSubmit extends Fragment
 {
     private RecyclerView ListOptionView;
-    private List<String> ListNumber = new ArrayList<>();
+    int address = 0;
     private List<Shop> data = new ArrayList<>();
     private List<Adress> data2 = new ArrayList<>();
+    private List<String> number = new ArrayList<>();
 
-    public OrderSubmit() {
-        // Required empty public constructor
+    public OrderSubmit(List<String> number, int address) {
+        this.number = number;
+        GetShopMes needmes = new GetShopMes();
+        data = needmes.GetShopMes(number);
+        this.address = address;
     }
 
     @Override
@@ -49,9 +58,6 @@ public class OrderSubmit extends Fragment
 
         RWUser User = new RWUser();
         User.RWUser(getActivity());
-        ListNumber = User.GetCart();
-        GetShopMes needmes = new GetShopMes();
-        data = needmes.GetShopMes(ListNumber);
         data2 = User.GetAddress();
 
         TextView address_user = (TextView) view.findViewById(R.id.order_address_user);
@@ -59,7 +65,7 @@ public class OrderSubmit extends Fragment
         Button change_address = (Button) view.findViewById(R.id.change_address);
         Button submit_button = (Button) view.findViewById(R.id.submit_button);
 
-        Adress adress = data2.get(0);
+        Adress adress = data2.get(address);
 
         address_user.setText(adress.getName()+"  "+adress.getPhone());
         address_detail.setText(adress.getAdress());
@@ -67,8 +73,12 @@ public class OrderSubmit extends Fragment
         change_address.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Gson gson=new Gson();
+                String listNum = gson.toJson(number);
+
                 Intent intent = new Intent(getActivity(), JumpActivity.class);
                 intent.putExtra("id",32);
+                intent.putExtra("OrderNumber",listNum);
                 startActivity(intent);
             }
         });

@@ -1,6 +1,7 @@
 package homework.taohuo.GJ;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import android.os.Bundle;
@@ -18,13 +19,10 @@ import homework.taohuo.WZT.AdressFragment;
 import homework.taohuo.WZT.CreateAddress;
 import homework.taohuo.WZT.DeleteAddress;
 import homework.taohuo.WZT.ModifyAddress;
-import homework.taohuo.ZH.MineFragment;
+
 
 public class JumpActivity extends AppCompatActivity
 {
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -88,13 +86,21 @@ public class JumpActivity extends AppCompatActivity
 
         //何家乐：31-40
         if (id == 31) {
-            OrderSubmit orderSubmit = new OrderSubmit();
+            int AddressNumber = getIntent().getIntExtra("AddressNumber", 0);
+            String OrderNumber = getIntent().getStringExtra("OrderNumber");
+            Gson gson=new Gson();
+            List<String> ListNumber = gson.fromJson(OrderNumber,new TypeToken<List<String>>(){}.getType());
+
+            OrderSubmit orderSubmit = new OrderSubmit(ListNumber, AddressNumber);
             fragmentTransaction.add(R.id.fragment_container2, orderSubmit);
             fragmentTransaction.commit();
         }
 
         if (id == 32) {
-            OrderAddress orderAddress = new OrderAddress();
+            String OrderNumber = getIntent().getStringExtra("OrderNumber");
+            Gson gson=new Gson();
+            List<String> ListNumber = gson.fromJson(OrderNumber,new TypeToken<List<String>>(){}.getType());
+            OrderAddress orderAddress = new OrderAddress(ListNumber);
             fragmentTransaction.add(R.id.fragment_container2, orderAddress);
             fragmentTransaction.commit();
         }

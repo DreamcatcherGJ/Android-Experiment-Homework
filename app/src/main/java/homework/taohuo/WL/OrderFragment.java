@@ -14,6 +14,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,6 +29,7 @@ import homework.taohuo.bean.Shop;
  */
 public class OrderFragment extends Fragment {
     private RecyclerView ListOptionView;
+    private Shop shop;
     private List<Shop> data = new ArrayList<>();
 
     public OrderFragment(List<String> number) {
@@ -73,17 +76,25 @@ public class OrderFragment extends Fragment {
             TextView viewPrice = (TextView) v.findViewById(R.id.order_price);
             Button viewButton = (Button) v.findViewById(R.id.order_button);
 
-            Shop shop = data.get(position);
+            shop = data.get(position);
 
             viewHeadImage.setImageResource(shop.getHeadImage());
             viewTitle.setText(shop.getTitle());
             viewPrice.setText(shop.getPrice());
 
             viewButton.setOnClickListener(new View.OnClickListener() {
+                String shopNumber = shop.getId();
                 @Override
                 public void onClick(View v) {
+                    List<String> number = new ArrayList<>();
+                    System.out.println("456:"+shop.getId());
+                    number.add(shopNumber);
+                    Gson gson=new Gson();
+                    String listNum = gson.toJson(number);
+
                     Intent intent = new Intent(getActivity(), JumpActivity.class);
                     intent.putExtra("id",31);
+                    intent.putExtra("OrderNumber",listNum);
                     startActivity(intent);
                 }
             });
