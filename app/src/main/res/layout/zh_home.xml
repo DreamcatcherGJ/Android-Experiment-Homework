@@ -92,8 +92,10 @@
 
         <ImageView
             android:id="@+id/zh_img1"
-            android:layout_width="203dp"
-            android:layout_height="188dp"
+            android:layout_width="155dp"
+            android:layout_height="140dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="28dp"
             android:src="@mipmap/zh_img06"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -108,6 +110,7 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/zh_btn1"
             app:layout_constraintEnd_toEndOf="@+id/zh_img1"
+            app:layout_constraintHorizontal_bias="0.622"
             app:layout_constraintStart_toStartOf="parent" />
 
         <Button
@@ -124,13 +127,14 @@
 
         <ImageView
             android:id="@+id/zh_img2"
-            android:layout_width="208dp"
-            android:layout_height="188dp"
+            android:layout_width="155dp"
+            android:layout_height="140dp"
+            android:layout_marginEnd="24dp"
             android:src="@mipmap/zh_img07"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.18" />
+            app:layout_constraintVertical_bias="0.45" />
 
         <TextView
             android:id="@+id/zh_tv2"
@@ -199,8 +203,10 @@
 
         <ImageView
             android:id="@+id/imageView3"
-            android:layout_width="200dp"
-            android:layout_height="171dp"
+            android:layout_width="160dp"
+            android:layout_height="154dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
             android:src="@mipmap/zh_img10"
             app:layout_constraintBottom_toBottomOf="@+id/zh_btn4"
             app:layout_constraintEnd_toEndOf="parent" />
@@ -209,11 +215,13 @@
             android:id="@+id/zh_tv4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
             android:text="手机专卖"
             android:textColor="#E91E62"
             android:textSize="18sp"
             app:layout_constraintBottom_toTopOf="@+id/imageView3"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.389"
             app:layout_constraintStart_toStartOf="@+id/imageView3" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

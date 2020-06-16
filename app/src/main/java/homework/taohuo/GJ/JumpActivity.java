@@ -9,18 +9,17 @@ import com.google.gson.reflect.TypeToken;
 import java.util.List;
 import homework.taohuo.GHY.ShopDetailFragment;
 import homework.taohuo.GX.ListFragment;
-import homework.taohuo.LS.CategoryFragment;
 import homework.taohuo.R;
 import homework.taohuo.WL.OrderTabFragment;
 import homework.taohuo.WZT.AdressFragment;
 import homework.taohuo.WZT.CreateAddress;
 import homework.taohuo.WZT.DeleteAddress;
 import homework.taohuo.WZT.ModifyAddress;
-import homework.taohuo.ZH.HomeFragment;
 import homework.taohuo.ZH.MineFragment;
 
 public class JumpActivity extends AppCompatActivity
 {
+
 
 
     @Override
@@ -106,20 +105,6 @@ public class JumpActivity extends AppCompatActivity
             fragmentTransaction.commit();
         }
 
-        if (id == 62) {
-            //返回”我的“界面
-            MineFragment mineFragment =  new MineFragment();
-            fragmentTransaction.add(R.id.fragment_container2, mineFragment);
-            fragmentTransaction.commit();
-        }
-
-        if (id == 63) {
-            //返回”商品“界面
-            CategoryFragment categoryFragment =  new CategoryFragment();
-            fragmentTransaction.add(R.id.fragment_container2, categoryFragment);
-            fragmentTransaction.commit();
-        }
-
         //汪真天：71-80
         if (id == 71) {
             //打开我的收货地址
@@ -152,6 +137,7 @@ public class JumpActivity extends AppCompatActivity
             fragmentTransaction.add(R.id.fragment_container2, createAddress);
             fragmentTransaction.commit();
         }
+
 
         //王锦：81-90
 
