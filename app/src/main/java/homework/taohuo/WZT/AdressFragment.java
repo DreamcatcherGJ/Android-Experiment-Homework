@@ -32,7 +32,6 @@ public class AdressFragment extends Fragment {
     private RecyclerView ListOptionView;
     private List<Adress> data = new ArrayList<>();
      public AdressFragment() {
-
     }
 
 
@@ -51,6 +50,7 @@ public class AdressFragment extends Fragment {
         data = User.GetAddress();
 
         Button BTcreate = (Button) view.findViewById(R.id.address_create);
+
         BTcreate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
