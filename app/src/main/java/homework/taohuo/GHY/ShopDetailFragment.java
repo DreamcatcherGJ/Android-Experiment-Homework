@@ -1,5 +1,6 @@
 package homework.taohuo.GHY;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -15,6 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import homework.taohuo.GJ.JumpActivity;
 import homework.taohuo.R;
 import homework.taohuo.service.GetShopMes;
 import homework.taohuo.bean.Shop;
@@ -52,6 +55,7 @@ public class ShopDetailFragment extends Fragment {
         TextView shop_title = (TextView) v.findViewById(R.id.shop_title);
         TextView shop_price = (TextView) v.findViewById(R.id.shop_price);
         ImageView detail_image = (ImageView) v.findViewById(R.id.detail_image);
+        Button shop_buy = (Button) v.findViewById(R.id.shop_buy);
 
         myLinearLayout = Objects.requireNonNull(getActivity()).findViewById(R.id.myLinearLayout);
         Shop shop = shopdata.get(0);
@@ -61,6 +65,15 @@ public class ShopDetailFragment extends Fragment {
         shop_title.setText(shop.getTitle());
         shop_price.setText(shop.getPrice());
         detail_image.setImageResource(shop.getDetailImage());
+
+        shop_buy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), JumpActivity.class);
+                intent.putExtra("id",31);
+                startActivity(intent);
+            }
+        });
     }
 
 //    @Override
