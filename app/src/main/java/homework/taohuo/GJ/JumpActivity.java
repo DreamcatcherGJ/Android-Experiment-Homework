@@ -112,7 +112,7 @@ public class JumpActivity extends AppCompatActivity
             fragmentTransaction.commit();
         }
         if (id == 63) {
-            //商品
+            //返回商品
             CategoryFragment categoryFragment = new CategoryFragment();
             fragmentTransaction.replace(R.id.fragment_container2, categoryFragment);
             fragmentTransaction.commit();
