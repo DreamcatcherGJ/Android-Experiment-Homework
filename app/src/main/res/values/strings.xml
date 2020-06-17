@@ -25,9 +25,10 @@
 
     <!--List By HJL-->
     <string name="hjl_null"></string>
-    <string name="order_submit">确认购买</string>
+    <string name="order_submit">确认支付</string>
+    <string name="order_cancel">加入订单</string>
     <string name="order_succeed">购买成功</string>
-    <string name="succeed_back">返回首页</string>
+    <string name="succeed_back">返回</string>
     <string name="orderAddress">收货地址</string>
     <string name="orderSubmit">提交订单</string>
     <string name="orderSucceed">购买成功</string>
