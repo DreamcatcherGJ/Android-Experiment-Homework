@@ -60,10 +60,6 @@ public class AdressFragment extends Fragment {
                         .beginTransaction()
                         .replace(R.id.fragment_container2, createAddress)
                         .commit();
-//                Intent intent = new Intent(getActivity(), JumpActivity.class);
-//                intent.putExtra("id",74);
-//
-//                startActivity(intent);
             }
         });
         return view;
@@ -107,10 +103,6 @@ public class AdressFragment extends Fragment {
                             .beginTransaction()
                             .replace(R.id.fragment_container2, modifyAddress)
                             .commit();
-//                    Intent intent = new Intent(getActivity(), JumpActivity.class);
-//                    intent.putExtra("id",72);
-//                    intent.putExtra("Number",position);
-//                    startActivity(intent);
                 }
             });
             BTdetele.setOnClickListener(new View.OnClickListener() {
@@ -121,10 +113,6 @@ public class AdressFragment extends Fragment {
                             .beginTransaction()
                             .replace(R.id.fragment_container2, deleteAddress)
                             .commit();
-//                    Intent intent = new Intent(getActivity(), JumpActivity.class);
-//                    intent.putExtra("id",73);
-//                    intent.putExtra("Number",position);
-//                    startActivity(intent);
                 }
             });
 

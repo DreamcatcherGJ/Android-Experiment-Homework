@@ -116,9 +116,6 @@ public class DeleteAddress extends Fragment {
                         .beginTransaction()
                         .replace(R.id.fragment_container2, adressFragment)
                         .commit();
-//                Intent intent = new Intent(getActivity(), JumpActivity.class);
-//                intent.putExtra("id",71);
-//                startActivity(intent);
             }
         });
 
@@ -131,9 +128,6 @@ public class DeleteAddress extends Fragment {
                         .beginTransaction()
                         .replace(R.id.fragment_container2, adressFragment)
                         .commit();
-//                Intent intent = new Intent(getActivity(), JumpActivity.class);
-//                intent.putExtra("id",71);
-//                startActivity(intent);
             }
         });
 
