@@ -104,6 +104,7 @@
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent">
 
         <TextView
@@ -111,11 +112,35 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_weight="3"
+            android:layout_marginStart="10dp"
+            android:layout_weight="2"
             android:gravity="center"
-            android:text="@string/hjl_null" />
+            android:text="@string/hjl_null"
+            android:textColor="#040404"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/order_submit_sum"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="3"
+            android:gravity="start|center_vertical"
+            android:text="@string/hjl_null"
+            android:textColor="#E4FF1616"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/cancel_button"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="20dp"
+            android:layout_weight="2"
+            android:background="@drawable/ghy_button_shape_add"
+            android:text="@string/order_cancel"
+            android:textSize="12sp" />
 
         <Button
             android:id="@+id/submit_button"
@@ -123,7 +148,7 @@
             android:layout_height="35dp"
             android:layout_gravity="center"
             android:layout_marginEnd="20dp"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:background="@drawable/ghy_button_shape_buy"
             android:text="@string/order_submit"
             android:textSize="12sp" />

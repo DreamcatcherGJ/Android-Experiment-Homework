@@ -9,221 +9,259 @@
     tools:context=".ZH.HomeFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="180dp" >
-
-        <androidx.viewpager.widget.ViewPager
-            android:id="@+id/vp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="35dip"
-            android:layout_gravity="bottom"
-            android:background="#33000000"
-            android:gravity="center"
-            android:orientation="vertical" >
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="3dp"
-                android:orientation="horizontal" >
-
-                <View
-                    android:id="@+id/dot_0"
-                    android:layout_width="8dp"
-                    android:layout_height="8dp"
-                    android:layout_marginLeft="2dp"
-                    android:layout_marginRight="2dp"
-                    android:background="@mipmap/zh_dot_yes"/>
-
-                <View
-                    android:id="@+id/dot_1"
-                    android:layout_width="8dp"
-                    android:layout_height="8dp"
-                    android:layout_marginLeft="2dp"
-                    android:layout_marginRight="2dp"
-                    android:background="@mipmap/zh_dot_no"/>
-
-                <View
-                    android:id="@+id/dot_2"
-                    android:layout_width="8dp"
-                    android:layout_height="8dp"
-                    android:layout_marginLeft="2dp"
-                    android:layout_marginRight="2dp"
-                    android:background="@mipmap/zh_dot_no"/>
-
-                <View
-                    android:id="@+id/dot_3"
-                    android:layout_width="8dp"
-                    android:layout_height="8dp"
-                    android:layout_marginLeft="2dip"
-                    android:layout_marginRight="2dip"
-                    android:background="@mipmap/zh_dot_no"/>
-
-                <View
-                    android:id="@+id/dot_4"
-                    android:layout_width="8dp"
-                    android:layout_height="8dp"
-                    android:layout_marginLeft="2dp"
-                    android:layout_marginRight="2dp"
-                    android:background="@mipmap/zh_dot_no"/>
-            </LinearLayout>
-        </LinearLayout>
-    </FrameLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginTop="180dp">
-
-
-        <Button
-            android:id="@+id/zh_btn1"
-            android:layout_width="204dp"
-            android:layout_height="191dp"
-            android:background="#00000000"
-            android:textColor="#CC0000"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/zh_img1"
-            android:layout_width="155dp"
-            android:layout_height="140dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="28dp"
-            android:src="@mipmap/zh_img06"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/zh_tv1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="休闲零食"
-            android:textColor="#FFD000"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/zh_btn1"
-            app:layout_constraintEnd_toEndOf="@+id/zh_img1"
-            app:layout_constraintHorizontal_bias="0.622"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <Button
-            android:id="@+id/zh_btn2"
-            android:layout_width="205dp"
-            android:layout_height="189dp"
-            android:layout_marginTop="2dp"
-            android:background="#00000000"
-            android:textColor="#CC0000"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <ImageView
-            android:id="@+id/zh_img2"
-            android:layout_width="155dp"
-            android:layout_height="140dp"
-            android:layout_marginEnd="24dp"
-            android:src="@mipmap/zh_img07"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.45" />
-
-        <TextView
-            android:id="@+id/zh_tv2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="数码产品"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="@+id/zh_btn2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/zh_btn1" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="380dp">
+        android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/zh_img3"
-            android:layout_width="110dp"
-            android:layout_height="110dp"
-            android:src="@mipmap/zh_img08"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="180dp">
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/vp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="35dip"
+                android:layout_gravity="bottom"
+                android:background="#33000000"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:id="@+id/dot_0"
+                        android:layout_width="8dp"
+                        android:layout_height="8dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="2dp"
+                        android:background="@mipmap/zh_dot_yes" />
+
+                    <View
+                        android:id="@+id/dot_1"
+                        android:layout_width="8dp"
+                        android:layout_height="8dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="2dp"
+                        android:background="@mipmap/zh_dot_no" />
+
+                    <View
+                        android:id="@+id/dot_2"
+                        android:layout_width="8dp"
+                        android:layout_height="8dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="2dp"
+                        android:background="@mipmap/zh_dot_no" />
+
+                    <View
+                        android:id="@+id/dot_3"
+                        android:layout_width="8dp"
+                        android:layout_height="8dp"
+                        android:layout_marginLeft="2dip"
+                        android:layout_marginRight="2dip"
+                        android:background="@mipmap/zh_dot_no" />
+
+                    <View
+                        android:id="@+id/dot_4"
+                        android:layout_width="8dp"
+                        android:layout_height="8dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="2dp"
+                        android:background="@mipmap/zh_dot_no" />
+                </LinearLayout>
+            </LinearLayout>
+        </FrameLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
 
-        <Button
-            android:id="@+id/zh_btn3"
-            android:layout_width="207dp"
-            android:layout_height="225dp"
-            android:background="#00000000"
-            android:textColor="#CC0000"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+                <ImageView
+                    android:id="@+id/zh_img1"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:src="@mipmap/zh_img06"
+                    app:layout_constraintBottom_toBottomOf="@+id/zh_btn1"
+                    app:layout_constraintEnd_toEndOf="@+id/zh_btn1"
+                    app:layout_constraintHorizontal_bias="0.35"
+                    app:layout_constraintStart_toStartOf="@+id/zh_btn1"
+                    app:layout_constraintTop_toTopOf="@+id/zh_btn1"
+                    app:layout_constraintVertical_bias="0.25" />
 
-        <TextView
-            android:id="@+id/zh_tv3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="手表风云"
-            android:textColor="#4A1EE9"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@+id/imageView4"
-            app:layout_constraintStart_toEndOf="@+id/zh_img3"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.705" />
+                <TextView
+                    android:id="@+id/zh_tv1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="休闲零食"
+                    android:textColor="#FFD000"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/zh_img1"
+                    app:layout_constraintStart_toStartOf="@+id/zh_img1"
+                    app:layout_constraintTop_toBottomOf="@+id/zh_img1" />
 
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="120dp"
-            android:layout_height="110dp"
-            android:src="@mipmap/zh_img09"
-            app:layout_constraintBottom_toBottomOf="@+id/zh_btn3"
-            app:layout_constraintEnd_toEndOf="@+id/zh_btn3" />
+                <Button
+                    android:id="@+id/zh_btn1"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:background="#00000000"
+                    android:textColor="#CC0000"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/zh_btn4"
-            android:layout_width="204dp"
-            android:layout_height="221dp"
-            android:background="#00000000"
-            android:textColor="#CC0000"
-            app:layout_constraintEnd_toEndOf="parent"
-            tools:layout_editor_absoluteY="4dp" />
+                <ImageView
+                    android:id="@+id/zh_img2"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:src="@mipmap/zh_img07"
+                    app:layout_constraintBottom_toBottomOf="@+id/zh_btn2"
+                    app:layout_constraintEnd_toEndOf="@+id/zh_btn2"
+                    app:layout_constraintHorizontal_bias="0.65"
+                    app:layout_constraintStart_toStartOf="@+id/zh_btn2"
+                    app:layout_constraintTop_toTopOf="@+id/zh_btn2"
+                    app:layout_constraintVertical_bias="0.25" />
 
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="160dp"
-            android:layout_height="154dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="8dp"
-            android:src="@mipmap/zh_img10"
-            app:layout_constraintBottom_toBottomOf="@+id/zh_btn4"
-            app:layout_constraintEnd_toEndOf="parent" />
+                <TextView
+                    android:id="@+id/zh_tv2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="数码产品"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="@+id/zh_img2"
+                    app:layout_constraintStart_toStartOf="@+id/zh_img2"
+                    app:layout_constraintTop_toBottomOf="@+id/zh_img2" />
 
-        <TextView
-            android:id="@+id/zh_tv4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
-            android:text="手机专卖"
-            android:textColor="#E91E62"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@+id/imageView3"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.389"
-            app:layout_constraintStart_toStartOf="@+id/imageView3" />
+                <Button
+                    android:id="@+id/zh_btn2"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:background="#00000000"
+                    android:textColor="#CC0000"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <ImageView
+                    android:id="@+id/zh_img3"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="30dp"
+                    android:src="@mipmap/zh_img08"
+                    app:layout_constraintStart_toStartOf="@+id/zh_btn3"
+                    app:layout_constraintTop_toTopOf="@+id/zh_btn3" />
+
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginStart="90dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@mipmap/zh_img09"
+                    app:layout_constraintStart_toStartOf="@+id/zh_img3"
+                    app:layout_constraintTop_toBottomOf="@+id/zh_tv3" />
+
+                <TextView
+                    android:id="@+id/zh_tv3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="手表风云"
+                    android:textColor="#4A1EE9"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toEndOf="@+id/zh_img3"
+                    app:layout_constraintTop_toTopOf="@+id/zh_img3" />
+
+                <Button
+                    android:id="@+id/zh_btn3"
+                    android:layout_width="200dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="5dp"
+                    android:background="#00000000"
+                    android:textColor="#CC0000"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/zh_tv4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="手机专卖"
+                    android:textColor="#E91E62"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView3"
+                    app:layout_constraintStart_toStartOf="@+id/imageView3"
+                    app:layout_constraintTop_toTopOf="@+id/zh_btn4" />
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@mipmap/zh_img10"
+                    app:layout_constraintEnd_toEndOf="@+id/zh_btn4"
+                    app:layout_constraintHorizontal_bias="0.65"
+                    app:layout_constraintStart_toStartOf="@+id/zh_btn4"
+                    app:layout_constraintTop_toBottomOf="@+id/zh_tv4" />
+
+                <Button
+                    android:id="@+id/zh_btn4"
+                    android:layout_width="200dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="5dp"
+                    android:background="#00000000"
+                    android:textColor="#CC0000"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
 
 </RelativeLayout>
