@@ -21,7 +21,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,6 +40,7 @@ public class CartFragment extends Fragment {
     private List<Shop> data = new ArrayList<>();
     private Gson gson=new Gson();
     private List<String> ListNumber = new ArrayList<>();
+    private List<String> number = new ArrayList<>();
     private CheckBox checkAllChoose;
     private TextView tvTotal;
     private CartFragment.MyAdapter shopAdapter;
@@ -81,8 +81,6 @@ public class CartFragment extends Fragment {
         viewButton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                List<String> number = new ArrayList<>();
-                number.add(shop.getId());
                 Gson gson=new Gson();
                 String listNum = gson.toJson(number);
 
@@ -171,8 +169,15 @@ public class CartFragment extends Fragment {
                     Log.d("WANG","点击check的price="+price);
                     if(cb.isChecked()){
                         totalPrice+=Double.parseDouble(price);
+                        number.add(data.get(viewHolder.getAdapterPosition()).getId());
                     }else{
                         totalPrice-=Double.parseDouble(price);
+                        for (int i = 0; i < number.size(); i++) {
+                            if (data.get(viewHolder.getAdapterPosition()).getId().equals(number.get(i))) {
+                                number.remove(i);
+                                i--;
+                            }
+                        }
                     }
 
                     tvTotal.setText("合计：¥"+totalPrice);
@@ -191,6 +196,8 @@ public class CartFragment extends Fragment {
     private Handler msgHandler=new Handler(){
         @Override
         public void handleMessage(@NonNull Message msg) {
+            List<String> zeroNumber = new ArrayList<>();
+            number = zeroNumber;
             switch(msg.what){
                 case MSG_UPDATE_PRICE:
                     //合计
@@ -198,6 +205,7 @@ public class CartFragment extends Fragment {
                     for(Shop shop:data){
                         if(shop.isbChoose()){
                             String strP=shop.getPrice();
+                            number.add(shop.getId());
 
                             Log.d("WANG","strP="+strP);
 
