@@ -59,15 +59,6 @@ public class ListFragment extends Fragment
                     intent.putExtra("id",11);
                     intent.putExtra("shop_id",shop.getId());
                     startActivity(intent);
-
-                    /*跳转fragment
-                    ShopDetailFragment shopDetailFragment = new ShopDetailFragment(shop.getId());
-                    getActivity().getSupportFragmentManager()
-                            .beginTransaction()
-                            .replace(R.id.fragment_container, shopDetailFragment, null)
-                            .addToBackStack(null)
-                            .commit();
-                     */
                 }
             });
         }
