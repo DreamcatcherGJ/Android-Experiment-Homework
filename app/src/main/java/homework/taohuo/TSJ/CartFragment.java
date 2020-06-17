@@ -3,14 +3,20 @@ package homework.taohuo.TSJ;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.os.Handler;
+import android.os.Message;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -35,6 +41,10 @@ public class CartFragment extends Fragment {
     private List<Shop> data = new ArrayList<>();
     private Gson gson=new Gson();
     private List<String> ListNumber = new ArrayList<>();
+    private CheckBox checkAllChoose;
+    private TextView tvTotal;
+    private CartFragment.MyAdapter shopAdapter;
+    private double totalPrice=0;
 
     public CartFragment() {
     }
@@ -46,8 +56,11 @@ public class CartFragment extends Fragment {
         View view = inflater.inflate(R.layout.tsj_cart, container, false);
 
         ListOptionView = (RecyclerView) view.findViewById(R.id.cart_option_view);
-        ListOptionView.setLayoutManager(new LinearLayoutManager(getContext()));
-        ListOptionView.setAdapter(new CartFragment.MyAdapter());
+        LinearLayoutManager layoutManager=new LinearLayoutManager(getActivity());
+        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        ListOptionView.setLayoutManager(layoutManager);
+        shopAdapter=new CartFragment.MyAdapter();
+        ListOptionView.setAdapter(shopAdapter);
 
         RWUser User = new RWUser();
         User.RWUser(getActivity());
@@ -55,6 +68,8 @@ public class CartFragment extends Fragment {
 
         GetShopMes needmes = new GetShopMes();
         data = needmes.GetShopMes(ListNumber);
+
+        Log.d("WANG","data.size="+data.size());
 
         Button viewButton = (Button) view.findViewById(R.id.cart_button1);
         Button viewButton2 = (Button) view.findViewById(R.id.cart_button2);
@@ -78,8 +93,29 @@ public class CartFragment extends Fragment {
             }
         });
 
+        //实现全选功能
+        tvTotal=(TextView)view.findViewById(R.id.textView13);
+
+        checkAllChoose=view.findViewById(R.id.checkBox1);
+        checkAllChoose.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                for(Shop shop:data)
+                    shop.setbChoose(isChecked);
+                if(shopAdapter!=null)
+                    shopAdapter.notifyDataSetChanged();
+
+                //合计
+                Message message=msgHandler.obtainMessage();
+                message.what=MSG_UPDATE_PRICE;
+                msgHandler.sendMessage(message);
+            }
+        });
+
+
         return view;
     }
+
 
     private class MyViewHolder extends RecyclerView.ViewHolder {
         public MyViewHolder(View itemView) {
@@ -112,17 +148,36 @@ public class CartFragment extends Fragment {
         }
 
         @Override
-        public void onBindViewHolder(CartFragment.MyViewHolder viewHolder, int position) {
+        public void onBindViewHolder(final CartFragment.MyViewHolder viewHolder, int position) {
             View v = viewHolder.itemView;
             ImageView viewHeadImage = (ImageView) v.findViewById(R.id.cart_headimage);
             TextView viewTitle = (TextView) v.findViewById(R.id.cart_title);
             TextView viewPrice = (TextView) v.findViewById(R.id.cart_price);
+            final CheckBox cb=v.findViewById(R.id.checkBox2);
+
 
             shop = data.get(position);
 
             viewHeadImage.setImageResource(shop.getHeadImage());
             viewTitle.setText(shop.getTitle());
             viewPrice.setText(shop.getPrice());
+            cb.setChecked(shop.isbChoose());
+
+            cb.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    String price=data.get(viewHolder.getAdapterPosition()).getPrice();
+                    price=price.substring(1);
+                    Log.d("WANG","点击check的price="+price);
+                    if(cb.isChecked()){
+                        totalPrice+=Double.parseDouble(price);
+                    }else{
+                        totalPrice-=Double.parseDouble(price);
+                    }
+
+                    tvTotal.setText("合计：¥"+totalPrice);
+                }
+            });
         }
 
         @Override
@@ -130,5 +185,31 @@ public class CartFragment extends Fragment {
             return data.size();
         }
     }
+
+
+    private static final int MSG_UPDATE_PRICE=1;
+    private Handler msgHandler=new Handler(){
+        @Override
+        public void handleMessage(@NonNull Message msg) {
+            switch(msg.what){
+                case MSG_UPDATE_PRICE:
+                    //合计
+                    double price=0;
+                    for(Shop shop:data){
+                        if(shop.isbChoose()){
+                            String strP=shop.getPrice();
+
+                            Log.d("WANG","strP="+strP);
+
+                            strP=strP.substring(1);
+                            price+=Double.parseDouble(strP);
+                        }
+                    }
+                    totalPrice=price;
+                    tvTotal.setText("合计：¥"+price);
+                    break;
+            }
+        }
+    };
 }
 
