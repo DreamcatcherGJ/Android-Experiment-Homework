@@ -20,6 +20,8 @@ import java.util.List;
 import java.util.Objects;
 
 import homework.taohuo.GJ.JumpActivity;
+import homework.taohuo.HJL.OrderAddress;
+import homework.taohuo.HJL.OrderSubmit;
 import homework.taohuo.R;
 import homework.taohuo.service.GetShopMes;
 import homework.taohuo.bean.Shop;
@@ -74,38 +76,12 @@ public class ShopDetailFragment extends Fragment {
             public void onClick(View v) {
                 List<String> number = new ArrayList<>();
                 number.add(shop.getId());
-                Gson gson=new Gson();
-                String listNum = gson.toJson(number);
-
-                Intent intent = new Intent(getActivity(), JumpActivity.class);
-                intent.putExtra("id",31);
-                intent.putExtra("OrderNumber",listNum);
-                startActivity(intent);
+                OrderSubmit orderSubmit = new OrderSubmit(number, 0);
+                getActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragment_container2, orderSubmit)
+                        .commit();
             }
         });
     }
-
-//    @Override
-//    public void onResume() {
-//        super.onResume();
-//        backListenter();
-//    }
-//
-//    private void backListenter() {
-//        v.setFocusableInTouchMode(true);
-//        v.requestFocus();
-//        v.setOnKeyListener(new View.OnKeyListener() {
-//            @Override
-//            public boolean onKey(View view, int i, KeyEvent keyEvent) {
-//                if (keyEvent.getAction() == KeyEvent.ACTION_DOWN && i == KeyEvent.KEYCODE_BACK) {
-//                    FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-//                    fragmentTransaction.replace(R.id.mFrameLayout, new CategoryFragment1()).commit();
-//                    fragmentTransaction.remove(ShopDetailFragment.this);
-//                    myLinearLayout.setVisibility(View.VISIBLE);
-//                    return true;
-//                }
-//                return false;
-//            }
-//        });
-//    }
 }

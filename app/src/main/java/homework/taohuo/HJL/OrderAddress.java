@@ -61,15 +61,11 @@ public class OrderAddress extends Fragment
                 @Override
                 public void onClick(View v) {
                     int position = getAdapterPosition();
-                    Gson gson=new Gson();
-                    String listNum = gson.toJson(number);
-
-                    Intent intent = new Intent(getActivity(), JumpActivity.class);
-                    intent.putExtra("id",31);
-                    intent.putExtra("AddressNumber",position);
-                    intent.putExtra("OrderNumber",listNum);
-                    startActivity(intent);
-
+                    OrderSubmit orderSubmit = new OrderSubmit(number, position);
+                    getActivity().getSupportFragmentManager()
+                            .beginTransaction()
+                            .replace(R.id.fragment_container2, orderSubmit)
+                            .commit();
                 }
             });
         }

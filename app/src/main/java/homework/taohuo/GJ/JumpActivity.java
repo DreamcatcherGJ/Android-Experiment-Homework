@@ -9,6 +9,9 @@ import com.google.gson.reflect.TypeToken;
 import java.util.List;
 import homework.taohuo.GHY.ShopDetailFragment;
 import homework.taohuo.GX.ListFragment;
+import homework.taohuo.HJL.OrderAddress;
+import homework.taohuo.HJL.OrderSubmit;
+import homework.taohuo.HJL.OrderSucceed;
 import homework.taohuo.LS.CategoryFragment;
 import homework.taohuo.R;
 import homework.taohuo.WL.OrderTabFragment;
@@ -92,27 +95,6 @@ public class JumpActivity extends AppCompatActivity
             fragmentTransaction.add(R.id.fragment_container2, orderSubmit);
             fragmentTransaction.commit();
         }
-
-        if (id == 32) {
-            String OrderNumber = getIntent().getStringExtra("OrderNumber");
-            Gson gson=new Gson();
-            List<String> ListNumber = gson.fromJson(OrderNumber,new TypeToken<List<String>>(){}.getType());
-            OrderAddress orderAddress = new OrderAddress(ListNumber);
-            fragmentTransaction.add(R.id.fragment_container2, orderAddress);
-            fragmentTransaction.commit();
-        }
-
-        if (id == 33) {
-            OrderSucceed orderSucceed = new OrderSucceed();
-            fragmentTransaction.add(R.id.fragment_container2, orderSucceed);
-            fragmentTransaction.commit();
-        }
-
-//        if (id == 34) {
-//            OrderAddress orderAddress = new OrderAddress();
-//            fragmentTransaction.add(R.id.fragment_container2, orderAddress);
-//            fragmentTransaction.commit();
-//        }
 
         //张虎：41-50
 

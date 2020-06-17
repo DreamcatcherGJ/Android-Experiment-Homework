@@ -25,6 +25,7 @@ import homework.taohuo.GJ.JumpActivity;
 import homework.taohuo.GJ.MainFragment;
 import homework.taohuo.GX.ListFragment;
 import homework.taohuo.R;
+import homework.taohuo.WL.OrderFragment;
 import homework.taohuo.bean.Adress;
 import homework.taohuo.bean.Shop;
 import homework.taohuo.service.GetShopMes;
@@ -73,21 +74,21 @@ public class OrderSubmit extends Fragment
         change_address.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Gson gson=new Gson();
-                String listNum = gson.toJson(number);
-
-                Intent intent = new Intent(getActivity(), JumpActivity.class);
-                intent.putExtra("id",32);
-                intent.putExtra("OrderNumber",listNum);
-                startActivity(intent);
+                OrderAddress orderAddress = new OrderAddress(number);
+                getActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragment_container2, orderAddress)
+                        .commit();
             }
         });
         submit_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), JumpActivity.class);
-                intent.putExtra("id",33);
-                startActivity(intent);
+                OrderSucceed orderSucceed = new OrderSucceed();
+                getActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragment_container2, orderSucceed)
+                        .commit();
             }
         });
 

@@ -47,8 +47,7 @@ public class OrderTabFragment extends Fragment {
         OrderFragment orderFragment = new OrderFragment(number1);
         getActivity().getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.wl_tab, orderFragment, null)
-                .addToBackStack(null)
+                .replace(R.id.wl_tab, orderFragment)
                 .commit();
 
         Button button1 = (Button)  view.findViewById(R.id.button3);
@@ -62,8 +61,7 @@ public class OrderTabFragment extends Fragment {
                 OrderFragment orderFragment = new OrderFragment(number1);
                 getActivity().getSupportFragmentManager()
                         .beginTransaction()
-                        .replace(R.id.wl_tab, orderFragment, null)
-                        .addToBackStack(null)
+                        .replace(R.id.wl_tab, orderFragment)
                         .commit();
             }
         });
@@ -75,8 +73,7 @@ public class OrderTabFragment extends Fragment {
                 OrderFragment orderFragment = new OrderFragment(number2);
                 getActivity().getSupportFragmentManager()
                         .beginTransaction()
-                        .replace(R.id.wl_tab, orderFragment, null)
-                        .addToBackStack(null)
+                        .replace(R.id.wl_tab, orderFragment)
                         .commit();
             }
         });
