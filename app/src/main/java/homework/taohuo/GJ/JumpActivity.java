@@ -135,31 +135,31 @@ public class JumpActivity extends AppCompatActivity
             fragmentTransaction.add(R.id.fragment_container2, adressFragment);
             fragmentTransaction.commit();
         }
-        if (id == 72) {
-            //修改我的收货地址
-            int number = getIntent().getIntExtra("Number",-1);
-
-            ModifyAddress modifyAddress = new ModifyAddress(number);
-            fragmentTransaction.add(R.id.fragment_container2, modifyAddress);
-            fragmentTransaction.commit();
-        }
-
-        if (id == 73) {
-            //进入删除界面
-            int number = getIntent().getIntExtra("Number",-1);
-
-            DeleteAddress deleteAddress =  new DeleteAddress(number);
-            fragmentTransaction.add(R.id.fragment_container2, deleteAddress);
-            fragmentTransaction.commit();
-        }
-        if (id == 74) {
-            //进入新增界面
-            int number = getIntent().getIntExtra("Number",-1);
-
-            CreateAddress createAddress =new CreateAddress(number);
-            fragmentTransaction.add(R.id.fragment_container2, createAddress);
-            fragmentTransaction.commit();
-        }
+//        if (id == 72) {
+//            //修改我的收货地址
+//            int number = getIntent().getIntExtra("Number",-1);
+//
+//            ModifyAddress modifyAddress = new ModifyAddress(number);
+//            fragmentTransaction.add(R.id.fragment_container2, modifyAddress);
+//            fragmentTransaction.commit();
+//        }
+//
+//        if (id == 73) {
+//            //进入删除界面
+//            int number = getIntent().getIntExtra("Number",-1);
+//
+//            DeleteAddress deleteAddress =  new DeleteAddress(number);
+//            fragmentTransaction.add(R.id.fragment_container2, deleteAddress);
+//            fragmentTransaction.commit();
+//        }
+//        if (id == 74) {
+//            //进入新增界面
+//            int number = getIntent().getIntExtra("Number",-1);
+//
+//            CreateAddress createAddress =new CreateAddress();
+//            fragmentTransaction.add(R.id.fragment_container2, createAddress);
+//            fragmentTransaction.commit();
+//        }
 
 
         //王锦：81-90

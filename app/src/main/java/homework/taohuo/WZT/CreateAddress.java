@@ -31,6 +31,8 @@ public class CreateAddress extends Fragment {
     private View view;
     private EditText r_address,r_name,r_phone;
     private int id;
+    private RWUser User;
+    private String newaddressStr;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -43,9 +45,7 @@ public class CreateAddress extends Fragment {
 
 
 
-    public CreateAddress(int id) {
-        this.id =  id;
-        System.out.println(this.id);
+    public CreateAddress() {
     }
 
     /**
@@ -58,7 +58,7 @@ public class CreateAddress extends Fragment {
      */
     // TODO: Rename and change types and number of parameters
     public static CreateAddress newInstance(String param1, String param2) {
-        CreateAddress fragment = new CreateAddress(-1);
+        CreateAddress fragment = new CreateAddress();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -81,7 +81,7 @@ public class CreateAddress extends Fragment {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.wzt_create_address, container, false);
 
-        RWUser User = new RWUser();
+        User = new RWUser();
         User.RWUser(getActivity());
         oldaddress = User.GetAddress();
         r_address=(EditText) view.findViewById(R.id.createadress);
@@ -96,8 +96,7 @@ public class CreateAddress extends Fragment {
 
 
         Gson gson =new Gson();
-        String newaddressStr = gson.toJson(oldaddress);
-        User.ChangeAddress(newaddressStr);
+        newaddressStr = gson.toJson(oldaddress);
 
         return view;
     }
@@ -106,33 +105,34 @@ public class CreateAddress extends Fragment {
         super.onActivityCreated(savedInstanceState);
         Button set = (Button) view.findViewById(R.id.changeok);
         Button returnme= (Button) view.findViewById(R.id.changecancel);
-        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         set.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                User.ChangeAddress(newaddressStr);
+                AdressFragment adressFragment =  new AdressFragment();
+                getActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragment_container2, adressFragment)
+                        .commit();
 
-                Intent intent = new Intent(getActivity(), JumpActivity.class);
-                intent.putExtra("id",71);
-                startActivity(intent);
+//                Intent intent = new Intent(getActivity(), JumpActivity.class);
+//                intent.putExtra("id",71);
+//                startActivity(intent);
             }
         });
-
-
-
-
-
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
 
         returnme.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), JumpActivity.class);
-                intent.putExtra("id",71);
-                startActivity(intent);
+                AdressFragment adressFragment =  new AdressFragment();
+                getActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragment_container2, adressFragment)
+                        .commit();
+//                Intent intent = new Intent(getActivity(), JumpActivity.class);
+//                intent.putExtra("id",71);
+//                startActivity(intent);
             }
         });
 

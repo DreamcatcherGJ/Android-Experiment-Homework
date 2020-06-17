@@ -31,6 +31,8 @@ public class DeleteAddress extends Fragment {
     private  List<Adress> olddelete = new ArrayList<>();
     private  List<Adress> newdelete = new ArrayList<>();
     private int id;
+    private RWUser User;
+    private String newaddressStr;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -77,7 +79,7 @@ public class DeleteAddress extends Fragment {
         // Inflate the layout for this fragment
         view= inflater.inflate(R.layout.wzt_delete_address, container, false);
 
-        RWUser User = new RWUser();
+        User = new RWUser();
         User.RWUser(getActivity());
         olddelete = User.GetAddress();
 
@@ -94,8 +96,7 @@ public class DeleteAddress extends Fragment {
         }
 
         Gson gson =new Gson();
-        String newaddressStr = gson.toJson(newdelete);
-        User.ChangeAddress(newaddressStr);
+        newaddressStr = gson.toJson(newdelete);
 
         return view;
     }
@@ -110,18 +111,29 @@ public class DeleteAddress extends Fragment {
         returnmine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), JumpActivity.class);
-                intent.putExtra("id",71);
-                startActivity(intent);
+                AdressFragment adressFragment =  new AdressFragment();
+                getActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragment_container2, adressFragment)
+                        .commit();
+//                Intent intent = new Intent(getActivity(), JumpActivity.class);
+//                intent.putExtra("id",71);
+//                startActivity(intent);
             }
         });
 
         Delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), JumpActivity.class);
-                intent.putExtra("id",71);
-                startActivity(intent);
+                User.ChangeAddress(newaddressStr);
+                AdressFragment adressFragment =  new AdressFragment();
+                getActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragment_container2, adressFragment)
+                        .commit();
+//                Intent intent = new Intent(getActivity(), JumpActivity.class);
+//                intent.putExtra("id",71);
+//                startActivity(intent);
             }
         });
 

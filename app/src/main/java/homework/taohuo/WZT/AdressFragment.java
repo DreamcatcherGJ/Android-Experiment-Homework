@@ -21,6 +21,7 @@ import java.util.List;
 import homework.taohuo.GJ.JumpActivity;
 import homework.taohuo.GX.ListFragment;
 import homework.taohuo.R;
+import homework.taohuo.WL.OrderFragment;
 import homework.taohuo.bean.Adress;
 import homework.taohuo.bean.Shop;
 import homework.taohuo.service.RWUser;
@@ -54,10 +55,15 @@ public class AdressFragment extends Fragment {
         BTcreate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), JumpActivity.class);
-                intent.putExtra("id",74);
-
-                startActivity(intent);
+                CreateAddress createAddress =new CreateAddress();
+                getActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragment_container2, createAddress)
+                        .commit();
+//                Intent intent = new Intent(getActivity(), JumpActivity.class);
+//                intent.putExtra("id",74);
+//
+//                startActivity(intent);
             }
         });
         return view;
@@ -96,19 +102,29 @@ public class AdressFragment extends Fragment {
             BTchange.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(getActivity(), JumpActivity.class);
-                    intent.putExtra("id",72);
-                    intent.putExtra("Number",position);
-                    startActivity(intent);
+                    ModifyAddress modifyAddress = new ModifyAddress(position);
+                    getActivity().getSupportFragmentManager()
+                            .beginTransaction()
+                            .replace(R.id.fragment_container2, modifyAddress)
+                            .commit();
+//                    Intent intent = new Intent(getActivity(), JumpActivity.class);
+//                    intent.putExtra("id",72);
+//                    intent.putExtra("Number",position);
+//                    startActivity(intent);
                 }
             });
             BTdetele.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(getActivity(), JumpActivity.class);
-                    intent.putExtra("id",73);
-                    intent.putExtra("Number",position);
-                    startActivity(intent);
+                    DeleteAddress deleteAddress =  new DeleteAddress(position);
+                    getActivity().getSupportFragmentManager()
+                            .beginTransaction()
+                            .replace(R.id.fragment_container2, deleteAddress)
+                            .commit();
+//                    Intent intent = new Intent(getActivity(), JumpActivity.class);
+//                    intent.putExtra("id",73);
+//                    intent.putExtra("Number",position);
+//                    startActivity(intent);
                 }
             });
 
