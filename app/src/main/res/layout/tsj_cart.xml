@@ -12,7 +12,7 @@
     <LinearLayout
         android:id="@+id/linearLayout4"
         android:layout_width="0dp"
-        android:layout_height="71dp"
+        android:layout_height="50dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,7 +36,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="#F44336"
+            android:background="#B52F25"
             android:text="编辑"
             android:textColor="#FFFFFF" />
 
@@ -48,37 +48,44 @@
         android:layout_height="0dp"
         android:background="#CDEFEFEF"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
         tools:context=".GX.ListFragment"></androidx.recyclerview.widget.RecyclerView>
 
     <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <CheckBox
             android:id="@+id/checkBox1"
-            android:layout_width="137dp"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_weight="2"
             android:background="#C3C2C2"
             android:text="全选" />
 
         <TextView
             android:id="@+id/textView13"
-            android:layout_width="195dp"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_marginStart="10dp"
+            android:layout_weight="5"
             android:gravity="center_vertical"
             android:text="合计"
             tools:text="合计" />
 
         <Button
             android:id="@+id/cart_button2"
-            android:layout_width="74dp"
-            android:layout_height="50dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_gravity="center"
+            android:layout_weight="2"
             android:background="#E81E1E"
             android:text="去结算"
             android:textColor="#FFFFFF" />
