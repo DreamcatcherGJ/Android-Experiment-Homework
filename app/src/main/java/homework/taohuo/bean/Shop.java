@@ -6,6 +6,16 @@ public class Shop {
     private int headImage;//图片
     private int detailImage;//详细信息
     private String price;//价格
+    private boolean bChoose;
+
+    public Shop(String id, String title, int headImage, int detailImage, String price,boolean bChoose) {
+        this.id = id;
+        this.title = title;
+        this.headImage = headImage;
+        this.detailImage = detailImage;
+        this.price = price;
+        this.bChoose=bChoose;
+    }
 
     public Shop(String id, String title, int headImage, int detailImage, String price) {
         this.id = id;
@@ -13,6 +23,7 @@ public class Shop {
         this.headImage = headImage;
         this.detailImage = detailImage;
         this.price = price;
+        this.bChoose=false;
     }
 
     public String getId() {
@@ -53,5 +64,13 @@ public class Shop {
 
     public void setPrice(String price) {
         this.price = price;
+    }
+
+    public boolean isbChoose() {
+        return bChoose;
+    }
+
+    public void setbChoose(boolean bChoose) {
+        this.bChoose = bChoose;
     }
 }
