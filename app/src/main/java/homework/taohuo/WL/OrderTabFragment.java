@@ -1,12 +1,17 @@
 package homework.taohuo.WL;
 
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
+
 import java.util.List;
+
+import homework.taohuo.GJ.JumpActivity;
 import homework.taohuo.R;
 import homework.taohuo.service.RWUser;
 
@@ -48,6 +53,7 @@ public class OrderTabFragment extends Fragment {
 
         Button button1 = (Button)  view.findViewById(R.id.button3);
         Button button2 = (Button)  view.findViewById(R.id.button4);
+        ImageButton button3 = (ImageButton) view.findViewById(R.id.wl_btn);
 
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,6 +78,15 @@ public class OrderTabFragment extends Fragment {
                         .replace(R.id.wl_tab, orderFragment, null)
                         .addToBackStack(null)
                         .commit();
+            }
+        });
+
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), JumpActivity.class);
+                intent.putExtra("id",62);
+                startActivity(intent);
             }
         });
 

@@ -63,6 +63,7 @@
                     android:layout_width="100dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="end"
+                    android:background="#E2FDFF"
                     android:gravity="center"
                     android:text="@string/order_bay" />
             </LinearLayout>
@@ -70,5 +71,6 @@
         </LinearLayout>
 
     </LinearLayout>
+
 
 </androidx.cardview.widget.CardView>

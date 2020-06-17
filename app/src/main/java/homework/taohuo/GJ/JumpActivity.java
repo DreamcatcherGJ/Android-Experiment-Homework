@@ -1,7 +1,6 @@
 package homework.taohuo.GJ;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import android.os.Bundle;
@@ -10,16 +9,14 @@ import com.google.gson.reflect.TypeToken;
 import java.util.List;
 import homework.taohuo.GHY.ShopDetailFragment;
 import homework.taohuo.GX.ListFragment;
-import homework.taohuo.HJL.OrderAddress;
-import homework.taohuo.HJL.OrderSubmit;
-import homework.taohuo.HJL.OrderSucceed;
+import homework.taohuo.LS.CategoryFragment;
 import homework.taohuo.R;
 import homework.taohuo.WL.OrderTabFragment;
 import homework.taohuo.WZT.AdressFragment;
 import homework.taohuo.WZT.CreateAddress;
 import homework.taohuo.WZT.DeleteAddress;
 import homework.taohuo.WZT.ModifyAddress;
-
+import homework.taohuo.ZH.MineFragment;
 
 public class JumpActivity extends AppCompatActivity
 {
@@ -134,6 +131,18 @@ public class JumpActivity extends AppCompatActivity
             //我的订单
             OrderTabFragment orderTabFragment = new OrderTabFragment();
             fragmentTransaction.replace(R.id.fragment_container2, orderTabFragment);
+            fragmentTransaction.commit();
+        }
+        if (id == 62) {
+            //“我的”界面
+            MineFragment mineFragment = new MineFragment();
+            fragmentTransaction.replace(R.id.fragment_container2, mineFragment);
+            fragmentTransaction.commit();
+        }
+        if (id == 63) {
+            //返回商品
+            CategoryFragment categoryFragment = new CategoryFragment();
+            fragmentTransaction.replace(R.id.fragment_container2, categoryFragment);
             fragmentTransaction.commit();
         }
 

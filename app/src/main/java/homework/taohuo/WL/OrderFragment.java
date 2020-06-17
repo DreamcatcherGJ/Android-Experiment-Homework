@@ -1,6 +1,5 @@
 package homework.taohuo.WL;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -75,6 +74,16 @@ public class OrderFragment extends Fragment {
             TextView viewTitle = (TextView) v.findViewById(R.id.order_title);
             TextView viewPrice = (TextView) v.findViewById(R.id.order_price);
             Button viewButton = (Button) v.findViewById(R.id.order_button);
+
+            viewButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(getActivity(), JumpActivity.class);
+                    intent.putExtra("id",63);
+                    //   intent.putExtra("number",adress.getID());
+                    startActivity(intent);
+                }
+            });
 
             shop = data.get(position);
 
