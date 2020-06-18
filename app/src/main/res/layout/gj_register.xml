@@ -4,19 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GJ.LoginFragment">
+    tools:context=".GJ.RegisterFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
             android:layout_marginTop="60dp"
-            android:contentDescription="@string/gj_null"
-            android:src="@mipmap/brand_128"
+            android:gravity="center"
+            android:text="@string/gj_register"
+            android:textColor="#050505"
+            android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -27,14 +29,14 @@
             android:layout_height="35dp"
             android:gravity="center_vertical"
             android:text="@string/gj_user"
-            app:layout_constraintBottom_toBottomOf="@+id/lo_user"
-            app:layout_constraintEnd_toStartOf="@+id/lo_user"
+            app:layout_constraintBottom_toBottomOf="@+id/re_user"
+            app:layout_constraintEnd_toStartOf="@+id/re_user"
             app:layout_constraintHorizontal_bias="0.85"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/lo_user" />
+            app:layout_constraintTop_toTopOf="@+id/re_user" />
 
         <TextView
-            android:id="@+id/lo_user"
+            android:id="@+id/re_user"
             android:layout_width="200dp"
             android:layout_height="35dp"
             android:layout_marginTop="60dp"
@@ -45,7 +47,7 @@
             android:text="@string/hjl_null"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+            app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
         <TextView
             android:id="@+id/textView12"
@@ -53,12 +55,12 @@
             android:layout_height="35dp"
             android:gravity="center_vertical"
             android:text="@string/gj_password"
-            app:layout_constraintBottom_toBottomOf="@+id/lo_password"
+            app:layout_constraintBottom_toBottomOf="@+id/re_password"
             app:layout_constraintStart_toStartOf="@+id/textView11"
-            app:layout_constraintTop_toTopOf="@+id/lo_password" />
+            app:layout_constraintTop_toTopOf="@+id/re_password" />
 
         <TextView
-            android:id="@+id/lo_password"
+            android:id="@+id/re_password"
             android:layout_width="200dp"
             android:layout_height="35dp"
             android:layout_marginTop="20dp"
@@ -69,29 +71,42 @@
             android:text="@string/hjl_null"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/lo_user" />
+            app:layout_constraintTop_toBottomOf="@+id/re_user" />
 
         <Button
-            android:id="@+id/lo_bt_login"
+            android:id="@+id/re_bt_register"
             android:layout_width="120dp"
             android:layout_height="35dp"
             android:layout_marginTop="60dp"
-            android:background="@drawable/gj_login"
-            android:text="@string/gj_login"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/lo_password" />
-
-        <Button
-            android:id="@+id/lo_bt_register"
-            android:layout_width="120dp"
-            android:layout_height="35dp"
-            android:layout_marginTop="30dp"
             android:background="@drawable/gj_register"
             android:text="@string/gj_register"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/lo_bt_login" />
+            app:layout_constraintTop_toBottomOf="@+id/re_password" />
+
+        <Button
+            android:id="@+id/re_bt_server"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="#00FFFFFF"
+            android:text="@string/gj_null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/re_warning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/gj_null"
+            android:textColor="#F44336"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/re_bt_register" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </FrameLayout>

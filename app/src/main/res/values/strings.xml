@@ -9,6 +9,11 @@
     <string name="tab_user">我的</string>
     <string name="actionbar_title1">淘货</string>
     <string name="actionbar_title2"></string>
+    <string name="gj_null"></string>
+    <string name="gj_user">用户名</string>
+    <string name="gj_password">密码</string>
+    <string name="gj_login">登录</string>
+    <string name="gj_register">注册</string>
 
     <!--List By GX-->
     <string name="list_title">标题</string>
