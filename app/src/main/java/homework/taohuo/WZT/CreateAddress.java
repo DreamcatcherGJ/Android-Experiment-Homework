@@ -81,6 +81,10 @@ public class CreateAddress extends Fragment {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.wzt_create_address, container, false);
 
+        return view;
+    }
+
+    public void CreateAD(){
         User = new RWUser();
         User.RWUser(getActivity());
         oldaddress = User.GetAddress();
@@ -90,15 +94,10 @@ public class CreateAddress extends Fragment {
         String addtes2 = r_name.getText().toString();
         r_phone=(EditText) view.findViewById(R.id.createnumber);
         String addtes3 = r_phone.getText().toString();
-
-
-        oldaddress.add(new Adress(addtes1,addtes2,addtes3));
-
-
+        oldaddress.add(new Adress(addtes2,addtes3,addtes1));
         Gson gson =new Gson();
         newaddressStr = gson.toJson(oldaddress);
-
-        return view;
+        User.ChangeAddress(newaddressStr);
     }
 
     public void onActivityCreated(Bundle savedInstanceState) {
@@ -109,7 +108,7 @@ public class CreateAddress extends Fragment {
         set.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                User.ChangeAddress(newaddressStr);
+                CreateAD();
                 AdressFragment adressFragment =  new AdressFragment();
                 getActivity().getSupportFragmentManager()
                         .beginTransaction()
