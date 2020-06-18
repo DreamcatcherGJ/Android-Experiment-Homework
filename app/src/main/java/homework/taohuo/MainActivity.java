@@ -1,6 +1,7 @@
 package homework.taohuo;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import android.content.Context;
@@ -9,6 +10,8 @@ import android.os.Bundle;
 import com.google.gson.Gson;
 import java.util.ArrayList;
 import java.util.List;
+
+import homework.taohuo.GJ.LoginFragment;
 import homework.taohuo.GJ.MainFragment;
 import homework.taohuo.bean.Adress;
 
@@ -20,17 +23,32 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //初始值-登录信息
-        SharedPreferences Login = getSharedPreferences("Login", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor1 = Login.edit();
-        editor1.putString("user", "Admin");
-        editor1.apply();
+        SetAdmin();
 
+        SharedPreferences Login = getSharedPreferences("Login", Context.MODE_PRIVATE);
+        String Admin = Login.getString("user", "NoBody");
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        MainFragment fragment = new MainFragment();
+        LoginFragment loginFragment = new LoginFragment();
+
+        if (Admin.equals("NoBody")){
+            fragmentTransaction.replace(R.id.fragment_container, loginFragment);
+            fragmentTransaction.commit();
+        }else {
+            fragmentTransaction.replace(R.id.fragment_container, fragment);
+            fragmentTransaction.commit();
+        }
+    }
+
+
+    public void SetAdmin(){
         //初始值-用户信息
-        SharedPreferences User = getSharedPreferences("Admin", Context.MODE_PRIVATE);
+        SharedPreferences User = getSharedPreferences("admin", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor2 = User.edit();
         Gson gson=new Gson();
-        String user = "Admin";
+        String user = "admin";
         String password = "123456";
         List<String> number3 = new ArrayList<>();
         List<String> number4 = new ArrayList<>();
@@ -65,11 +83,5 @@ public class MainActivity extends AppCompatActivity {
         editor2.putString("order2", listNum6);
         editor2.putString("address", listNum7);
         editor2.apply();
-
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        MainFragment fragment = new MainFragment();
-        fragmentTransaction.add(R.id.fragment_container, fragment);
-        fragmentTransaction.commit();
     }
 }

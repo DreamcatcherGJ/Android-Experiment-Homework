@@ -26,13 +26,15 @@ public class OrderSubmit extends Fragment
 {
     private RecyclerView ListOptionView;
     private RWUser User;
-    private String numberStr1, numberStr2;
+    private String numberStr1, numberStr2, numberStr3, numberStr4;
     int address = 0;
     private List<Shop> data = new ArrayList<>();
     private List<Adress> data2 = new ArrayList<>();
     private List<String> number = new ArrayList<>();
     private List<String> number1 = new ArrayList<>();
     private List<String> number2 = new ArrayList<>();
+    private List<String> numberChange1 = new ArrayList<>();
+    private List<String> numberChange2 = new ArrayList<>();
 
     public OrderSubmit(List<String> number, int address) {
         this.number = number;
@@ -101,13 +103,17 @@ public class OrderSubmit extends Fragment
             @Override
             public void onClick(View v) {
                 number1 = User.GetOrder1();
+                numberChange1 = User.GetCart();
                 for (int h=0;h<number.size();h++)
                 {
+                    numberChange1.remove(number.get(h));
                     number1.add(number.get(h));
                 }
                 Gson gson =new Gson();
                 numberStr1 = gson.toJson(number1);
+                numberStr3 = gson.toJson(numberChange1);
                 User.ChangeOrder1(numberStr1);
+                User.ChangeCart(numberStr3);
 
                 OrderSucceed orderSucceed = new OrderSucceed();
                 getActivity().getSupportFragmentManager()
@@ -121,13 +127,17 @@ public class OrderSubmit extends Fragment
             public void onClick(View v) {
                 User.GetOrder2();
                 number2 = User.GetOrder2();
+                numberChange2 = User.GetCart();
                 for (int k=0;k<number.size();k++)
                 {
+                    numberChange2.remove(number.get(k));
                     number2.add(number.get(k));
                 }
                 Gson gson =new Gson();
                 numberStr2 = gson.toJson(number2);
+                numberStr4 = gson.toJson(numberChange2);
                 User.ChangeOrder2(numberStr2);
+                User.ChangeCart(numberStr4);
 
                 getActivity().finish();
             }

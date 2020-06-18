@@ -1,5 +1,6 @@
 package homework.taohuo.HJL;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -9,6 +10,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import homework.taohuo.GJ.JumpActivity;
+import homework.taohuo.GJ.MainFragment;
+import homework.taohuo.MainActivity;
 import homework.taohuo.R;
 
 public class OrderSucceed extends Fragment

@@ -1,6 +1,5 @@
 package homework.taohuo.GHY;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -19,23 +18,26 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-import homework.taohuo.GJ.JumpActivity;
-import homework.taohuo.HJL.OrderAddress;
 import homework.taohuo.HJL.OrderSubmit;
 import homework.taohuo.R;
 import homework.taohuo.service.GetShopMes;
 import homework.taohuo.bean.Shop;
+import homework.taohuo.service.RWUser;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class ShopDetailFragment extends Fragment {
     private List<Shop> shopdata = new ArrayList<>();
+    private List<String> number = new ArrayList<>();
     private Shop shop;
     private View v;
+    private RWUser User;
+    private String num;
     private LinearLayout myLinearLayout;
 
     public ShopDetailFragment(String num) {
+        this.num = num;
         List<String> number = new ArrayList<>();
         GetShopMes needmes = new GetShopMes();
         number.add(num);
@@ -50,6 +52,8 @@ public class ShopDetailFragment extends Fragment {
         v = inflater.inflate(R.layout.ghy_shop_detail, container, false);
 
         SetShopDetail();
+        User = new RWUser();
+        User.RWUser(getActivity());
 
         return v;
     }
@@ -61,6 +65,7 @@ public class ShopDetailFragment extends Fragment {
         TextView shop_price = (TextView) v.findViewById(R.id.shop_price);
         ImageView detail_image = (ImageView) v.findViewById(R.id.detail_image);
         Button shop_buy = (Button) v.findViewById(R.id.shop_buy);
+        Button shop_add = (Button) v.findViewById(R.id.shop_add);
 
         myLinearLayout = Objects.requireNonNull(getActivity()).findViewById(R.id.myLinearLayout);
         shop = shopdata.get(0);
@@ -81,6 +86,18 @@ public class ShopDetailFragment extends Fragment {
                         .beginTransaction()
                         .replace(R.id.fragment_container2, orderSubmit)
                         .commit();
+            }
+        });
+
+        shop_add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                number = User.GetCart();
+                number.add(num);
+                Gson gson =new Gson();
+                String numberStr = gson.toJson(number);
+                User.ChangeCart(numberStr);
+                getActivity().finish();
             }
         });
     }

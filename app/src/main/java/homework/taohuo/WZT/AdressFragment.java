@@ -118,9 +118,6 @@ public class AdressFragment extends Fragment {
 
         }
 
-
-
-
         @Override
         public int getItemCount() {
             return data.size();

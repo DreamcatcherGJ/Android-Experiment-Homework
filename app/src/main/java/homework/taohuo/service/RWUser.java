@@ -28,6 +28,37 @@ public class RWUser extends AppCompatActivity
         editor = User.edit();
     }
 
+    public void Register(Context context,String user, String password){
+        SharedPreferences ReUser = context.getSharedPreferences(user, Context.MODE_PRIVATE);
+        SharedPreferences.Editor ReEditor = ReUser.edit();
+        ReEditor.putString("user", user);
+        ReEditor.putString("password", password);
+        ReEditor.apply();
+    }
+
+    public boolean Login(Context context,String user, String password){
+        SharedPreferences LoLogin = context.getSharedPreferences(user, Context.MODE_PRIVATE);
+        String user2 = LoLogin.getString("user", "NoUser");
+        String password2 = LoLogin.getString("password", "NoPassword");
+
+        if (user.equals(user2) && password.equals(password2)){
+            Login = context.getSharedPreferences("Login", Context.MODE_PRIVATE);
+            SharedPreferences.Editor LoEditor =  Login.edit();
+            LoEditor.putString("user", user);
+            LoEditor.apply();
+            return true;
+        }else {
+            return false;
+        }
+    }
+
+    public void Quit(Context context){
+        Login = context.getSharedPreferences("Login", Context.MODE_PRIVATE);
+        SharedPreferences.Editor QuEditor =  Login.edit();
+        QuEditor.remove("user");
+        QuEditor.apply();
+    }
+
 
     /***获得信息***/
     //购物车
@@ -35,7 +66,7 @@ public class RWUser extends AppCompatActivity
     {
         data = User.getString("cart", "defaultValue");
         if(data == "defaultValue"){
-            return null;
+            return ListNumber;
         }else {
             ListNumber = gson.fromJson(data,new TypeToken<List<String>>(){}.getType());
             return ListNumber;
@@ -46,7 +77,7 @@ public class RWUser extends AppCompatActivity
     {
         data = User.getString("collect", "defaultValue");
         if(data == "defaultValue"){
-            return null;
+            return ListNumber;
         }else {
             ListNumber = gson.fromJson(data,new TypeToken<List<String>>(){}.getType());
             return ListNumber;
@@ -57,7 +88,7 @@ public class RWUser extends AppCompatActivity
     {
         data = User.getString("order1", "defaultValue");
         if(data == "defaultValue"){
-            return null;
+            return ListNumber;
         }else {
             ListNumber = gson.fromJson(data,new TypeToken<List<String>>(){}.getType());
             return ListNumber;
@@ -68,7 +99,7 @@ public class RWUser extends AppCompatActivity
     {
         String data = User.getString("order2", "defaultValue");
         if(data == "defaultValue"){
-            return null;
+            return ListNumber;
         }else {
             ListNumber = gson.fromJson(data,new TypeToken<List<String>>(){}.getType());
             return ListNumber;
@@ -79,7 +110,7 @@ public class RWUser extends AppCompatActivity
     {
         String data = User.getString("address", "defaultValue");
         if(data == "defaultValue"){
-            return null;
+            return Adress;
         }else {
             Adress = gson.fromJson(data,new TypeToken<List<Adress>>(){}.getType());
             return Adress;

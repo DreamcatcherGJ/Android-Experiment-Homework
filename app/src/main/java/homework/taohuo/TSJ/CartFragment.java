@@ -65,7 +65,6 @@ public class CartFragment extends Fragment {
         RWUser User = new RWUser();
         User.RWUser(getActivity());
         ListNumber = User.GetCart();
-
         GetShopMes needmes = new GetShopMes();
         data = needmes.GetShopMes(ListNumber);
 

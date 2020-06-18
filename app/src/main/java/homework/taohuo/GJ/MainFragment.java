@@ -23,7 +23,6 @@ import homework.taohuo.service.RWUser;
 
 public class MainFragment extends Fragment
 {
-
     private ViewPager mViewPager;
     private RadioGroup mTabRadioGroup;
     private List<Fragment> mFragments;
@@ -38,8 +37,6 @@ public class MainFragment extends Fragment
 
         mViewPager = v.findViewById(R.id.fragment_vp);
         mTabRadioGroup = v.findViewById(R.id.tabs_rg);
-
-
 
         HomeFragment homeFragment = new HomeFragment();
         MineFragment mineFragment = new MineFragment();
