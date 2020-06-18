@@ -10,15 +10,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.google.gson.Gson;
-
-import java.util.ArrayList;
-import java.util.List;
-
 import homework.taohuo.GJ.JumpActivity;
 import homework.taohuo.GJ.LoginFragment;
-import homework.taohuo.GJ.MainFragment;
-import homework.taohuo.MainActivity;
+
 import homework.taohuo.R;
 import homework.taohuo.service.RWUser;
 
@@ -28,7 +22,6 @@ import homework.taohuo.service.RWUser;
 public class MineFragment extends Fragment {
     private Button btn1,btn2,btn3,btn4;
     public MineFragment() {
-        // Required empty public constructor
     }
 
 
@@ -42,7 +35,7 @@ public class MineFragment extends Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        // final User user ;
+
         btn1 = (Button) getActivity().findViewById(R.id.zh_btn6);
         btn2 = (Button) getActivity().findViewById(R.id.zh_btn7);
         btn3 = (Button) getActivity().findViewById(R.id.zh_btn8);

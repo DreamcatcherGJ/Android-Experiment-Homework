@@ -3,7 +3,7 @@ package homework.taohuo.GJ;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,14 +19,13 @@ import homework.taohuo.TSJ.CartFragment;
 import homework.taohuo.TSJ.HotFragment;
 import homework.taohuo.ZH.HomeFragment;
 import homework.taohuo.ZH.MineFragment;
-import homework.taohuo.service.RWUser;
 
 public class MainFragment extends Fragment
 {
     private ViewPager mViewPager;
     private RadioGroup mTabRadioGroup;
     private List<Fragment> mFragments;
-    private FragmentPagerAdapter mAdapter;
+    private FragmentStatePagerAdapter mAdapter;
 
     public MainFragment() { }
 
@@ -98,7 +97,7 @@ public class MainFragment extends Fragment
         }
     };
 
-    private class MyFragmentPagerAdapter extends FragmentPagerAdapter
+    private class MyFragmentPagerAdapter extends FragmentStatePagerAdapter
     {
         private List<Fragment> mList;
 

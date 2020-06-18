@@ -10,7 +10,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.ListFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -21,7 +20,6 @@ import java.util.List;
 
 import homework.taohuo.GJ.JumpActivity;
 import homework.taohuo.R;
-import homework.taohuo.WL.OrderFragment;
 import homework.taohuo.bean.Shop;
 import homework.taohuo.service.GetShopMes;
 

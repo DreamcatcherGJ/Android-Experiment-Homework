@@ -1,7 +1,6 @@
 package homework.taohuo;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import android.content.Context;
@@ -30,14 +29,14 @@ public class MainActivity extends AppCompatActivity {
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        MainFragment fragment = new MainFragment();
-        LoginFragment loginFragment = new LoginFragment();
 
         if (Admin.equals("NoBody")){
-            fragmentTransaction.replace(R.id.fragment_container, loginFragment);
+            LoginFragment loginFragment = new LoginFragment();
+            fragmentTransaction.add(R.id.fragment_container, loginFragment);
             fragmentTransaction.commit();
         }else {
-            fragmentTransaction.replace(R.id.fragment_container, fragment);
+            MainFragment fragment = new MainFragment();
+            fragmentTransaction.add(R.id.fragment_container, fragment);
             fragmentTransaction.commit();
         }
     }

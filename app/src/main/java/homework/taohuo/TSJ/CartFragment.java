@@ -68,8 +68,6 @@ public class CartFragment extends Fragment {
         GetShopMes needmes = new GetShopMes();
         data = needmes.GetShopMes(ListNumber);
 
-        Log.d("WANG","data.size="+data.size());
-
         Button viewButton = (Button) view.findViewById(R.id.cart_button1);
         Button viewButton2 = (Button) view.findViewById(R.id.cart_button2);
         viewButton.setOnClickListener(new View.OnClickListener() {

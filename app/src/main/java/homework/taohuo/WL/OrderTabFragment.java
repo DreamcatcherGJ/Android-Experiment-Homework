@@ -29,7 +29,6 @@ public class OrderTabFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.wl_order_tab, container, false);
 
         RWUser User = new RWUser();

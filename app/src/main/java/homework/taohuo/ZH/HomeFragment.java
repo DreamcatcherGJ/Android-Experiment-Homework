@@ -3,7 +3,6 @@ import homework.taohuo.GJ.JumpActivity;
 
 import homework.taohuo.R;
 
-
 import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
@@ -49,24 +48,15 @@ public class HomeFragment extends Fragment {
             R.mipmap.zh_img04,
             R.mipmap.zh_img05
     };
-    //存放图片的标题
-    /*private String[] titles = new String[]{
-            "轮播1",
-            "轮播2",
-            "轮播3",
-            "轮播4",
-            "轮播5"
-    };*/
     private TextView title;
     private ViewPagerAdapter adapter;
     private ScheduledExecutorService scheduledExecutorService;
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+    {
         mView = inflater.inflate(R.layout.zh_home, null);
-
         setView();
 
         return mView;
