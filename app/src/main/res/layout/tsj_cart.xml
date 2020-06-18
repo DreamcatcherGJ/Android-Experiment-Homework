@@ -31,15 +31,6 @@
             android:textColor="#00BCD4"
             android:textSize="18sp" />
 
-        <Button
-            android:id="@+id/cart_button1"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="#B52F25"
-            android:text="编辑"
-            android:textColor="#FFFFFF" />
-
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -79,6 +70,15 @@
             android:gravity="center_vertical"
             android:text="合计"
             tools:text="合计" />
+
+        <Button
+            android:id="@+id/cart_button1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#E8E4E4"
+            android:text="编辑"
+            android:textColor="#4E4C4C" />
 
         <Button
             android:id="@+id/cart_button2"
