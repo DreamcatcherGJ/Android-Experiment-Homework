@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,6 +25,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import homework.taohuo.GJ.JumpActivity;
+import homework.taohuo.GJ.MainFragment;
 import homework.taohuo.R;
 import homework.taohuo.bean.Shop;
 import homework.taohuo.service.GetShopMes;
@@ -41,10 +41,13 @@ public class CartFragment extends Fragment {
     private Gson gson=new Gson();
     private List<String> ListNumber = new ArrayList<>();
     private List<String> number = new ArrayList<>();
+    private List<String> numberChange = new ArrayList<>();
     private CheckBox checkAllChoose;
     private TextView tvTotal;
     private CartFragment.MyAdapter shopAdapter;
     private double totalPrice=0;
+    private RWUser User;
+    private String numberStr;
 
     public CartFragment() {
     }
@@ -62,7 +65,7 @@ public class CartFragment extends Fragment {
         shopAdapter=new CartFragment.MyAdapter();
         ListOptionView.setAdapter(shopAdapter);
 
-        RWUser User = new RWUser();
+        User = new RWUser();
         User.RWUser(getActivity());
         ListNumber = User.GetCart();
         GetShopMes needmes = new GetShopMes();
@@ -73,8 +76,23 @@ public class CartFragment extends Fragment {
         viewButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                numberChange = User.GetCart();
+                for (int h=0;h<number.size();h++)
+                {
+                    numberChange.remove(number.get(h));
+                }
+                Gson gson =new Gson();
+                numberStr = gson.toJson(numberChange);
+                User.ChangeCart(numberStr);
+
+                MainFragment mainFragment = new MainFragment();
+                getActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragment_container, mainFragment)
+                        .commit();
             }
         });
+
         viewButton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -85,6 +103,12 @@ public class CartFragment extends Fragment {
                 intent.putExtra("id",31);
                 intent.putExtra("OrderNumber",listNum);
                 startActivity(intent);
+
+                MainFragment mainFragment = new MainFragment();
+                getActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragment_container, mainFragment)
+                        .commit();
             }
         });
 
@@ -163,7 +187,6 @@ public class CartFragment extends Fragment {
                 public void onClick(View v) {
                     String price=data.get(viewHolder.getAdapterPosition()).getPrice();
                     price=price.substring(1);
-                    Log.d("WANG","点击check的price="+price);
                     if(cb.isChecked()){
                         totalPrice+=Double.parseDouble(price);
                         number.add(data.get(viewHolder.getAdapterPosition()).getId());
@@ -203,9 +226,6 @@ public class CartFragment extends Fragment {
                         if(shop.isbChoose()){
                             String strP=shop.getPrice();
                             number.add(shop.getId());
-
-                            Log.d("WANG","strP="+strP);
-
                             strP=strP.substring(1);
                             price+=Double.parseDouble(strP);
                         }
