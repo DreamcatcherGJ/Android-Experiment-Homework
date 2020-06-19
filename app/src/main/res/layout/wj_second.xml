@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WJ.SecondFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="1">
+
+        <ImageView
+            android:id="@+id/img21"
+            android:layout_width="wrap_content"
+            android:layout_height="268dp"
+            android:layout_gravity="center"
+            android:src="@mipmap/zh_shop1" />
+
+        <TextView
+            android:id="@+id/bz21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="手表"/>
+
+        <ImageView
+            android:id="@+id/img22"
+            android:layout_width="334dp"
+            android:layout_height="268dp"
+            android:layout_gravity="center"
+            android:src="@mipmap/zh_shop2"/>
+
+        <TextView
+            android:id="@+id/bz22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="小米手表"/>
+
+        <ImageView
+            android:id="@+id/img23"
+            android:layout_width="334dp"
+            android:layout_height="268dp"
+            android:layout_gravity="center"
+            android:src="@mipmap/gj_shop1"/>
+
+        <TextView
+            android:id="@+id/bz23"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="巧乐兹"/>
+
+        <ImageView
+            android:id="@+id/img24"
+            android:layout_width="334dp"
+            android:layout_height="268dp"
+            android:layout_gravity="center"
+            android:src="@mipmap/gj_shop2"/>
+
+        <TextView
+            android:id="@+id/bz24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="星球杯"/>
+
+    </LinearLayout>
+
+</ScrollView>

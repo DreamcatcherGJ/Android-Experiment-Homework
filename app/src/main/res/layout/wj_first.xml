@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WJ.FirstFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="1">
+
+        <ImageView
+            android:id="@+id/img11"
+            android:layout_width="334dp"
+            android:layout_height="268dp"
+            android:layout_gravity="center"
+            android:src="@mipmap/wl_shop1" />
+
+        <TextView
+            android:id="@+id/bz11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="小米手表"/>
+
+        <ImageView
+            android:id="@+id/img12"
+            android:layout_width="334dp"
+            android:layout_height="268dp"
+            android:layout_gravity="center"
+            android:src="@mipmap/wj_shop1"/>
+
+        <TextView
+            android:id="@+id/bz12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="松露巧克力"/>
+
+        <ImageView
+            android:id="@+id/img13"
+            android:layout_width="334dp"
+            android:layout_height="268dp"
+            android:layout_gravity="center"
+            android:src="@mipmap/wj_shop2"/>
+
+        <TextView
+            android:id="@+id/bz13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="斜挎包"/>
+
+        <ImageView
+            android:id="@+id/img14"
+            android:layout_width="334dp"
+            android:layout_height="268dp"
+            android:layout_gravity="center"
+            android:src="@mipmap/wj_shop3"/>
+
+        <TextView
+            android:id="@+id/bz14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="袜子"/>
+
+        <ImageView
+            android:id="@+id/img15"
+            android:layout_width="334dp"
+            android:layout_height="268dp"
+            android:layout_gravity="center"
+            android:src="@mipmap/wj_shop4"/>
+
+        <TextView
+            android:id="@+id/bz15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="按摩器"/>
+
+
+    </LinearLayout>
+
+</ScrollView>
