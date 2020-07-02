@@ -31,7 +31,7 @@
             android:layout_width="334dp"
             android:layout_height="268dp"
             android:layout_gravity="center"
-            android:src="@mipmap/wj_shop1"/>
+            android:src="@mipmap/wj_shop1" />
 
         <TextView
             android:id="@+id/bz12"
@@ -81,6 +81,12 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="按摩器"/>
+
+        <Button
+            android:id="@+id/nextpage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="下一页" />
 
 
     </LinearLayout>

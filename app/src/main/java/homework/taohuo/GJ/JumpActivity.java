@@ -14,6 +14,8 @@ import homework.taohuo.HJL.OrderSubmit;
 import homework.taohuo.HJL.OrderSucceed;
 import homework.taohuo.LS.CategoryFragment;
 import homework.taohuo.R;
+import homework.taohuo.WJ.FirstFragment;
+import homework.taohuo.WJ.SecondFragment;
 import homework.taohuo.WL.OrderTabFragment;
 import homework.taohuo.WZT.AdressFragment;
 import homework.taohuo.WZT.CreateAddress;
@@ -163,6 +165,23 @@ public class JumpActivity extends AppCompatActivity
 
 
         //王锦：81-90
+        if (id == 81) {
+            //进入第一个界面
+            //  int number = getIntent().getIntExtra("Number",-1);
+            FirstFragment firstFragment=new FirstFragment();
+
+            fragmentTransaction.add(R.id.fragment_container2, firstFragment);
+            fragmentTransaction.commit();
+        }
+        if (id == 82) {
+            //进入第二个界面
+            //  int number = getIntent().getIntExtra("Number",-1);
+            SecondFragment secondFragment= new SecondFragment();
+
+
+            fragmentTransaction.add(R.id.fragment_container2, secondFragment);
+            fragmentTransaction.commit();
+        }
 
         //汤深杰：91-100
 

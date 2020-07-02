@@ -48,6 +48,14 @@ public class MineFragment extends Fragment {
                 startActivity(intent);
             }
         });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), JumpActivity.class);
+                intent.putExtra("id",81);
+                startActivity(intent);
+            }
+        });
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

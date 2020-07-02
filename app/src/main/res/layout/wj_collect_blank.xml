@@ -16,5 +16,4 @@
         android:queryHint="输入商品" >
     </SearchView>
 
-
 </FrameLayout>

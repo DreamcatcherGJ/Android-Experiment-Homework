@@ -1,5 +1,6 @@
 package homework.taohuo.WJ;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,7 +8,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
+import homework.taohuo.GJ.JumpActivity;
 import homework.taohuo.R;
 
 /**
@@ -25,6 +28,7 @@ public class SecondFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private Button btn1,btn2;
 
     public SecondFragment() {
         // Required empty public constructor
@@ -61,6 +65,31 @@ public class SecondFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+//        btn1 = (Button) getActivity().findViewById(R.id.prepage);
+//
+//        btn1.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(getActivity(), JumpActivity.class);
+//                intent.putExtra("id",81);
+//                startActivity(intent);
+//            }
+//        });
         return inflater.inflate(R.layout.wj_second, container, false);
+    }
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+        btn1 = (Button) getActivity().findViewById(R.id.prepage);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), JumpActivity.class);
+                intent.putExtra("id",81);
+                startActivity(intent);
+            }
+        });
+
     }
 }
